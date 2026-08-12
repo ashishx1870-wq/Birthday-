@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+
 <title>For Pallavi ✦</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -10,6 +11,7 @@
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
 
 <style>
+
 :root{
   --bg:#faf6f3;
   --paper:#fffdf9;
@@ -125,10 +127,10 @@ button{
   filter:blur(6px);
 
   transition:
-    opacity .7s ease,
-    transform .85s var(--ease),
-    filter .7s ease,
-    visibility 0s linear .9s;
+    opacity .55s ease,
+    transform .7s var(--ease),
+    filter .55s ease,
+    visibility 0s linear .7s;
 }
 
 .scene.active{
@@ -139,9 +141,9 @@ button{
   filter:blur(0);
 
   transition:
-    opacity .7s ease,
-    transform .85s var(--ease),
-    filter .7s ease;
+    opacity .55s ease,
+    transform .7s var(--ease),
+    filter .55s ease;
 }
 
 .content{
@@ -210,7 +212,7 @@ p{
 }
 
 .scene.active .btn{
-  animation:buttonIn .7s .65s var(--ease) forwards;
+  animation:buttonIn .7s .55s var(--ease) forwards;
 }
 
 .btn.primary{
@@ -278,7 +280,7 @@ p{
 }
 
 .scene.active .date-mark{
-  animation:slowUp .9s .4s var(--ease) forwards;
+  animation:slowUp .7s .25s var(--ease) forwards;
 }
 
 .opening-line{
@@ -292,7 +294,7 @@ p{
 }
 
 .scene.active .opening-line{
-  animation:slowUp 1s 1.2s var(--ease) forwards;
+  animation:slowUp .8s .8s var(--ease) forwards;
 }
 
 .opening-line.second{
@@ -302,7 +304,7 @@ p{
 }
 
 .scene.active .opening-line.second{
-  animation:slowUp 1s 2.3s var(--ease) forwards;
+  animation:slowUp .8s 1.65s var(--ease) forwards;
 }
 
 .opening-divider{
@@ -314,7 +316,7 @@ p{
 }
 
 .scene.active .opening-divider{
-  animation:lineGrow .8s 3.35s var(--ease) forwards;
+  animation:lineGrow .7s 2.45s var(--ease) forwards;
 }
 
 @keyframes lineGrow{
@@ -330,7 +332,7 @@ p{
 }
 
 .scene.active .opening-sub{
-  animation:slowUp .7s 3.65s var(--ease) forwards;
+  animation:slowUp .6s 2.7s var(--ease) forwards;
 }
 
 @keyframes slowUp{
@@ -341,14 +343,13 @@ p{
 }
 
 /* =========================
-   SCENE 2
+   SCENE 2 LETTER
 ========================= */
 
 .envelope-stage{
   height:320px;
   display:grid;
   place-items:center;
-  perspective:1100px;
 }
 
 .envelope{
@@ -362,7 +363,7 @@ p{
 }
 
 .scene.active .envelope{
-  animation:envelopeIn .9s .25s var(--ease) forwards;
+  animation:envelopeIn .8s .2s var(--ease) forwards;
 }
 
 @keyframes envelopeIn{
@@ -411,7 +412,7 @@ p{
   background:linear-gradient(145deg,#f6e8df,#ead2ce);
   clip-path:polygon(0 0,100% 0,50% 100%);
   transform-origin:50% 0;
-  transition:transform 1s var(--ease);
+  transition:transform .8s var(--ease);
   backface-visibility:hidden;
 }
 
@@ -431,7 +432,7 @@ p{
   border-radius:4px;
   box-shadow:0 10px 30px rgba(60,40,45,.12);
   transition:
-    transform 1s .18s var(--ease),
+    transform .8s .12s var(--ease),
     box-shadow .8s ease;
 }
 
@@ -478,7 +479,7 @@ p{
   font-family:var(--luxury);
   font-size:16px;
   box-shadow:0 7px 17px rgba(100,55,65,.2);
-  transition:.55s;
+  transition:.5s;
 }
 
 .envelope.open .seal{
@@ -497,7 +498,7 @@ p{
   background:radial-gradient(circle,rgba(255,245,206,.8),transparent 70%);
   filter:blur(8px);
   opacity:0;
-  transition:opacity .9s;
+  transition:opacity .7s;
 }
 
 .envelope.open .letter-glow{
@@ -517,7 +518,7 @@ p{
 }
 
 .scene.active .envelope-hint{
-  animation:hintIn .7s 1.2s forwards;
+  animation:hintIn .6s .9s forwards;
 }
 
 @keyframes hintIn{
@@ -590,19 +591,19 @@ p{
 }
 
 .scene.active .message-text span:nth-child(1){
-  animation:messageIn .65s .55s forwards;
+  animation:messageIn .6s .35s forwards;
 }
 
 .scene.active .message-text span:nth-child(2){
-  animation:messageIn .65s 1.35s forwards;
+  animation:messageIn .6s 1s forwards;
 }
 
 .scene.active .message-text span:nth-child(3){
-  animation:messageIn .65s 2.15s forwards;
+  animation:messageIn .6s 1.65s forwards;
 }
 
 .scene.active .message-text span:nth-child(4){
-  animation:messageIn .65s 2.95s forwards;
+  animation:messageIn .6s 2.3s forwards;
 }
 
 @keyframes messageIn{
@@ -622,7 +623,7 @@ p{
 }
 
 .scene.active .message-sign{
-  animation:messageIn .7s 3.8s forwards;
+  animation:messageIn .7s 3.05s forwards;
 }
 
 .message-next{
@@ -630,11 +631,11 @@ p{
 }
 
 .scene.active .message-next{
-  animation:buttonIn .7s 4.25s forwards!important;
+  animation:buttonIn .7s 3.45s forwards!important;
 }
 
 /* =========================
-   SCENE 4 — MEMORIES
+   SCENE 4 MEMORIES
 ========================= */
 
 .memory-area{
@@ -654,8 +655,8 @@ p{
   opacity:0;
   transform:translateY(25px) scale(.95) rotate(3deg);
   transition:
-    opacity .65s ease,
-    transform .75s var(--ease);
+    opacity .55s ease,
+    transform .65s var(--ease);
 }
 
 .memory-card.active{
@@ -663,13 +664,20 @@ p{
   transform:translateY(0) scale(1) rotate(-2deg);
 }
 
+/*
+  FIX:
+  contain ke bajay cover nahi lagaya gaya,
+  taaki original photo crop na ho.
+  Frame ko responsive rakha gaya hai.
+*/
+
 .memory-card img{
   display:block;
   width:100%;
   height:225px;
   object-fit:contain;
   object-position:center;
-  background:#faf7f4;
+  background:#f5efec;
   border-radius:2px;
 }
 
@@ -756,7 +764,7 @@ p{
 }
 
 /* =========================
-   SCENE 5 — GIFT
+   SCENE 5 GIFT
 ========================= */
 
 .gift{
@@ -771,8 +779,8 @@ p{
 
 .scene.active .gift{
   animation:
-    giftIn 1s .7s var(--ease) forwards,
-    giftFloat 3.2s 1.8s ease-in-out infinite;
+    giftIn .8s .45s var(--ease) forwards,
+    giftFloat 3.2s 1.4s ease-in-out infinite;
 }
 
 @keyframes giftIn{
@@ -834,7 +842,7 @@ p{
 }
 
 /* =========================
-   SCENE 7 — CHOICE
+   SCENE 7 CHOICE
 ========================= */
 
 .choice{
@@ -853,7 +861,7 @@ p{
 }
 
 /* =========================
-   SCENE 10 — CAKE
+   SCENE 10 CAKE
 ========================= */
 
 .cake-stage{
@@ -896,6 +904,7 @@ p{
   bottom:30px;
   transform:translateX(-50%);
   filter:drop-shadow(0 15px 12px rgba(80,50,55,.10));
+  transition:transform .8s var(--ease);
 }
 
 .cake-body{
@@ -929,7 +938,6 @@ p{
   box-shadow:
     0 27px 0 #f9dace,
     0 54px 0 #f9dace;
-  opacity:.95;
 }
 
 .cake-body:after{
@@ -1050,7 +1058,7 @@ p{
   transform:rotate(4deg) scaleY(1);
 }
 
-/* REALISTIC KNIFE */
+/* knife */
 
 .knife{
   position:absolute;
@@ -1113,7 +1121,7 @@ p{
 }
 
 /* =========================
-   FINAL SCENE
+   FINAL
 ========================= */
 
 .final-content{
@@ -1126,7 +1134,7 @@ p{
 }
 
 .scene.active .final-intro{
-  animation:slowUp 1s .4s var(--ease) forwards;
+  animation:slowUp .8s .3s var(--ease) forwards;
 }
 
 .final-photos{
@@ -1147,15 +1155,15 @@ p{
 }
 
 .scene.active .mini-photo:nth-child(1){
-  animation:photoOne .8s 1.2s var(--ease) forwards;
+  animation:photoOne .7s .9s var(--ease) forwards;
 }
 
 .scene.active .mini-photo:nth-child(2){
-  animation:photoTwo .8s 1.55s var(--ease) forwards;
+  animation:photoTwo .7s 1.2s var(--ease) forwards;
 }
 
 .scene.active .mini-photo:nth-child(3){
-  animation:photoThree .8s 1.9s var(--ease) forwards;
+  animation:photoThree .7s 1.5s var(--ease) forwards;
 }
 
 @keyframes photoOne{
@@ -1183,7 +1191,7 @@ p{
   width:100%;
   height:79px;
   object-fit:contain;
-  background:#faf7f4;
+  background:#f5efec;
   display:block;
 }
 
@@ -1229,7 +1237,7 @@ p{
 }
 
 .scene.active .friend-card{
-  animation:friendIn 1s 2.6s var(--ease) forwards;
+  animation:friendIn .8s 2.2s var(--ease) forwards;
 }
 
 @keyframes friendIn{
@@ -1274,7 +1282,7 @@ p{
 }
 
 .scene.active .final-note{
-  animation:slowUp 1s 3.8s var(--ease) forwards;
+  animation:slowUp .8s 3.3s var(--ease) forwards;
 }
 
 .final-small{
@@ -1285,7 +1293,7 @@ p{
 }
 
 .scene.active .final-small{
-  animation:slowUp 1s 4.25s var(--ease) forwards;
+  animation:slowUp .8s 3.7s var(--ease) forwards;
 }
 
 /* =========================
@@ -1418,6 +1426,7 @@ p{
     font-size:19px;
   }
 }
+
 </style>
 </head>
 
@@ -1428,24 +1437,12 @@ p{
 <div class="ambient one"></div>
 <div class="ambient two"></div>
 
-<!-- PARTICLES -->
-
-<script>
-for(let i=0;i<28;i++){
-  const p=document.createElement("div");
-  p.className="particle";
-  p.style.left=Math.random()*100+"%";
-  p.style.animationDuration=(9+Math.random()*10)+"s";
-  p.style.animationDelay=(Math.random()*9)+"s";
-  document.getElementById("app").appendChild(p);
-}
-</script>
-
 <!-- =========================
      01 OPENING
 ========================= -->
 
 <section class="scene active" id="s1">
+
 <div class="content">
 
 <div class="opening-wrap">
@@ -1476,6 +1473,7 @@ AAGE BADHEIN →
 </button>
 
 </div>
+
 </section>
 
 
@@ -1484,6 +1482,7 @@ AAGE BADHEIN →
 ========================= -->
 
 <section class="scene" id="s2">
+
 <div class="content">
 
 <div class="eyebrow">
@@ -1497,10 +1496,16 @@ Kuch likha hai,<br>
 
 <div class="envelope-stage">
 
-<div class="envelope" id="envelope" onclick="openLetter">
+<!-- FIXED: onclick="openLetter()" -->
+
+<div class="envelope"
+     id="envelope"
+     onclick="openLetter()">
 
 <div class="envelope-shadow"></div>
+
 <div class="envelope-back"></div>
+
 <div class="letter-glow"></div>
 
 <div class="letter">
@@ -1517,15 +1522,20 @@ For Pallavi,
 
 <div class="flap"></div>
 
-<div class="seal">P</div>
+<div class="seal">
+P
+</div>
 
 <div class="envelope-hint">
 TAP TO OPEN
 </div>
 
 </div>
+
 </div>
+
 </div>
+
 </section>
 
 
@@ -1534,6 +1544,7 @@ TAP TO OPEN
 ========================= -->
 
 <section class="scene" id="s3">
+
 <div class="content">
 
 <div class="message-card">
@@ -1577,12 +1588,16 @@ aur aap hamesha khush rahen. 🩵
 — from someone who remembers :)
 </div>
 
-<button class="btn primary message-next" onclick="go(4)">
+<button
+class="btn primary message-next"
+onclick="go(4)">
 MEMORIES DEKHEIN ✦
 </button>
 
 </div>
+
 </div>
+
 </section>
 
 
@@ -1591,6 +1606,7 @@ MEMORIES DEKHEIN ✦
 ========================= -->
 
 <section class="scene" id="s4">
+
 <div class="content">
 
 <div class="eyebrow">
@@ -1610,7 +1626,10 @@ Kuch photos,<br>
 memory ✦
 </div>
 
-<img src="1000244923.png" alt="Memory 1">
+<img
+src="1000244923.png"
+alt="Memory 1"
+>
 
 <div class="memory-caption">
 Ek khoobsurat memory.
@@ -1625,7 +1644,10 @@ Ek khoobsurat memory.
 another one ✦
 </div>
 
-<img src="1000244922.png" alt="Memory 2">
+<img
+src="1000244922.png"
+alt="Memory 2"
+>
 
 <div class="memory-caption">
 Ek aur pyari si yaad…
@@ -1669,18 +1691,35 @@ Maybe someday. :)
 
 
 <div class="dots">
-<span class="dot active" id="d1"></span>
-<span class="dot" id="d2"></span>
-<span class="dot" id="d3"></span>
-</div>
+
+<span
+class="dot active"
+id="d1">
+</span>
+
+<span
+class="dot"
+id="d2">
+</span>
+
+<span
+class="dot"
+id="d3">
+</span>
 
 </div>
 
-<button class="btn primary" id="memoryBtn" onclick="nextMemory()">
+</div>
+
+<button
+class="btn primary"
+id="memoryBtn"
+onclick="nextMemory()">
 NEXT MEMORY →
 </button>
 
 </div>
+
 </section>
 
 
@@ -1689,6 +1728,7 @@ NEXT MEMORY →
 ========================= -->
 
 <section class="scene" id="s5">
+
 <div class="content">
 
 <div class="eyebrow">
@@ -1697,17 +1737,26 @@ One more thing
 
 <h2>
 Ye bhi<br>
-<span class="accent">open kijiye. 🎁</span>
+<span class="accent">
+open kijiye. 🎁
+</span>
 </h2>
 
-<div class="gift" id="gift" onclick="openGift()">
+<div
+class="gift"
+id="gift"
+onclick="openGift()">
 
 <div class="gift-body">
+
 <div class="ribbon-v"></div>
+
 </div>
 
 <div class="gift-lid">
+
 <div class="ribbon-h"></div>
+
 </div>
 
 </div>
@@ -1717,6 +1766,7 @@ Is baar thoda aur patience. 😌
 </p>
 
 </div>
+
 </section>
 
 
@@ -1725,6 +1775,7 @@ Is baar thoda aur patience. 😌
 ========================= -->
 
 <section class="scene" id="s6">
+
 <div class="content">
 
 <div class="eyebrow">
@@ -1733,18 +1784,29 @@ Inside
 
 <h2>
 Abhi ek<br>
-<span class="accent">cheez aur baaki hai.</span>
+<span class="accent">
+cheez aur baaki hai.
+</span>
 </h2>
 
-<div class="serif" style="font-size:25px;margin-top:22px;color:var(--rose)">
+<div
+class="serif"
+style="font-size:25px;margin-top:22px;color:var(--rose)">
+
 Aur woh thodi important hai…
+
 </div>
 
-<button class="btn primary" onclick="go(7)">
+<button
+class="btn primary"
+onclick="go(7)">
+
 AAGE →
+
 </button>
 
 </div>
+
 </section>
 
 
@@ -1753,6 +1815,7 @@ AAGE →
 ========================= -->
 
 <section class="scene" id="s7">
+
 <div class="content">
 
 <div class="eyebrow">
@@ -1761,22 +1824,34 @@ Ek chhota sa question
 
 <h2>
 Surprise ke liye<br>
-<span class="accent">ready?</span>
+<span class="accent">
+ready?
+</span>
 </h2>
 
 <div class="choice">
 
-<button class="btn primary" onclick="yesAnswer()">
+<button
+class="btn primary"
+onclick="yesAnswer()">
+
 HAAN 🩵
+
 </button>
 
-<button class="btn" id="noBtn" onclick="noAnswer()">
+<button
+class="btn"
+id="noBtn"
+onclick="noAnswer()">
+
 NAHI
+
 </button>
 
 </div>
 
 </div>
+
 </section>
 
 
@@ -1785,6 +1860,7 @@ NAHI
 ========================= -->
 
 <section class="scene" id="s8">
+
 <div class="content">
 
 <div class="eyebrow">
@@ -1795,11 +1871,16 @@ The end…
 Bas itna hi.
 </h1>
 
-<div class="serif" style="font-size:23px;margin-top:21px;color:var(--rose)">
+<div
+class="serif"
+style="font-size:23px;margin-top:21px;color:var(--rose)">
+
 …shayad. 👀
+
 </div>
 
 </div>
+
 </section>
 
 
@@ -1808,6 +1889,7 @@ Bas itna hi.
 ========================= -->
 
 <section class="scene" id="s9">
+
 <div class="content">
 
 <div class="eyebrow">
@@ -1816,18 +1898,25 @@ Wait.
 
 <h1>
 Aapko laga<br>
-<span class="accent">khatam ho gaya? 😂</span>
+<span class="accent">
+khatam ho gaya? 😂
+</span>
 </h1>
 
 <p>
 Nahi ji. Abhi main part baaki hai.
 </p>
 
-<button class="btn primary" onclick="go(10)">
+<button
+class="btn primary"
+onclick="go(10)">
+
 ASLI SURPRISE ✦
+
 </button>
 
 </div>
+
 </section>
 
 
@@ -1836,6 +1925,7 @@ ASLI SURPRISE ✦
 ========================= -->
 
 <section class="scene" id="s10">
+
 <div class="content">
 
 <div class="eyebrow">
@@ -1844,23 +1934,31 @@ The important part
 
 <h2>
 Cake cut karein,<br>
-<span class="accent">Pallavi? 🎂</span>
+<span class="accent">
+Pallavi? 🎂
+</span>
 </h2>
 
-<div class="cake-stage" id="cakeStage">
+<div
+class="cake-stage"
+id="cakeStage">
 
 <div class="plate"></div>
 
-<div class="cake" id="cake">
+<div
+class="cake"
+id="cake">
 
 <div class="cake-body"></div>
 
 <div class="top-cake"></div>
 
 <div class="frosting">
+
 <div class="drip a"></div>
 <div class="drip b"></div>
 <div class="drip c"></div>
+
 </div>
 
 <div class="cut-line"></div>
@@ -1879,15 +1977,23 @@ Cake cut karein,<br>
 
 </div>
 
-<div class="knife" id="knife"></div>
+<div
+class="knife"
+id="knife">
+</div>
 
 </div>
 
-<div class="cut-hint" id="cutHint">
+<div
+class="cut-hint"
+id="cutHint">
+
 Knife ko cake ke across smoothly drag kijiye ✦
+
 </div>
 
 </div>
+
 </section>
 
 
@@ -1896,6 +2002,7 @@ Knife ko cake ke across smoothly drag kijiye ✦
 ========================= -->
 
 <section class="scene" id="s11">
+
 <div class="content">
 
 <div class="eyebrow">
@@ -1904,18 +2011,29 @@ And finally…
 
 <h1>
 Happy Birthday,<br>
-<span class="accent">Pallavi! 🎉</span>
+<span class="accent">
+Pallavi! 🎉
+</span>
 </h1>
 
-<div class="serif" style="font-size:24px;margin-top:21px;color:var(--rose)">
+<div
+class="serif"
+style="font-size:24px;margin-top:21px;color:var(--rose)">
+
 Aaj ka cake officially cut ho gaya. ✨
+
 </div>
 
-<button class="btn primary" onclick="go(12)">
+<button
+class="btn primary"
+onclick="go(12)">
+
 EK LAST BAAT…
+
 </button>
 
 </div>
+
 </section>
 
 
@@ -1924,6 +2042,7 @@ EK LAST BAAT…
 ========================= -->
 
 <section class="scene" id="s12">
+
 <div class="content final-content">
 
 <div class="final-intro">
@@ -1934,7 +2053,9 @@ Aur ek last baat…
 
 <h2>
 Kuch friendships<br>
-<span class="accent">bas bani rehni chahiye.</span>
+<span class="accent">
+bas bani rehni chahiye.
+</span>
 </h2>
 
 </div>
@@ -1944,7 +2065,9 @@ Kuch friendships<br>
 
 <div class="mini-photo">
 
-<img src="1000244923.png" alt="Memory">
+<img
+src="1000244923.png"
+alt="Memory">
 
 <div class="photo-tag">
 one little memory
@@ -1955,7 +2078,9 @@ one little memory
 
 <div class="mini-photo">
 
-<img src="1000244922.png" alt="Memory">
+<img
+src="1000244922.png"
+alt="Memory">
 
 <div class="photo-tag">
 another one
@@ -1968,7 +2093,9 @@ another one
 
 <div class="mini-empty">
 
-<div>📷</div>
+<div>
+📷
+</div>
 
 <span>
 Our photo<br>
@@ -1990,7 +2117,9 @@ maybe someday
 
 <div class="friend-main">
 Aap meri life ki<br>
-<span>first friend hain.</span>
+<span>
+first friend hain.
+</span>
 </div>
 
 <div class="friend-line">
@@ -2014,11 +2143,13 @@ Ab jaaiye… birthday enjoy kijiye 😌🎂
 </div>
 
 </div>
+
 </section>
 
 </div>
 
 <div id="flash"></div>
+
 
 <script>
 
@@ -2026,23 +2157,32 @@ Ab jaaiye… birthday enjoy kijiye 😌🎂
    PARTICLES
 ========================= */
 
-for(let i=0;i<28;i++){
+function createParticles(){
 
-  const p=document.createElement("div");
+  const app=document.getElementById("app");
 
-  p.className="particle";
+  for(let i=0;i<28;i++){
 
-  p.style.left=Math.random()*100+"%";
+    const p=document.createElement("div");
 
-  p.style.animationDuration=
-    (9+Math.random()*10)+"s";
+    p.className="particle";
 
-  p.style.animationDelay=
-    (Math.random()*9)+"s";
+    p.style.left=
+      Math.random()*100+"%";
 
-  document.getElementById("app")
-    .appendChild(p);
+    p.style.animationDuration=
+      (9+Math.random()*10)+"s";
+
+    p.style.animationDelay=
+      (Math.random()*9)+"s";
+
+    app.appendChild(p);
+
+  }
+
 }
+
+createParticles();
 
 
 /* =========================
@@ -2057,7 +2197,8 @@ function go(n){
 
   busy=true;
 
-  document.querySelectorAll(".scene")
+  document
+    .querySelectorAll(".scene")
     .forEach(scene=>{
       scene.classList.remove("active");
     });
@@ -2068,14 +2209,18 @@ function go(n){
       document.getElementById("s"+n);
 
     if(target){
+
       target.classList.add("active");
+
     }
 
     setTimeout(()=>{
-      busy=false;
-    },850);
 
-  },120);
+      busy=false;
+
+    },650);
+
+  },100);
 
 }
 
@@ -2092,16 +2237,24 @@ function openLetter(){
 
   letterOpened=true;
 
-  document.getElementById("envelope")
-    .classList.add("open");
+  const envelope=
+    document.getElementById("envelope");
+
+  if(!envelope)return;
+
+  envelope.classList.add("open");
 
   setTimeout(()=>{
+
     flash();
-  },750);
+
+  },550);
 
   setTimeout(()=>{
+
     go(3);
-  },1850);
+
+  },1450);
 
 }
 
@@ -2116,28 +2269,42 @@ function nextMemory(){
 
   if(memory<3){
 
-    document.getElementById("m"+memory)
-      .classList.remove("active");
+    const oldMemory=
+      document.getElementById("m"+memory);
 
-    document.getElementById("d"+memory)
-      .classList.remove("active");
+    const oldDot=
+      document.getElementById("d"+memory);
+
+    if(oldMemory)
+      oldMemory.classList.remove("active");
+
+    if(oldDot)
+      oldDot.classList.remove("active");
 
     memory++;
 
     setTimeout(()=>{
 
-      document.getElementById("m"+memory)
-        .classList.add("active");
+      const newMemory=
+        document.getElementById("m"+memory);
 
-      document.getElementById("d"+memory)
-        .classList.add("active");
+      const newDot=
+        document.getElementById("d"+memory);
 
-    },130);
+      if(newMemory)
+        newMemory.classList.add("active");
+
+      if(newDot)
+        newDot.classList.add("active");
+
+    },120);
 
     if(memory===3){
 
-      document.getElementById("memoryBtn")
-        .textContent="AAGE CHALEIN ✦";
+      document
+        .getElementById("memoryBtn")
+        .textContent=
+        "AAGE CHALEIN ✦";
 
     }
 
@@ -2162,16 +2329,23 @@ function openGift(){
 
   giftOpened=true;
 
-  document.getElementById("gift")
-    .classList.add("open");
+  const gift=
+    document.getElementById("gift");
+
+  if(gift)
+    gift.classList.add("open");
 
   setTimeout(()=>{
+
     confetti(16);
-  },450);
+
+  },400);
 
   setTimeout(()=>{
+
     go(6);
-  },1250);
+
+  },1100);
 
 }
 
@@ -2187,6 +2361,8 @@ function noAnswer(){
   const b=
     document.getElementById("noBtn");
 
+  if(!b)return;
+
   noCount++;
 
   if(noCount===1){
@@ -2197,7 +2373,9 @@ function noAnswer(){
     b.textContent=
       "Sochiye 😌";
 
-  }else if(noCount===2){
+  }
+
+  else if(noCount===2){
 
     b.style.transform=
       "translate(-38px,13px)";
@@ -2205,7 +2383,9 @@ function noAnswer(){
     b.textContent=
       "Pakka? 😂";
 
-  }else{
+  }
+
+  else{
 
     b.style.opacity="0";
     b.style.pointerEvents="none";
@@ -2222,8 +2402,10 @@ function yesAnswer(){
   go(8);
 
   setTimeout(()=>{
+
     go(9);
-  },2450);
+
+  },2100);
 
 }
 
@@ -2247,15 +2429,22 @@ let startY=0;
 
 function pointer(e){
 
-  return e.touches && e.touches.length
-    ? {
-        x:e.touches[0].clientX,
-        y:e.touches[0].clientY
-      }
-    : {
-        x:e.clientX,
-        y:e.clientY
-      };
+  if(
+    e.touches &&
+    e.touches.length
+  ){
+
+    return{
+      x:e.touches[0].clientX,
+      y:e.touches[0].clientY
+    };
+
+  }
+
+  return{
+    x:e.clientX,
+    y:e.clientY
+  };
 
 }
 
@@ -2293,16 +2482,29 @@ function knifeMove(e){
     p.y-startY;
 
   const x=
-    Math.max(-95,Math.min(10,dx));
+    Math.max(
+      -105,
+      Math.min(10,dx)
+    );
 
   const y=
-    Math.max(-10,Math.min(42,dy));
+    Math.max(
+      -12,
+      Math.min(42,dy)
+    );
 
   knife.style.transform=
     `rotate(-42deg) translate(${x}px,${y}px)`;
 
+  /*
+    Knife ko left side ki taraf
+    drag karne par cake cut hoga.
+  */
+
   if(dx < -65){
+
     cutCake();
+
   }
 
   e.preventDefault();
@@ -2328,37 +2530,41 @@ function knifeUp(){
 }
 
 
-knife.addEventListener(
-  "mousedown",
-  knifeDown
-);
+if(knife){
 
-window.addEventListener(
-  "mousemove",
-  knifeMove
-);
+  knife.addEventListener(
+    "mousedown",
+    knifeDown
+  );
 
-window.addEventListener(
-  "mouseup",
-  knifeUp
-);
+  window.addEventListener(
+    "mousemove",
+    knifeMove
+  );
 
-knife.addEventListener(
-  "touchstart",
-  knifeDown,
-  {passive:false}
-);
+  window.addEventListener(
+    "mouseup",
+    knifeUp
+  );
 
-window.addEventListener(
-  "touchmove",
-  knifeMove,
-  {passive:false}
-);
+  knife.addEventListener(
+    "touchstart",
+    knifeDown,
+    {passive:false}
+  );
 
-window.addEventListener(
-  "touchend",
-  knifeUp
-);
+  window.addEventListener(
+    "touchmove",
+    knifeMove,
+    {passive:false}
+  );
+
+  window.addEventListener(
+    "touchend",
+    knifeUp
+  );
+
+}
 
 
 /* =========================
@@ -2373,58 +2579,75 @@ function cutCake(){
 
   dragging=false;
 
-  cake.classList.add("cut");
+  if(cake)
+    cake.classList.add("cut");
 
-  document.getElementById("cutHint")
-    .textContent=
-    "Perfect! 🎂✨";
+  const hint=
+    document.getElementById("cutHint");
 
+  if(hint){
 
-  knife.style.transition=
-    "transform 1s cubic-bezier(.22,.75,.18,1)";
+    hint.textContent=
+      "Perfect! 🎂✨";
 
-  knife.style.transform=
-    "rotate(-42deg) translate(-70px,5px)";
+  }
+
+  if(knife){
+
+    knife.style.transition=
+      "transform 1s cubic-bezier(.22,.75,.18,1)";
+
+    knife.style.transform=
+      "rotate(-42deg) translate(-70px,5px)";
+
+  }
 
 
   /* CANDLES */
 
   setTimeout(()=>{
 
-    document.querySelectorAll(".flame")
+    document
+      .querySelectorAll(".flame")
       .forEach((flame,index)=>{
 
         setTimeout(()=>{
 
           flame.animate(
+
             [
               {
                 opacity:1,
                 transform:"scale(1)"
               },
+
               {
                 opacity:.65,
                 transform:
                   "translateY(-5px) scale(.75)"
               },
+
               {
                 opacity:0,
                 transform:
                   "translateY(-15px) scale(.1)"
               }
+
             ],
+
             {
               duration:700,
               fill:"forwards",
               easing:"ease-out"
             }
+
           );
 
         },index*150);
 
       });
 
-  },400);
+  },350);
 
 
   /* CRUMBS */
@@ -2433,6 +2656,8 @@ function cutCake(){
 
     const stage=
       document.getElementById("cakeStage");
+
+    if(!stage)return;
 
     for(let i=0;i<18;i++){
 
@@ -2460,12 +2685,14 @@ function cutCake(){
       stage.appendChild(c);
 
       setTimeout(()=>{
+
         c.remove();
+
       },1000);
 
     }
 
-  },650);
+  },600);
 
 
   /* CELEBRATION */
@@ -2476,7 +2703,7 @@ function cutCake(){
 
     confetti(45);
 
-  },1100);
+  },1000);
 
 
   /* FINAL */
@@ -2485,7 +2712,7 @@ function cutCake(){
 
     go(11);
 
-  },2550);
+  },2250);
 
 }
 
@@ -2496,18 +2723,25 @@ function cutCake(){
 
 function flash(){
 
-  document.getElementById("flash")
-    .animate(
-      [
-        {opacity:0},
-        {opacity:.38},
-        {opacity:0}
-      ],
-      {
-        duration:650,
-        easing:"ease-out"
-      }
-    );
+  const f=
+    document.getElementById("flash");
+
+  if(!f)return;
+
+  f.animate(
+
+    [
+      {opacity:0},
+      {opacity:.38},
+      {opacity:0}
+    ],
+
+    {
+      duration:550,
+      easing:"ease-out"
+    }
+
+  );
 
 }
 
@@ -2557,7 +2791,9 @@ function confetti(amount){
     document.body.appendChild(c);
 
     setTimeout(()=>{
+
       c.remove();
+
     },4500);
 
   }
@@ -2590,7 +2826,9 @@ document.addEventListener(
   "touchmove",
   e=>{
 
-    if(!e.target.closest(".cake-stage")){
+    if(
+      !e.target.closest(".cake-stage")
+    ){
 
       e.preventDefault();
 
