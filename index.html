@@ -19,11 +19,10 @@
   --rose2:#e9c5cb;
   --gold:#d9bd72;
   --lav:#ddd8e8;
-  --peach:#f1d7c8;
   --line:rgba(70,50,57,.12);
   --shadow:0 25px 75px rgba(66,45,53,.14);
   --ease:cubic-bezier(.22,.75,.18,1);
-  --luxury:"Playfair Display","Cormorant Garamond",Georgia,serif;
+  --lux:"Playfair Display","Cormorant Garamond",Georgia,serif;
   --script:"Cormorant Garamond",Georgia,serif;
   --clean:"DM Sans",sans-serif;
 }
@@ -77,7 +76,7 @@ button{
   filter:blur(70px);
   pointer-events:none;
   opacity:.25;
-  animation:ambientMove 16s ease-in-out infinite alternate;
+  animation:ambient 16s ease-in-out infinite alternate;
 }
 
 .ambient.one{
@@ -97,11 +96,15 @@ button{
   animation-delay:-5s;
 }
 
-@keyframes ambientMove{
-  to{transform:translate(35px,25px) scale(1.08)}
+@keyframes ambient{
+  to{
+    transform:translate(35px,25px) scale(1.08);
+  }
 }
 
-/* SCENES */
+/* =========================
+   SCENES
+========================= */
 
 .scene{
   position:absolute;
@@ -111,16 +114,19 @@ button{
   align-items:center;
   justify-content:center;
   padding:18px;
+
   opacity:0;
   visibility:hidden;
   pointer-events:none;
+
   transform:translateY(18px) scale(.985);
   filter:blur(5px);
+
   transition:
-    opacity .42s ease,
-    transform .55s var(--ease),
-    filter .42s ease,
-    visibility 0s linear .6s;
+    opacity .5s ease,
+    transform .65s var(--ease),
+    filter .5s ease,
+    visibility 0s linear .7s;
 }
 
 .scene.active{
@@ -129,10 +135,11 @@ button{
   pointer-events:auto;
   transform:none;
   filter:blur(0);
+
   transition:
-    opacity .42s ease,
-    transform .55s var(--ease),
-    filter .42s ease;
+    opacity .5s ease,
+    transform .65s var(--ease),
+    filter .5s ease;
 }
 
 .content{
@@ -151,7 +158,7 @@ button{
 }
 
 h1,h2{
-  font-family:var(--luxury);
+  font-family:var(--lux);
   font-weight:500;
   letter-spacing:-1.2px;
 }
@@ -199,7 +206,7 @@ p{
 }
 
 .btn:active{
-  transform:scale(.94);
+  transform:scale(.95);
 }
 
 .btn.primary{
@@ -207,35 +214,21 @@ p{
   border-color:transparent;
 }
 
-.scene.active .btn:not(.back){
-  animation:buttonIn .55s .45s var(--ease) both;
-}
-
-@keyframes buttonIn{
-  from{opacity:0;transform:translateY(8px)}
-  to{opacity:1;transform:none}
-}
-
-/* BACK BUTTON */
-
 .back{
   position:absolute;
-  top:13px;
-  left:13px;
-  z-index:100;
+  top:15px;
+  left:15px;
+  z-index:30;
   margin:0;
-  padding:9px 13px;
+  padding:9px 14px;
   font-size:8px;
-  letter-spacing:1px;
-  opacity:.9;
-  animation:none!important;
+  background:rgba(255,255,255,.78);
+  backdrop-filter:blur(8px);
 }
 
-.back:active{
-  transform:scale(.94);
-}
-
-/* PARTICLES */
+/* =========================
+   PARTICLES
+========================= */
 
 .particle{
   position:absolute;
@@ -249,13 +242,24 @@ p{
 }
 
 @keyframes particleFloat{
-  0%{transform:translateY(110vh);opacity:0}
+  0%{
+    transform:translateY(110vh);
+    opacity:0;
+  }
+
   18%{opacity:.22}
+
   80%{opacity:.1}
-  100%{transform:translateY(-10vh);opacity:0}
+
+  100%{
+    transform:translateY(-10vh);
+    opacity:0;
+  }
 }
 
-/* SCENE 1 */
+/* =========================
+   OPENING
+========================= */
 
 .opening-wrap{
   min-height:385px;
@@ -273,13 +277,7 @@ p{
 }
 
 .scene.active .date-mark{
-  animation:up .65s .2s var(--ease) forwards;
-}
-
-.date-mark{
-  font-size:8px;
-  letter-spacing:4px;
-  color:#a19397;
+  animation:up .7s .2s forwards;
 }
 
 .opening-line{
@@ -287,11 +285,10 @@ p{
   font-family:var(--script);
   font-size:clamp(28px,7vw,44px);
   line-height:1.15;
-  color:#4c4246;
 }
 
 .scene.active .opening-line{
-  animation:up .7s .65s var(--ease) forwards;
+  animation:up .8s .7s forwards;
 }
 
 .opening-line.second{
@@ -301,7 +298,7 @@ p{
 }
 
 .scene.active .opening-line.second{
-  animation:up .7s 1.35s var(--ease) forwards;
+  animation:up .8s 1.5s forwards;
 }
 
 .opening-divider{
@@ -309,15 +306,10 @@ p{
   height:1px;
   background:var(--gold);
   margin-top:22px;
-  opacity:.7;
 }
 
 .scene.active .opening-divider{
-  animation:lineGrow .55s 2.1s var(--ease) forwards;
-}
-
-@keyframes lineGrow{
-  to{width:110px}
+  animation:lineGrow .6s 2.35s forwards;
 }
 
 .opening-sub{
@@ -327,14 +319,25 @@ p{
 }
 
 .scene.active .opening-sub{
-  animation:up .55s 2.35s var(--ease) forwards;
+  animation:up .6s 2.65s forwards;
 }
 
 @keyframes up{
-  to{opacity:1;transform:none}
+  to{
+    opacity:1;
+    transform:none;
+  }
 }
 
-/* SCENE 2 */
+@keyframes lineGrow{
+  to{
+    width:110px;
+  }
+}
+
+/* =========================
+   LETTER
+========================= */
 
 .envelope-stage{
   height:320px;
@@ -353,11 +356,14 @@ p{
 }
 
 .scene.active .envelope{
-  animation:envIn .7s .15s var(--ease) forwards;
+  animation:envelopeIn .8s .2s forwards;
 }
 
-@keyframes envIn{
-  to{opacity:1;transform:none}
+@keyframes envelopeIn{
+  to{
+    opacity:1;
+    transform:none;
+  }
 }
 
 .envelope-shadow{
@@ -399,7 +405,7 @@ p{
   background:linear-gradient(145deg,#f6e8df,#ead2ce);
   clip-path:polygon(0 0,100% 0,50% 100%);
   transform-origin:50% 0;
-  transition:transform .75s var(--ease);
+  transition:transform .85s var(--ease);
   backface-visibility:hidden;
 }
 
@@ -419,12 +425,12 @@ p{
   border-radius:4px;
   box-shadow:0 10px 30px rgba(60,40,45,.12);
   transition:
-    transform .75s .12s var(--ease),
-    box-shadow .6s ease;
+    transform .9s .12s var(--ease),
+    box-shadow .8s ease;
 }
 
 .envelope.open .letter{
-  transform:translateY(-100px);
+  transform:translateY(-98px);
   box-shadow:0 25px 60px rgba(60,40,45,.16);
 }
 
@@ -436,7 +442,7 @@ p{
 }
 
 .letter-name{
-  font-family:var(--luxury);
+  font-family:var(--lux);
   font-size:20px;
   color:var(--rose);
   margin-bottom:10px;
@@ -446,8 +452,6 @@ p{
   font-family:var(--script);
   font-style:italic;
   font-size:17px;
-  line-height:1.3;
-  color:#66585d;
 }
 
 .seal{
@@ -463,33 +467,14 @@ p{
   place-items:center;
   background:radial-gradient(circle at 35% 30%,#d88d99,#a75d6c);
   color:#fff;
-  font-family:var(--luxury);
-  font-size:16px;
+  font-family:var(--lux);
   box-shadow:0 7px 17px rgba(100,55,65,.2);
-  transition:.4s;
+  transition:.45s;
 }
 
 .envelope.open .seal{
-  transform:translate(-50%,-50%) scale(.65);
+  transform:translate(-50%,-50%) scale(.5);
   opacity:0;
-}
-
-.letter-glow{
-  position:absolute;
-  z-index:3;
-  width:150px;
-  height:110px;
-  left:50%;
-  top:52%;
-  transform:translate(-50%,-50%);
-  background:radial-gradient(circle,rgba(255,245,206,.8),transparent 70%);
-  filter:blur(8px);
-  opacity:0;
-  transition:.6s;
-}
-
-.envelope.open .letter-glow{
-  opacity:1;
 }
 
 .envelope-hint{
@@ -503,16 +488,9 @@ p{
   color:#9a8b90;
 }
 
-.scene.active .envelope-hint{
-  animation:hint .55s .7s forwards;
-}
-
-@keyframes hint{
-  from{opacity:0}
-  to{opacity:1}
-}
-
-/* SCENE 3 */
+/* =========================
+   MESSAGE
+========================= */
 
 .message-card{
   width:min(580px,91vw);
@@ -521,30 +499,6 @@ p{
   border:1px solid rgba(100,70,78,.1);
   box-shadow:var(--shadow);
   border-radius:4px;
-  position:relative;
-}
-
-.message-card:before,
-.message-card:after{
-  content:"";
-  position:absolute;
-  width:38px;
-  height:38px;
-  border-color:rgba(184,109,124,.25);
-}
-
-.message-card:before{
-  left:13px;
-  top:13px;
-  border-left:1px solid;
-  border-top:1px solid;
-}
-
-.message-card:after{
-  right:13px;
-  bottom:13px;
-  border-right:1px solid;
-  border-bottom:1px solid;
 }
 
 .message-label{
@@ -556,7 +510,7 @@ p{
 }
 
 .message-title{
-  font-family:var(--luxury);
+  font-family:var(--lux);
   font-size:26px;
   color:var(--rose);
   margin-bottom:16px;
@@ -574,28 +528,18 @@ p{
   transform:translateY(8px);
 }
 
-.scene.active .message-text span:nth-child(1){animation:msg .5s .35s forwards}
-.scene.active .message-text span:nth-child(2){animation:msg .5s .85s forwards}
-.scene.active .message-text span:nth-child(3){animation:msg .5s 1.35s forwards}
-.scene.active .message-text span:nth-child(4){animation:msg .5s 1.85s forwards}
-
-@keyframes msg{
-  to{opacity:1;transform:none}
+.scene.active .message-text span{
+  animation:up .55s forwards;
 }
 
-.message-sign{
-  margin-top:18px;
-  font-family:var(--luxury);
-  font-style:italic;
-  color:var(--rose);
-  opacity:0;
-}
+.scene.active .message-text span:nth-child(1){animation-delay:.35s}
+.scene.active .message-text span:nth-child(2){animation-delay:.8s}
+.scene.active .message-text span:nth-child(3){animation-delay:1.25s}
+.scene.active .message-text span:nth-child(4){animation-delay:1.7s}
 
-.scene.active .message-sign{
-  animation:msg .6s 2.35s forwards;
-}
-
-/* MEMORIES */
+/* =========================
+   MEMORIES
+========================= */
 
 .memory-area{
   height:360px;
@@ -606,20 +550,28 @@ p{
 
 .memory-card{
   position:absolute;
-  width:min(275px,76vw);
+  width:min(285px,78vw);
   padding:9px 9px 15px;
   background:#fff;
   border-radius:4px;
   box-shadow:var(--shadow);
   opacity:0;
-  transform:translateY(20px) scale(.96) rotate(3deg);
-  transition:opacity .45s ease,transform .5s var(--ease);
+  transform:translateY(20px) scale(.96) rotate(2deg);
+  transition:
+    opacity .45s ease,
+    transform .55s var(--ease);
 }
 
 .memory-card.active{
   opacity:1;
   transform:translateY(0) scale(1) rotate(-2deg);
 }
+
+/*
+IMPORTANT:
+contain = complete image visible.
+No cropping.
+*/
 
 .memory-card img{
   display:block;
@@ -650,7 +602,6 @@ p{
   font-style:italic;
   font-size:13px;
   transform:rotate(7deg);
-  box-shadow:0 5px 13px rgba(50,40,20,.08);
 }
 
 .no-photo-card{
@@ -659,7 +610,6 @@ p{
   flex-direction:column;
   align-items:center;
   justify-content:center;
-  text-align:center;
   padding:20px;
   background:linear-gradient(145deg,#fffdf9,#fff5ef);
   border:1px dashed rgba(184,109,124,.3);
@@ -704,7 +654,6 @@ p{
   height:6px;
   border-radius:50%;
   background:#d8ced1;
-  transition:.4s;
 }
 
 .dot.active{
@@ -712,69 +661,48 @@ p{
   transform:scale(1.35);
 }
 
-/* GIFT */
+/* =========================
+   GIFT
+========================= */
 
 .gift-box{
-  position:relative;
-  width:190px;
-  height:200px;
-  margin:28px auto 5px;
-  display:grid;
-  place-items:center;
-}
-
-.gift{
-  width:150px;
-  height:145px;
+  width:180px;
+  height:170px;
+  margin:30px auto;
   position:relative;
   cursor:pointer;
-  opacity:0;
-  transform:translateY(15px);
-}
-
-.scene.active .gift{
-  animation:giftIn .7s .3s var(--ease) forwards,
-            giftFloat 3s 1.1s ease-in-out infinite;
-}
-
-@keyframes giftIn{
-  to{opacity:1;transform:none}
-}
-
-@keyframes giftFloat{
-  50%{transform:translateY(-7px)}
 }
 
 .gift-body{
   position:absolute;
-  left:8px;
-  right:8px;
+  left:10px;
+  right:10px;
   bottom:0;
-  height:87px;
-  border-radius:5px;
-  background:linear-gradient(135deg,#edb6bf,#dc98a5);
+  height:105px;
+  border-radius:8px;
+  background:linear-gradient(135deg,#edb6bf,#d98e9d);
   box-shadow:0 22px 40px rgba(100,55,65,.17);
 }
 
 .gift-lid{
   position:absolute;
   z-index:4;
-  left:1px;
-  right:1px;
-  top:30px;
-  height:30px;
-  border-radius:5px;
-  background:#f2cbd0;
-  transition:.65s var(--ease);
+  left:0;
+  right:0;
+  top:29px;
+  height:34px;
+  border-radius:8px;
+  background:linear-gradient(135deg,#f6d9dd,#edb7c0);
+  transition:1s var(--ease);
 }
 
-.gift.open .gift-lid{
-  transform:translateY(-58px) rotate(-5deg);
+.gift-box.open .gift-lid{
+  transform:translateY(-72px) rotate(-7deg);
 }
 
 .ribbon-v{
   position:absolute;
-  width:13px;
+  width:16px;
   top:0;
   bottom:0;
   left:50%;
@@ -784,7 +712,7 @@ p{
 
 .ribbon-h{
   position:absolute;
-  height:9px;
+  height:10px;
   left:0;
   right:0;
   top:50%;
@@ -792,44 +720,40 @@ p{
   background:#e7c66f;
 }
 
-.gift-spark{
+.bow{
   position:absolute;
-  color:#d9bd72;
-  font-size:20px;
-  opacity:0;
+  z-index:8;
+  top:5px;
+  left:50%;
+  transform:translateX(-50%);
+  font-size:40px;
+  transition:.8s;
 }
 
-.gift-spark.a{top:4px;left:17px}
-.gift-spark.b{top:38px;right:12px;font-size:15px}
-.gift-spark.c{bottom:15px;left:8px;font-size:13px}
-
-.gift.open .gift-spark{
-  animation:spark .9s forwards;
+.gift-box.open .bow{
+  transform:translate(-50%,-55px) rotate(-8deg);
+  opacity:.7;
 }
 
-@keyframes spark{
-  0%{opacity:0;transform:scale(.5)}
-  50%{opacity:1;transform:scale(1.2)}
-  100%{opacity:0;transform:scale(1.5) translateY(-15px)}
-}
-
-/* SCENE 7 */
+/* =========================
+   QUESTION
+========================= */
 
 .choice{
   height:105px;
   display:flex;
   justify-content:center;
-  align-items:flex-start;
   gap:14px;
-  position:relative;
 }
 
 .choice .btn{
-  opacity:1!important;
-  animation:none!important;
+  opacity:1;
+  transform:none;
 }
 
-/* CAKE */
+/* =========================
+   CAKE
+========================= */
 
 .cake-stage{
   width:390px;
@@ -848,16 +772,8 @@ p{
   bottom:10px;
   transform:translateX(-50%);
   border-radius:50%;
-  background:radial-gradient(ellipse at center,#fff,#e9dedc 68%,#d8cbca);
+  background:radial-gradient(ellipse,#fff,#e9dedc 68%,#d8cbca);
   box-shadow:0 12px 20px rgba(70,50,55,.14);
-}
-
-.plate:after{
-  content:"";
-  position:absolute;
-  inset:5px 17px;
-  border-radius:50%;
-  border:1px solid rgba(160,130,130,.18);
 }
 
 .cake{
@@ -877,7 +793,14 @@ p{
   bottom:0;
   height:100px;
   border-radius:10px 10px 14px 14px;
-  background:linear-gradient(90deg,#d994a0,#edb8bf 18%,#e3a5b0 50%,#efbbc2 82%,#d9929f);
+  background:linear-gradient(
+    90deg,
+    #d994a0,
+    #edb8bf 18%,
+    #e3a5b0 50%,
+    #efbbc2 82%,
+    #d9929f
+  );
   overflow:hidden;
   box-shadow:inset 0 9px 15px rgba(255,255,255,.28);
 }
@@ -890,7 +813,9 @@ p{
   top:31px;
   height:5px;
   background:#f9dace;
-  box-shadow:0 27px 0 #f9dace,0 54px 0 #f9dace;
+  box-shadow:
+    0 27px #f9dace,
+    0 54px #f9dace;
 }
 
 .top-cake{
@@ -900,8 +825,12 @@ p{
   left:15px;
   top:12px;
   border-radius:50%;
-  background:radial-gradient(ellipse at 48% 40%,#fffdf5 0 18%,#faeadc 48%,#f1d6c8);
-  box-shadow:0 4px 8px rgba(100,60,60,.12);
+  background:radial-gradient(
+    ellipse,
+    #fffdf5,
+    #faeadc 48%,
+    #f1d6c8
+  );
 }
 
 .frosting{
@@ -921,9 +850,20 @@ p{
   border-radius:0 0 10px 10px;
 }
 
-.drip.a{height:24px;left:40px}
-.drip.b{height:18px;left:88px}
-.drip.c{height:29px;left:137px}
+.drip.a{
+  height:24px;
+  left:40px;
+}
+
+.drip.b{
+  height:18px;
+  left:88px;
+}
+
+.drip.c{
+  height:29px;
+  left:137px;
+}
 
 .candle{
   position:absolute;
@@ -932,7 +872,11 @@ p{
   width:10px;
   height:40px;
   border-radius:5px;
-  background:repeating-linear-gradient(135deg,#d6b8dc 0 5px,#f1def1 5px 10px);
+  background:repeating-linear-gradient(
+    135deg,
+    #d6b8dc 0 5px,
+    #f1def1 5px 10px
+  );
 }
 
 .c1{left:73px}
@@ -946,14 +890,22 @@ p{
   left:-1.5px;
   top:-18px;
   border-radius:50%;
-  background:radial-gradient(circle at 50% 65%,#fff9c7 0 20%,#f4cf6a 28% 60%,transparent 63%);
-  filter:drop-shadow(0 0 5px rgba(240,190,80,.45));
-  animation:flame .55s ease-in-out infinite alternate;
+  background:radial-gradient(
+    circle,
+    #fff9c7 0 20%,
+    #f4cf6a 28% 60%,
+    transparent 63%
+  );
+  animation:flame .55s infinite alternate;
 }
 
 @keyframes flame{
-  from{transform:rotate(-3deg) scale(.92)}
-  to{transform:rotate(4deg) scale(1.08)}
+  from{
+    transform:rotate(-3deg) scale(.92);
+  }
+  to{
+    transform:rotate(4deg) scale(1.08);
+  }
 }
 
 .cut-line{
@@ -963,11 +915,15 @@ p{
   height:96px;
   left:106px;
   top:53px;
-  background:linear-gradient(to bottom,rgba(140,70,80,.05),rgba(140,70,80,.35),rgba(140,70,80,.12));
+  background:linear-gradient(
+    rgba(140,70,80,.05),
+    rgba(140,70,80,.35),
+    rgba(140,70,80,.12)
+  );
   opacity:0;
   transform:rotate(4deg) scaleY(.05);
   transform-origin:top;
-  transition:.7s var(--ease);
+  transition:.8s var(--ease);
 }
 
 .cake.cut .cut-line{
@@ -975,41 +931,44 @@ p{
   transform:rotate(4deg) scaleY(1);
 }
 
-/* KNIFE */
+/* smooth knife */
 
 .knife{
   position:absolute;
   z-index:30;
-  width:148px;
-  height:15px;
-  right:-2px;
+  width:145px;
+  height:13px;
+  right:0;
   top:143px;
-  border-radius:9px;
-  background:linear-gradient(to bottom,#fff,#e8e8e8 48%,#a9a9a9);
+  border-radius:8px;
+  background:linear-gradient(
+    #fff,
+    #eee 45%,
+    #aaa
+  );
   transform:rotate(-42deg);
   transform-origin:100% 50%;
   cursor:grab;
-  box-shadow:0 5px 12px rgba(60,50,50,.22);
+  box-shadow:
+    0 5px 12px rgba(60,50,50,.22),
+    inset 0 1px rgba(255,255,255,.9);
+  transition:transform .35s var(--ease);
   will-change:transform;
 }
 
-.knife-blade{
-  position:absolute;
-  left:0;
-  top:0;
-  width:108px;
-  height:15px;
-  clip-path:polygon(0 0,100% 0,88% 100%,0 100%);
-}
-
-.knife-handle{
+.knife:after{
+  content:"";
   position:absolute;
   right:-38px;
   top:-4px;
   width:43px;
-  height:23px;
-  border-radius:5px 8px 8px 5px;
-  background:linear-gradient(145deg,#9b7a80,#6d5057);
+  height:20px;
+  border-radius:5px 7px 7px 5px;
+  background:linear-gradient(
+    145deg,
+    #9b7a80,
+    #6d5057
+  );
 }
 
 .knife.dragging{
@@ -1023,7 +982,9 @@ p{
   color:#998d91;
 }
 
-/* FINAL */
+/* =========================
+   FINAL
+========================= */
 
 .final-content{
   width:min(94vw,700px);
@@ -1031,19 +992,18 @@ p{
 
 .final-intro{
   opacity:0;
-  transform:translateY(12px);
+  transform:translateY(10px);
 }
 
 .scene.active .final-intro{
-  animation:up .7s .25s forwards;
+  animation:up .8s .2s forwards;
 }
 
 .final-photos{
   display:flex;
   justify-content:center;
-  align-items:flex-start;
   gap:12px;
-  margin:20px auto;
+  margin:22px auto;
 }
 
 .mini-photo{
@@ -1055,20 +1015,20 @@ p{
   opacity:0;
 }
 
-.scene.active .mini-photo:nth-child(1){animation:photo1 .55s .7s forwards}
-.scene.active .mini-photo:nth-child(2){animation:photo2 .55s .95s forwards}
-.scene.active .mini-photo:nth-child(3){animation:photo3 .55s 1.2s forwards}
-
-@keyframes photo1{
-  to{opacity:1;transform:rotate(-6deg)}
+.scene.active .mini-photo{
+  animation:up .65s forwards;
 }
 
-@keyframes photo2{
-  to{opacity:1;transform:translateY(-7px) rotate(2deg)}
+.scene.active .mini-photo:nth-child(1){
+  animation-delay:.7s;
 }
 
-@keyframes photo3{
-  to{opacity:1;transform:rotate(5deg)}
+.scene.active .mini-photo:nth-child(2){
+  animation-delay:1s;
+}
+
+.scene.active .mini-photo:nth-child(3){
+  animation-delay:1.3s;
 }
 
 .mini-photo img{
@@ -1083,20 +1043,18 @@ p{
   width:100%;
   height:79px;
   display:flex;
-  flex-direction:column;
   align-items:center;
   justify-content:center;
-  background:linear-gradient(145deg,#fffdf9,#fff5ef);
+  text-align:center;
+  background:#fff5ef;
   border:1px dashed rgba(184,109,124,.28);
 }
 
 .mini-empty span{
-  margin-top:4px;
   font-family:var(--script);
   font-style:italic;
   color:var(--rose);
   font-size:11px;
-  line-height:1.25;
 }
 
 .photo-tag{
@@ -1116,19 +1074,15 @@ p{
   border-radius:22px;
   box-shadow:var(--shadow);
   opacity:0;
-  transform:translateY(16px) scale(.98);
+  transform:translateY(15px);
 }
 
 .scene.active .friend-card{
-  animation:friend .7s 1.55s forwards;
-}
-
-@keyframes friend{
-  to{opacity:1;transform:none}
+  animation:up .8s 1.8s forwards;
 }
 
 .friend-main{
-  font-family:var(--luxury);
+  font-family:var(--lux);
   font-size:23px;
   line-height:1.4;
 }
@@ -1154,7 +1108,7 @@ p{
 
 .final-note{
   margin-top:17px;
-  font-family:var(--luxury);
+  font-family:var(--lux);
   font-style:italic;
   font-size:20px;
   color:var(--rose);
@@ -1162,7 +1116,7 @@ p{
 }
 
 .scene.active .final-note{
-  animation:up .7s 2.45s forwards;
+  animation:up .8s 2.7s forwards;
 }
 
 .final-small{
@@ -1173,10 +1127,10 @@ p{
 }
 
 .scene.active .final-small{
-  animation:up .7s 2.8s forwards;
+  animation:up .8s 3.1s forwards;
 }
 
-/* EFFECTS */
+/* effects */
 
 #flash{
   position:fixed;
@@ -1193,7 +1147,7 @@ p{
   width:6px;
   height:10px;
   z-index:100;
-  animation:fall 3.2s linear forwards;
+  animation:fall 3s linear forwards;
 }
 
 @keyframes fall{
@@ -1210,55 +1164,27 @@ p{
   height:5px;
   border-radius:50%;
   background:#e8b7ad;
-  pointer-events:none;
-  animation:crumb .9s ease-out forwards;
+  animation:crumb .9s forwards;
 }
 
 @keyframes crumb{
   to{
-    transform:translate(var(--x),var(--y)) rotate(180deg);
+    transform:translate(var(--x),var(--y));
     opacity:0;
   }
 }
 
-/* MOBILE */
+/* mobile */
 
 @media(max-width:600px){
 
   .scene{
-    padding:14px;
+    padding:12px;
   }
 
-  .opening-wrap{
-    min-height:360px;
-  }
-
-  .opening-line{
-    font-size:29px;
-  }
-
-  .envelope-stage{
-    height:325px;
-  }
-
-  .letter{
-    height:170px;
-  }
-
-  .envelope.open .letter{
-    transform:translateY(-95px);
-  }
-
-  .message-card{
-    padding:27px 20px;
-  }
-
-  .message-text{
-    font-size:19px;
-  }
-
-  .memory-area{
-    height:360px;
+  .back{
+    top:10px;
+    left:10px;
   }
 
   .memory-card{
@@ -1301,11 +1227,6 @@ p{
   .friend-line{
     font-size:19px;
   }
-
-  .back{
-    top:8px;
-    left:8px;
-  }
 }
 </style>
 </head>
@@ -1314,608 +1235,877 @@ p{
 
 <div id="app">
 
-<div class="ambient one"></div>
-<div class="ambient two"></div>
-
-<!-- 01 -->
-
-<section class="scene active" id="s1">
-<div class="content">
-
-<div class="opening-wrap">
-
-<div class="date-mark">A LITTLE SOMETHING · 2026</div>
-
-<div class="opening-line">
-Aaj kuch alag sa<br>
-karne ka mann tha…
-</div>
-
-<div class="opening-line second">
-Toh socha… ek chhoti si yaad bana dete hain. ✨
-</div>
-
-<div class="opening-divider"></div>
-
-<div class="opening-sub">
-Bas thoda sa waqt dijiye…
-</div>
-
-</div>
-
-<button class="btn primary" onclick="go(2)">
-AAGE BADHEIN →
-</button>
-
-</div>
-</section>
-
-
-<!-- 02 -->
-
-<section class="scene" id="s2">
-<div class="content">
-
-<button class="btn back" onclick="go(1)">← BACK</button>
-
-<div class="eyebrow">A letter for you</div>
-
-<h2>
-Kuch likha hai,<br>
-<span class="accent">sirf aapke liye.</span>
-</h2>
-
-<div class="envelope-stage">
-
-<div class="envelope" id="envelope" onclick="openLetter()">
-
-<div class="envelope-shadow"></div>
-<div class="envelope-back"></div>
-<div class="letter-glow"></div>
-
-<div class="letter">
-<div class="letter-name">For Pallavi,</div>
-<div class="letter-preview">
-“Ek chhoti si baat kehni thi…”
-</div>
-</div>
-
-<div class="flap"></div>
-<div class="seal">P</div>
-
-<div class="envelope-hint">
-TAP TO OPEN
-</div>
-
-</div>
-</div>
-</div>
-</section>
-
-
-<!-- 03 -->
-
-<section class="scene" id="s3">
-<div class="content">
-
-<button class="btn back" onclick="go(2)">← BACK</button>
-
-<div class="message-card">
-
-<div class="message-label">A little note</div>
-
-<div class="message-title">Dear Pallavi,</div>
-
-<div class="message-text">
-
-<span>
-Aaj aapka birthday hai,
-toh sirf “Happy Birthday” kehkar
-baat khatam karna thoda boring laga.
-</span>
-
-<span>
-Isliye socha kuch aisa banaya jaye
-jo aap thoda ruk kar dekhein…
-</span>
-
-<span>
-Kuch photos, kuch chhoti si memories,
-aur thoda sa woh jo words mein
-properly explain nahi hota.
-</span>
-
-<span>
-Bas itna hi kehna tha —
-aaj ka din achha ho,
-aur aap hamesha khush rahen. 🩵
-</span>
-
-</div>
-
-<div class="message-sign">
-— from someone who remembers :)
-</div>
-
-<button class="btn primary" onclick="go(4)">
-MEMORIES DEKHEIN ✦
-</button>
-
-</div>
-</div>
-</section>
-
-
-<!-- 04 -->
-
-<section class="scene" id="s4">
-<div class="content">
-
-<button class="btn back" onclick="backMemory()">← BACK</button>
-
-<div class="eyebrow">A few memories</div>
-
-<h2>
-Kuch photos,<br>
-<span class="accent">kuch yaadein.</span>
-</h2>
-
-<div class="memory-area">
-
-<div class="memory-card active" id="m1">
-<div class="memory-note">memory ✦</div>
-<img src="1000244923.png" alt="Memory 1">
-<div class="memory-caption">Ek khoobsurat memory.</div>
-</div>
-
-<div class="memory-card" id="m2">
-<div class="memory-note">another one ✦</div>
-<img src="1000244922.png" alt="Memory 2">
-<div class="memory-caption">Ek aur pyari si yaad…</div>
-</div>
-
-<div class="memory-card" id="m3">
-<div class="memory-note">hmm… 👀</div>
-
-<div class="no-photo-card">
-<div class="camera">📷</div>
-
-<div class="no-photo-title">
-Humari saath mein photo toh hai hi nahi 😅
-</div>
-
-<div class="no-photo-text">
-Lagta hai ye frame abhi kisi
-future memory ka wait kar raha hai…
-</div>
-
-<div class="no-photo-small">
-Ek photo abhi baaki hai. ✦
-</div>
-</div>
-
-<div class="memory-caption">
-Maybe someday. :)
-</div>
-
-</div>
-
-<div class="dots">
-<span class="dot active" id="d1"></span>
-<span class="dot" id="d2"></span>
-<span class="dot" id="d3"></span>
-</div>
-
-</div>
-
-<button class="btn primary" id="memoryBtn" onclick="nextMemory()">
-NEXT MEMORY →
-</button>
-
-</div>
-</section>
-
-
-<!-- 05 -->
-
-<section class="scene" id="s5">
-<div class="content">
-
-<button class="btn back" onclick="go(4)">← BACK</button>
-
-<div class="eyebrow">One more thing</div>
-
-<h2>
-Ye bhi<br>
-<span class="accent">open kijiye. 🎁</span>
-</h2>
-
-<div class="gift-box">
-
-<div class="gift" id="gift" onclick="openGift()">
-
-<div class="gift-spark a">✨</div>
-<div class="gift-spark b">✦</div>
-<div class="gift-spark c">✨</div>
-
-<div class="gift-body">
-<div class="ribbon-v"></div>
-</div>
-
-<div class="gift-lid">
-<div class="ribbon-h"></div>
-</div>
-
-</div>
-
-</div>
-
-<p>
-Is baar thoda aur patience. 😌
-</p>
-
-</div>
-</section>
-
-
-<!-- 06 -->
-
-<section class="scene" id="s6">
-<div class="content">
-
-<button class="btn back" onclick="go(5)">← BACK</button>
-
-<div class="eyebrow">Inside</div>
-
-<h2>
-Abhi ek<br>
-<span class="accent">cheez aur baaki hai.</span>
-</h2>
-
-<div class="serif" style="font-size:25px;margin-top:22px;color:var(--rose)">
-Aur woh thodi important hai… ✨
-</div>
-
-<button class="btn primary" onclick="go(7)">
-AAGE →
-</button>
-
-</div>
-</section>
-
-
-<!-- 07 -->
-
-<section class="scene" id="s7">
-<div class="content">
-
-<button class="btn back" onclick="go(6)">← BACK</button>
-
-<div class="eyebrow">Ek chhota sa question</div>
-
-<h2>
-Surprise ke liye<br>
-<span class="accent">ready?</span>
-</h2>
-
-<div class="choice">
-
-<button class="btn primary" onclick="yesAnswer()">
-HAAN 🩵
-</button>
-
-<button class="btn" id="noBtn" onclick="noAnswer()">
-NAHI
-</button>
-
-</div>
-
-</div>
-</section>
-
-
-<!-- 08 -->
-
-<section class="scene" id="s8">
-<div class="content">
-
-<button class="btn back" onclick="go(7)">← BACK</button>
-
-<div class="eyebrow">The end…</div>
-
-<h1>Bas itna hi.</h1>
-
-<div class="serif" style="font-size:23px;margin-top:21px;color:var(--rose)">
-…shayad. 👀
-</div>
-
-</div>
-</section>
-
-
-<!-- 09 -->
-
-<section class="scene" id="s9">
-<div class="content">
-
-<button class="btn back" onclick="go(8)">← BACK</button>
-
-<div class="eyebrow">Wait.</div>
-
-<h1>
-Aapko laga<br>
-<span class="accent">khatam ho gaya? 😂</span>
-</h1>
-
-<p>
-Nahi ji. Abhi main part baaki hai.
-</p>
-
-<button class="btn primary" onclick="go(10)">
-ASLI SURPRISE ✦
-</button>
-
-</div>
-</section>
-
-
-<!-- 10 -->
-
-<section class="scene" id="s10">
-<div class="content">
-
-<button class="btn back" onclick="resetCake();go(9)">← BACK</button>
-
-<div class="eyebrow">The important part</div>
-
-<h2>
-Cake cut karein,<br>
-<span class="accent">Pallavi? 🎂</span>
-</h2>
-
-<div class="cake-stage" id="cakeStage">
-
-<div class="plate"></div>
-
-<div class="cake" id="cake">
-
-<div class="cake-body"></div>
-<div class="top-cake"></div>
-
-<div class="frosting">
-<div class="drip a"></div>
-<div class="drip b"></div>
-<div class="drip c"></div>
-</div>
-
-<div class="cut-line"></div>
-
-<div class="candle c1"><div class="flame"></div></div>
-<div class="candle c2"><div class="flame"></div></div>
-<div class="candle c3"><div class="flame"></div></div>
-
-</div>
-
-<div class="knife" id="knife">
-<div class="knife-blade"></div>
-<div class="knife-handle"></div>
-</div>
-
-</div>
-
-<div class="cut-hint" id="cutHint">
-Knife ko cake ke across smoothly drag kijiye ✦
-</div>
-
-</div>
-</section>
-
-
-<!-- 11 -->
-
-<section class="scene" id="s11">
-<div class="content">
-
-<button class="btn back" onclick="go(10)">← BACK</button>
-
-<div class="eyebrow">And finally…</div>
-
-<h1>
-Happy Birthday,<br>
-<span class="accent">Pallavi! 🎉</span>
-</h1>
-
-<div class="serif" style="font-size:24px;margin-top:21px;color:var(--rose)">
-Aaj ka cake officially cut ho gaya. ✨
-</div>
-
-<button class="btn primary" onclick="go(12)">
-EK LAST BAAT…
-</button>
-
-</div>
-</section>
-
-
-<!-- 12 -->
-
-<section class="scene" id="s12">
-<div class="content final-content">
-
-<button class="btn back" onclick="go(11)">← BACK</button>
-
-<div class="final-intro">
-
-<div class="eyebrow">
-Aur ek last baat…
-</div>
-
-<h2>
-Kuch friendships<br>
-<span class="accent">bas bani rehni chahiye.</span>
-</h2>
-
-</div>
-
-<div class="final-photos">
-
-<div class="mini-photo">
-<img src="1000244923.png" alt="Memory">
-<div class="photo-tag">one little memory</div>
-</div>
-
-<div class="mini-photo">
-<img src="1000244922.png" alt="Memory">
-<div class="photo-tag">another one</div>
-</div>
-
-<div class="mini-photo">
-
-<div class="mini-empty">
-<div>📷</div>
-<span>
-Our photo<br>
-is still missing :)
-</span>
-</div>
-
-<div class="photo-tag">
-maybe someday
-</div>
-
-</div>
-
-</div>
-
-<div class="friend-card">
-
-<div class="friend-main">
-Aap meri life ki<br>
-<span>first friend hain.</span>
-</div>
-
-<div class="friend-line">
-Aur bas ek wish hai… ✨
-</div>
-
-<div class="friend-mini">
-Humari friendship aise hi rahe,
-chahe kuch bhi ho. 🩵
-</div>
-
-</div>
-
-<div class="final-note">
-Happy Birthday once again, Pallavi. ✦
-</div>
-
-<div class="final-small">
-Ab jaaiye… birthday enjoy kijiye 😌🎂
-</div>
-
-</div>
-</section>
+  <div class="ambient one"></div>
+  <div class="ambient two"></div>
 
 </div>
 
 <div id="flash"></div>
 
+
+<!-- =====================================================
+     01 OPENING
+===================================================== -->
+
+<section class="scene active" id="s1">
+
+  <div class="content">
+
+    <div class="opening-wrap">
+
+      <div class="date-mark">
+        A LITTLE SOMETHING · 2026
+      </div>
+
+      <div class="opening-line">
+        Aaj kuch alag sa<br>
+        karne ka mann tha…
+      </div>
+
+      <div class="opening-line second">
+        Toh socha… ek chhoti si yaad bana dete hain. ✨
+      </div>
+
+      <div class="opening-divider"></div>
+
+      <div class="opening-sub">
+        Bas thoda sa waqt dijiye…
+      </div>
+
+    </div>
+
+    <button class="btn primary" onclick="go(2)">
+      AAGE BADHEIN →
+    </button>
+
+  </div>
+
+</section>
+
+
+<!-- =====================================================
+     02 LETTER
+===================================================== -->
+
+<section class="scene" id="s2">
+
+  <button class="btn back" onclick="go(1)">
+    ← BACK
+  </button>
+
+  <div class="content">
+
+    <div class="eyebrow">
+      A letter for you
+    </div>
+
+    <h2>
+      Kuch likha hai,<br>
+      <span class="accent">sirf aapke liye.</span>
+    </h2>
+
+    <div class="envelope-stage">
+
+      <div
+        class="envelope"
+        id="envelope"
+        onclick="openLetter()"
+      >
+
+        <div class="envelope-shadow"></div>
+
+        <div class="envelope-back"></div>
+
+        <div class="letter">
+
+          <div class="letter-name">
+            For Pallavi,
+          </div>
+
+          <div class="letter-preview">
+            “Ek chhoti si baat kehni thi…”
+          </div>
+
+        </div>
+
+        <div class="flap"></div>
+
+        <div class="seal">
+          P
+        </div>
+
+        <div class="envelope-hint">
+          TAP TO OPEN
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =====================================================
+     03 MESSAGE
+===================================================== -->
+
+<section class="scene" id="s3">
+
+  <button class="btn back" onclick="go(2)">
+    ← BACK
+  </button>
+
+  <div class="content">
+
+    <div class="message-card">
+
+      <div class="message-label">
+        A little note
+      </div>
+
+      <div class="message-title">
+        Dear Pallavi,
+      </div>
+
+      <div class="message-text">
+
+        <span>
+          Aaj aapka birthday hai,
+          toh sirf “Happy Birthday” kehkar
+          baat khatam karna boring laga.
+        </span>
+
+        <span>
+          Isliye socha kuch aisa banaya jaye
+          jo aap thoda ruk kar dekhein…
+        </span>
+
+        <span>
+          Kuch photos, kuch chhoti si memories,
+          aur thoda sa woh jo words mein
+          properly explain nahi hota.
+        </span>
+
+        <span>
+          Bas itna hi kehna tha —
+          aaj ka din achha ho,
+          aur aap hamesha khush rahen. 🩵
+        </span>
+
+      </div>
+
+      <div
+        class="serif"
+        style="margin-top:18px;color:var(--rose)"
+      >
+        — from someone who remembers :)
+      </div>
+
+      <button
+        class="btn primary"
+        onclick="go(4)"
+      >
+        MEMORIES DEKHEIN ✦
+      </button>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =====================================================
+     04 MEMORIES
+===================================================== -->
+
+<section class="scene" id="s4">
+
+  <button class="btn back" onclick="go(3)">
+    ← BACK
+  </button>
+
+  <div class="content">
+
+    <div class="eyebrow">
+      A few memories
+    </div>
+
+    <h2>
+      Kuch photos,<br>
+      <span class="accent">kuch yaadein.</span>
+    </h2>
+
+    <div class="memory-area">
+
+      <!-- PHOTO 1 -->
+
+      <div
+        class="memory-card active"
+        id="m1"
+      >
+
+        <div class="memory-note">
+          memory ✦
+        </div>
+
+        <img
+          src="1000244923.png"
+          alt="Memory 1"
+        >
+
+        <div class="memory-caption">
+          Ek khoobsurat memory.
+        </div>
+
+      </div>
+
+
+      <!-- PHOTO 2 -->
+
+      <div
+        class="memory-card"
+        id="m2"
+      >
+
+        <div class="memory-note">
+          another one ✦
+        </div>
+
+        <img
+          src="1000244922.png"
+          alt="Memory 2"
+        >
+
+        <div class="memory-caption">
+          Ek aur pyari si yaad…
+        </div>
+
+      </div>
+
+
+      <!-- NO PHOTO -->
+
+      <div
+        class="memory-card"
+        id="m3"
+      >
+
+        <div class="memory-note">
+          hmm… 👀
+        </div>
+
+        <div class="no-photo-card">
+
+          <div class="camera">
+            📷
+          </div>
+
+          <div class="no-photo-title">
+            Humari saath mein photo toh hai hi nahi 😅
+          </div>
+
+          <div class="no-photo-text">
+            Lagta hai ye frame abhi kisi
+            future memory ka wait kar raha hai…
+          </div>
+
+          <div class="no-photo-small">
+            Ek photo abhi baaki hai. ✦
+          </div>
+
+        </div>
+
+        <div class="memory-caption">
+          Maybe someday. :)
+        </div>
+
+      </div>
+
+
+      <div class="dots">
+
+        <span
+          class="dot active"
+          id="d1"
+        ></span>
+
+        <span
+          class="dot"
+          id="d2"
+        ></span>
+
+        <span
+          class="dot"
+          id="d3"
+        ></span>
+
+      </div>
+
+    </div>
+
+
+    <button
+      class="btn primary"
+      id="memoryBtn"
+      onclick="nextMemory()"
+    >
+      NEXT MEMORY →
+    </button>
+
+  </div>
+
+</section>
+
+
+<!-- =====================================================
+     05 ONE MORE THING
+===================================================== -->
+
+<section class="scene" id="s5">
+
+  <button class="btn back" onclick="go(4)">
+    ← BACK
+  </button>
+
+  <div class="content">
+
+    <div class="eyebrow">
+      One more thing
+    </div>
+
+    <h2>
+      Ye bhi<br>
+      <span class="accent">
+        open kijiye. 🎁
+      </span>
+    </h2>
+
+    <div
+      class="gift-box"
+      id="gift"
+      onclick="openGift()"
+    >
+
+      <div class="bow">
+        🎀
+      </div>
+
+      <div class="gift-body">
+
+        <div class="ribbon-v"></div>
+
+      </div>
+
+      <div class="gift-lid">
+
+        <div class="ribbon-h"></div>
+
+      </div>
+
+    </div>
+
+    <p>
+      Is baar thoda aur patience. 😌
+    </p>
+
+  </div>
+
+</section>
+
+
+<!-- =====================================================
+     06 GIFT MESSAGE
+===================================================== -->
+
+<section class="scene" id="s6">
+
+  <button class="btn back" onclick="go(5)">
+    ← BACK
+  </button>
+
+  <div class="content">
+
+    <div class="eyebrow">
+      Inside
+    </div>
+
+    <h2>
+      Abhi ek<br>
+      <span class="accent">
+        cheez aur baaki hai.
+      </span>
+    </h2>
+
+    <div
+      class="serif"
+      style="
+        font-size:25px;
+        margin-top:22px;
+        color:var(--rose)
+      "
+    >
+      Aur woh thodi important hai… ✨
+    </div>
+
+    <button
+      class="btn primary"
+      onclick="go(7)"
+    >
+      AAGE →
+    </button>
+
+  </div>
+
+</section>
+
+
+<!-- =====================================================
+     07 QUESTION
+===================================================== -->
+
+<section class="scene" id="s7">
+
+  <button class="btn back" onclick="go(6)">
+    ← BACK
+  </button>
+
+  <div class="content">
+
+    <div class="eyebrow">
+      Ek chhota sa question
+    </div>
+
+    <h2>
+      Surprise ke liye<br>
+      <span class="accent">
+        ready?
+      </span>
+    </h2>
+
+    <div class="choice">
+
+      <button
+        class="btn primary"
+        onclick="yesAnswer()"
+      >
+        HAAN 🩵
+      </button>
+
+      <button
+        class="btn"
+        id="noBtn"
+        onclick="noAnswer()"
+      >
+        NAHI
+      </button>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =====================================================
+     08 FAKE END
+===================================================== -->
+
+<section class="scene" id="s8">
+
+  <button class="btn back" onclick="go(7)">
+    ← BACK
+  </button>
+
+  <div class="content">
+
+    <div class="eyebrow">
+      The end…
+    </div>
+
+    <h1>
+      Bas itna hi.
+    </h1>
+
+    <div
+      class="serif"
+      style="
+        font-size:23px;
+        margin-top:21px;
+        color:var(--rose)
+      "
+    >
+      …shayad. 👀
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =====================================================
+     09 REAL SURPRISE
+===================================================== -->
+
+<section class="scene" id="s9">
+
+  <button class="btn back" onclick="go(8)">
+    ← BACK
+  </button>
+
+  <div class="content">
+
+    <div class="eyebrow">
+      Wait.
+    </div>
+
+    <h1>
+      Aapko laga<br>
+      <span class="accent">
+        khatam ho gaya? 😂
+      </span>
+    </h1>
+
+    <p>
+      Nahi ji. Abhi main part baaki hai.
+    </p>
+
+    <button
+      class="btn primary"
+      onclick="go(10)"
+    >
+      ASLI SURPRISE ✦
+    </button>
+
+  </div>
+
+</section>
+
+
+<!-- =====================================================
+     10 CAKE
+===================================================== -->
+
+<section class="scene" id="s10">
+
+  <button class="btn back" onclick="go(9)">
+    ← BACK
+  </button>
+
+  <div class="content">
+
+    <div class="eyebrow">
+      The important part
+    </div>
+
+    <h2>
+      Cake cut karein,<br>
+      <span class="accent">
+        Pallavi? 🎂
+      </span>
+    </h2>
+
+    <div
+      class="cake-stage"
+      id="cakeStage"
+    >
+
+      <div class="plate"></div>
+
+      <div
+        class="cake"
+        id="cake"
+      >
+
+        <div class="cake-body"></div>
+
+        <div class="top-cake"></div>
+
+        <div class="frosting">
+
+          <div class="drip a"></div>
+          <div class="drip b"></div>
+          <div class="drip c"></div>
+
+        </div>
+
+        <div class="cut-line"></div>
+
+        <div class="candle c1">
+          <div class="flame"></div>
+        </div>
+
+        <div class="candle c2">
+          <div class="flame"></div>
+        </div>
+
+        <div class="candle c3">
+          <div class="flame"></div>
+        </div>
+
+      </div>
+
+      <div
+        class="knife"
+        id="knife"
+      ></div>
+
+    </div>
+
+    <div
+      class="cut-hint"
+      id="cutHint"
+    >
+      Knife ko cake ke across smoothly drag kijiye ✦
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =====================================================
+     11 BIRTHDAY
+===================================================== -->
+
+<section class="scene" id="s11">
+
+  <button class="btn back" onclick="go(10)">
+    ← BACK
+  </button>
+
+  <div class="content">
+
+    <div class="eyebrow">
+      And finally…
+    </div>
+
+    <h1>
+      Happy Birthday,<br>
+      <span class="accent">
+        Pallavi! 🎉
+      </span>
+    </h1>
+
+    <div
+      class="serif"
+      style="
+        font-size:24px;
+        margin-top:21px;
+        color:var(--rose)
+      "
+    >
+      Aaj ka cake officially cut ho gaya. ✨
+    </div>
+
+    <button
+      class="btn primary"
+      onclick="go(12)"
+    >
+      EK LAST BAAT…
+    </button>
+
+  </div>
+
+</section>
+
+
+<!-- =====================================================
+     12 FINAL
+===================================================== -->
+
+<section class="scene" id="s12">
+
+  <button class="btn back" onclick="go(11)">
+    ← BACK
+  </button>
+
+  <div class="content final-content">
+
+    <div class="final-intro">
+
+      <div class="eyebrow">
+        Aur ek last baat…
+      </div>
+
+      <h2>
+        Kuch friendships<br>
+        <span class="accent">
+          bas bani rehni chahiye.
+        </span>
+      </h2>
+
+    </div>
+
+
+    <div class="final-photos">
+
+      <div class="mini-photo">
+
+        <img
+          src="1000244923.png"
+          alt="Memory"
+        >
+
+        <div class="photo-tag">
+          one little memory
+        </div>
+
+      </div>
+
+
+      <div class="mini-photo">
+
+        <img
+          src="1000244922.png"
+          alt="Memory"
+        >
+
+        <div class="photo-tag">
+          another one
+        </div>
+
+      </div>
+
+
+      <div class="mini-photo">
+
+        <div class="mini-empty">
+
+          <span>
+            📷<br>
+            Our photo<br>
+            is still missing :)
+          </span>
+
+        </div>
+
+        <div class="photo-tag">
+          maybe someday
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <div class="friend-card">
+
+      <div class="friend-main">
+        Aap meri life ki<br>
+        <span>
+          first friend hain.
+        </span>
+      </div>
+
+      <div class="friend-line">
+        Aur bas ek wish hai…
+      </div>
+
+      <div class="friend-mini">
+        Humari friendship aise hi rahe,
+        chahe kuch bhi ho. 🩵
+      </div>
+
+    </div>
+
+
+    <div class="final-note">
+      Happy Birthday once again, Pallavi. ✦
+    </div>
+
+    <div class="final-small">
+      Ab jaaiye… birthday enjoy kijiye 😌🎂
+    </div>
+
+  </div>
+
+</section>
+
+
 <script>
 
-/* =========================
+/* =====================================================
    PARTICLES
-========================= */
+===================================================== */
 
 for(let i=0;i<28;i++){
 
   const p=document.createElement("div");
 
   p.className="particle";
-  p.style.left=Math.random()*100+"%";
-  p.style.animationDuration=(9+Math.random()*10)+"s";
-  p.style.animationDelay=(Math.random()*9)+"s";
 
-  document.getElementById("app").appendChild(p);
+  p.style.left=
+    Math.random()*100+"%";
+
+  p.style.animationDuration=
+    (9+Math.random()*10)+"s";
+
+  p.style.animationDelay=
+    Math.random()*9+"s";
+
+  document
+    .getElementById("app")
+    .appendChild(p);
+
 }
 
 
-/* =========================
+/* =====================================================
    NAVIGATION
-   FIXED
-========================= */
+   FIXED: NO PAGE CUT / NO FREEZE
+===================================================== */
 
 let currentScene=1;
 let navigating=false;
-let navigationTimer=null;
 
 function go(n){
 
-  n=Math.max(1,Math.min(12,n));
+  if(n<1 || n>12) return;
 
-  if(n===currentScene)return;
+  if(n===currentScene) return;
 
-  if(navigating){
-    clearTimeout(navigationTimer);
-  }
+  if(navigating) return;
 
   navigating=true;
 
-  const oldScene=document.getElementById("s"+currentScene);
-  const newScene=document.getElementById("s"+n);
+  document
+    .querySelectorAll(".scene")
+    .forEach(scene=>{
+      scene.classList.remove("active");
+    });
 
-  if(!newScene){
+  setTimeout(()=>{
+
+    const target=
+      document.getElementById("s"+n);
+
+    if(target){
+
+      target.classList.add("active");
+
+      currentScene=n;
+
+    }
+
     navigating=false;
-    return;
-  }
 
-  /*
-    IMPORTANT:
-    Old scene immediately loses pointer events.
-    New scene gets active after a tiny delay.
-    This prevents the old page from appearing
-    underneath / cutting the screen.
-  */
-
-  oldScene.classList.remove("active");
-
-  currentScene=n;
-
-  requestAnimationFrame(()=>{
-
-    newScene.classList.add("active");
-
-    navigationTimer=setTimeout(()=>{
-
-      navigating=false;
-
-    },600);
-
-  });
+  },80);
 
 }
 
 
-/* =========================
-   SMART BACK
-========================= */
-
-function backMemory(){
-
-  resetMemory();
-  go(3);
-
-}
-
-
-/* =========================
+/* =====================================================
    LETTER
-========================= */
+===================================================== */
 
 let letterOpened=false;
 
 function openLetter(){
 
-  if(letterOpened)return;
+  if(letterOpened) return;
 
   letterOpened=true;
 
@@ -1926,19 +2116,18 @@ function openLetter(){
 
   setTimeout(()=>{
     flash();
-  },500);
+  },450);
 
   setTimeout(()=>{
     go(3);
-    letterOpened=false;
   },1250);
 
 }
 
 
-/* =========================
-   MEMORY
-========================= */
+/* =====================================================
+   MEMORY NAVIGATION
+===================================================== */
 
 let memory=1;
 
@@ -1956,23 +2145,20 @@ function nextMemory(){
 
     memory++;
 
-    setTimeout(()=>{
+    document
+      .getElementById("m"+memory)
+      .classList.add("active");
 
-      document
-        .getElementById("m"+memory)
-        .classList.add("active");
-
-      document
-        .getElementById("d"+memory)
-        .classList.add("active");
-
-    },80);
+    document
+      .getElementById("d"+memory)
+      .classList.add("active");
 
     if(memory===3){
 
       document
         .getElementById("memoryBtn")
-        .textContent="AAGE CHALEIN ✦";
+        .textContent=
+        "AAGE CHALEIN ✦";
 
     }
 
@@ -1984,38 +2170,16 @@ function nextMemory(){
 
 }
 
-function resetMemory(){
 
-  memory=1;
-
-  document
-    .querySelectorAll(".memory-card")
-    .forEach((card,i)=>{
-      card.classList.toggle("active",i===0);
-    });
-
-  document
-    .querySelectorAll(".dot")
-    .forEach((dot,i)=>{
-      dot.classList.toggle("active",i===0);
-    });
-
-  document
-    .getElementById("memoryBtn")
-    .textContent="NEXT MEMORY →";
-
-}
-
-
-/* =========================
+/* =====================================================
    GIFT
-========================= */
+===================================================== */
 
 let giftOpened=false;
 
 function openGift(){
 
-  if(giftOpened)return;
+  if(giftOpened) return;
 
   giftOpened=true;
 
@@ -2023,55 +2187,57 @@ function openGift(){
     .getElementById("gift")
     .classList.add("open");
 
-  setTimeout(()=>{
-    confetti(18);
-  },300);
+  confetti(18);
 
   setTimeout(()=>{
     go(6);
-    giftOpened=false;
-  },950);
+  },1050);
 
 }
 
 
-/* =========================
+/* =====================================================
    QUESTION
-========================= */
+===================================================== */
 
 let noCount=0;
 
 function noAnswer(){
 
-  const b=
+  const button=
     document.getElementById("noBtn");
 
   noCount++;
 
   if(noCount===1){
 
-    b.style.transform=
+    button.style.transform=
       "translate(42px,-5px)";
 
-    b.textContent=
+    button.textContent=
       "Sochiye 😌";
 
-  }else if(noCount===2){
+  }
 
-    b.style.transform=
+  else if(noCount===2){
+
+    button.style.transform=
       "translate(-38px,13px)";
 
-    b.textContent=
+    button.textContent=
       "Pakka? 😂";
 
-  }else{
+  }
 
-    b.style.opacity="0";
-    b.style.pointerEvents="none";
+  else{
+
+    button.style.opacity="0";
+    button.style.pointerEvents="none";
 
   }
 
 }
+
 
 function yesAnswer(){
 
@@ -2081,14 +2247,15 @@ function yesAnswer(){
 
   setTimeout(()=>{
     go(9);
-  },2100);
+  },1800);
 
 }
 
 
-/* =========================
+/* =====================================================
    CAKE KNIFE
-========================= */
+   SMOOTH DRAG
+===================================================== */
 
 const knife=
   document.getElementById("knife");
@@ -2102,9 +2269,13 @@ let cutDone=false;
 let startX=0;
 let startY=0;
 
-function pointer(e){
 
-  if(e.touches && e.touches.length){
+function getPoint(e){
+
+  if(
+    e.touches &&
+    e.touches.length
+  ){
 
     return{
       x:e.touches[0].clientX,
@@ -2120,11 +2291,13 @@ function pointer(e){
 
 }
 
+
 function knifeDown(e){
 
-  if(cutDone)return;
+  if(cutDone) return;
 
-  const p=pointer(e);
+  const p=
+    getPoint(e);
 
   dragging=true;
 
@@ -2137,35 +2310,44 @@ function knifeDown(e){
 
 }
 
+
 function knifeMove(e){
 
-  if(!dragging || cutDone)return;
+  if(
+    !dragging ||
+    cutDone
+  ) return;
 
-  const p=pointer(e);
+  const p=
+    getPoint(e);
 
-  const dx=p.x-startX;
-  const dy=p.y-startY;
+  const dx=
+    p.x-startX;
 
-  /*
-    Smooth motion:
-    movement is damped instead of directly
-    following the finger 1:1.
-  */
+  const dy=
+    p.y-startY;
 
-  const x=Math.max(
-    -105,
-    Math.min(15,dx*.82)
-  );
+  const x=
+    Math.max(
+      -105,
+      Math.min(8,dx)
+    );
 
-  const y=Math.max(
-    -12,
-    Math.min(45,dy*.55)
-  );
+  const y=
+    Math.max(
+      -10,
+      Math.min(42,dy)
+    );
 
   knife.style.transform=
-    `translate3d(${x}px,${y}px,0) rotate(-42deg)`;
+    `rotate(-42deg)
+     translate3d(${x}px,${y}px,0)`;
 
-  if(dx < -70){
+  /*
+    Enough horizontal movement = cake cut
+  */
+
+  if(dx<-70){
 
     cutCake();
 
@@ -2175,9 +2357,10 @@ function knifeMove(e){
 
 }
 
+
 function knifeUp(){
 
-  if(!dragging)return;
+  if(!dragging) return;
 
   dragging=false;
 
@@ -2185,15 +2368,15 @@ function knifeUp(){
 
   if(!cutDone){
 
-    knife.style.transition=
-      "transform .45s cubic-bezier(.22,.75,.18,1)";
-
     knife.style.transform=
       "rotate(-42deg)";
 
   }
 
 }
+
+
+/* mouse */
 
 knife.addEventListener(
   "mousedown",
@@ -2209,6 +2392,9 @@ window.addEventListener(
   "mouseup",
   knifeUp
 );
+
+
+/* touch */
 
 knife.addEventListener(
   "touchstart",
@@ -2228,15 +2414,16 @@ window.addEventListener(
 );
 
 
-/* =========================
+/* =====================================================
    CAKE CUT
-========================= */
+===================================================== */
 
 function cutCake(){
 
-  if(cutDone)return;
+  if(cutDone) return;
 
   cutDone=true;
+
   dragging=false;
 
   cake.classList.add("cut");
@@ -2246,14 +2433,15 @@ function cutCake(){
     .textContent=
     "Perfect! 🎂✨";
 
+
   knife.style.transition=
-    "transform .7s cubic-bezier(.22,.75,.18,1)";
+    "transform 1s cubic-bezier(.22,.75,.18,1)";
 
   knife.style.transform=
-    "translate3d(-78px,5px,0) rotate(-42deg)";
+    "rotate(-42deg) translate3d(-75px,5px,0)";
 
 
-  /* CANDLES */
+  /* candles */
 
   setTimeout(()=>{
 
@@ -2272,35 +2460,35 @@ function cutCake(){
               },
 
               {
-                opacity:.7,
+                opacity:.5,
                 transform:
-                  "translateY(-5px) scale(.75)"
+                  "translateY(-6px) scale(.7)"
               },
 
               {
                 opacity:0,
                 transform:
-                  "translateY(-15px) scale(.1)"
+                  "translateY(-14px) scale(.1)"
               }
 
             ],
 
             {
-              duration:600,
+              duration:650,
               fill:"forwards",
               easing:"ease-out"
             }
 
           );
 
-        },index*130);
+        },index*140);
 
       });
 
   },350);
 
 
-  /* CRUMBS */
+  /* cake crumbs */
 
   setTimeout(()=>{
 
@@ -2309,98 +2497,63 @@ function cutCake(){
 
     for(let i=0;i<18;i++){
 
-      const c=
+      const crumb=
         document.createElement("div");
 
-      c.className="crumb";
+      crumb.className="crumb";
 
-      c.style.left=
+      crumb.style.left=
         (105+Math.random()*120)+"px";
 
-      c.style.top=
+      crumb.style.top=
         (145+Math.random()*30)+"px";
 
-      c.style.setProperty(
+      crumb.style.setProperty(
         "--x",
         ((Math.random()-.5)*120)+"px"
       );
 
-      c.style.setProperty(
+      crumb.style.setProperty(
         "--y",
         (25+Math.random()*70)+"px"
       );
 
-      stage.appendChild(c);
+      stage.appendChild(crumb);
 
       setTimeout(()=>{
-        c.remove();
-      },1000);
+        crumb.remove();
+      },950);
 
     }
 
   },550);
 
 
-  /* CELEBRATION */
+  /* celebration */
 
   setTimeout(()=>{
 
     flash();
-    confetti(45);
+
+    confetti(42);
 
   },900);
 
 
-  /* NEXT */
+  /* next scene */
 
   setTimeout(()=>{
 
     go(11);
 
-  },2100);
+  },2200);
 
 }
 
 
-/* =========================
-   RESET CAKE
-========================= */
-
-function resetCake(){
-
-  cutDone=false;
-  dragging=false;
-
-  cake.classList.remove("cut");
-
-  knife.style.transition=
-    "transform .45s cubic-bezier(.22,.75,.18,1)";
-
-  knife.style.transform=
-    "rotate(-42deg)";
-
-  document
-    .getElementById("cutHint")
-    .textContent=
-    "Knife ko cake ke across smoothly drag kijiye ✦";
-
-  document
-    .querySelectorAll(".flame")
-    .forEach(flame=>{
-
-      flame.style.opacity="1";
-
-      flame.style.transform=
-        "scale(1)";
-
-    });
-
-}
-
-
-/* =========================
+/* =====================================================
    FLASH
-========================= */
+===================================================== */
 
 function flash(){
 
@@ -2410,7 +2563,7 @@ function flash(){
 
       [
         {opacity:0},
-        {opacity:.38},
+        {opacity:.35},
         {opacity:0}
       ],
 
@@ -2424,9 +2577,9 @@ function flash(){
 }
 
 
-/* =========================
+/* =====================================================
    CONFETTI
-========================= */
+===================================================== */
 
 function confetti(amount){
 
@@ -2461,25 +2614,24 @@ function confetti(amount){
     );
 
     c.style.animationDuration=
-      (2.2+Math.random()*1.6)+"s";
+      (2.1+Math.random()*1.4)+"s";
 
-    c.style.animationDelay=
-      Math.random()*.2+"s";
-
-    document.body.appendChild(c);
+    document
+      .body
+      .appendChild(c);
 
     setTimeout(()=>{
       c.remove();
-    },4500);
+    },4000);
 
   }
 
 }
 
 
-/* =========================
-   PRELOAD PHOTOS
-========================= */
+/* =====================================================
+   PRELOAD IMAGES
+===================================================== */
 
 [
   "1000244923.png",
@@ -2494,120 +2646,17 @@ function confetti(amount){
 });
 
 
-/* =========================
-   ANDROID BACK BUTTON
-========================= */
-
-window.addEventListener(
-  "popstate",
-  ()=>{
-
-    if(currentScene>1){
-
-      const previous=
-        currentScene-1;
-
-      if(previous===4){
-
-        resetMemory();
-
-      }
-
-      if(previous===10){
-
-        resetCake();
-
-      }
-
-      go(previous);
-
-    }
-
-  }
-);
-
-
-/*
-  Create browser history states.
-  This makes Android/browser BACK
-  behave like website navigation.
-*/
-
-history.replaceState(
-  {scene:1},
-  "",
-  "#scene1"
-);
-
-const originalGo=go;
-
-go=function(n){
-
-  if(n===currentScene)return;
-
-  history.pushState(
-    {scene:n},
-    "",
-    "#scene"+n
-  );
-
-  originalGo(n);
-
-};
-
-
-/* =========================
-   INITIAL HASH
-========================= */
-
-const hash=
-  location.hash;
-
-if(hash){
-
-  const match=
-    hash.match(/scene(\d+)/);
-
-  if(match){
-
-    const n=
-      Number(match[1]);
-
-    if(n>=1 && n<=12){
-
-      document
-        .querySelectorAll(".scene")
-        .forEach(s=>
-          s.classList.remove("active")
-        );
-
-      document
-        .getElementById("s"+n)
-        .classList.add("active");
-
-      currentScene=n;
-
-    }
-
-  }
-
-}
-
-
-/* =========================
-   PREVENT UNWANTED SCROLL
-========================= */
+/* =====================================================
+   PREVENT PAGE SCROLL
+===================================================== */
 
 document.addEventListener(
   "touchmove",
   e=>{
 
-    /*
-      Only prevent page scrolling.
-      Cake stage remains touch-enabled.
-    */
-
-    if(!e.target.closest(".cake-stage")){
+    if(
+      !e.target.closest(".cake-stage")
+    ){
 
       e.preventDefault();
 
