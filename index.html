@@ -2,1885 +2,1413 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport"
-      content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
 
 <title>For Pallavi ✦</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Bodoni+Moda:opsz,wght@6..96,400;6..96,500;6..96,600&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap"
-rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,400;6..96,500;6..96,600&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 
 <style>
 
-/* =========================================================
-   ROOT
-========================================================= */
+/* =====================================================
+   CORE
+===================================================== */
 
 :root{
-    --bg:#f8f4f1;
-    --paper:#fffdf9;
-    --ink:#393236;
-    --muted:#887b80;
+ --bg:#f8f5f3;
+ --paper:#fffdf9;
+ --ink:#373034;
+ --muted:#887b80;
 
-    --rose:#b76d7c;
-    --rose2:#e8c2c9;
-    --gold:#d9bb6d;
-    --lav:#ded9e8;
+ --rose:#b86d7c;
+ --rose2:#e7bfc6;
+ --gold:#d9bc6b;
+ --lav:#dcd7e8;
 
-    --line:rgba(70,50,57,.12);
+ --line:rgba(60,45,50,.12);
+ --shadow:0 25px 70px rgba(60,42,48,.15);
 
-    --luxury:"Bodoni Moda",
-                 "Cormorant Garamond",
-                 Georgia,
-                 serif;
+ --luxury:"Bodoni Moda","Cormorant Garamond",serif;
+ --serif:"Cormorant Garamond",serif;
+ --clean:"DM Sans",sans-serif;
 
-    --serif:"Cormorant Garamond",
-             Georgia,
-             serif;
-
-    --clean:"DM Sans",sans-serif;
-
-    --ease:cubic-bezier(.22,.75,.18,1);
+ --ease:cubic-bezier(.22,.75,.18,1);
 }
 
-
-/* =========================================================
-   RESET
-========================================================= */
-
 *{
-    box-sizing:border-box;
-    margin:0;
-    padding:0;
-    -webkit-tap-highlight-color:transparent;
+ box-sizing:border-box;
+ margin:0;
+ padding:0;
+ -webkit-tap-highlight-color:transparent;
 }
 
 html,
 body{
-    width:100%;
-    height:100%;
-    overflow:hidden;
+ width:100%;
+ height:100%;
+ overflow:hidden;
 }
 
 body{
-    font-family:var(--clean);
-    color:var(--ink);
-    background:var(--bg);
+ font-family:var(--clean);
+ color:var(--ink);
+ background:var(--bg);
 }
 
 button{
-    font-family:var(--clean);
+ font-family:var(--clean);
 }
 
 
-/* =========================================================
-   APP
-========================================================= */
+/* =====================================================
+   BACKGROUND
+===================================================== */
 
 #app{
-    position:fixed;
-    inset:0;
-    overflow:hidden;
-    isolation:isolate;
+ position:fixed;
+ inset:0;
+ overflow:hidden;
 
-    background:
-        radial-gradient(
-            circle at 8% 10%,
-            rgba(232,194,201,.52),
-            transparent 28%
-        ),
-
-        radial-gradient(
-            circle at 93% 88%,
-            rgba(222,217,232,.60),
-            transparent 34%
-        ),
-
-        radial-gradient(
-            circle at 50% 115%,
-            rgba(241,213,198,.48),
-            transparent 35%
-        ),
-
-        linear-gradient(
-            145deg,
-            #faf7f4,
-            #f7f2ef
-        );
+ background:
+ radial-gradient(
+   circle at 8% 8%,
+   rgba(231,191,198,.52),
+   transparent 28%
+ ),
+ radial-gradient(
+   circle at 92% 90%,
+   rgba(220,215,232,.60),
+   transparent 32%
+ ),
+ radial-gradient(
+   circle at 50% 110%,
+   rgba(239,210,195,.40),
+   transparent 35%
+ ),
+ #f8f5f3;
 }
 
 #app:after{
-    content:"";
-    position:absolute;
-    inset:0;
-    pointer-events:none;
-    opacity:.025;
+ content:"";
+ position:absolute;
+ inset:0;
+ pointer-events:none;
+ opacity:.025;
 
-    background-image:url(
-        "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence baseFrequency='.75' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"
-    );
+ background-image:url(
+ "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence baseFrequency='.75' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"
+ );
 }
 
-
-/* =========================================================
-   AMBIENT LIGHT
-========================================================= */
-
 .ambient{
-    position:absolute;
-    border-radius:50%;
-    filter:blur(75px);
-    pointer-events:none;
-    opacity:.23;
-    animation:ambientMove 16s ease-in-out infinite alternate;
+ position:absolute;
+ border-radius:50%;
+ filter:blur(75px);
+ pointer-events:none;
+ opacity:.22;
+ animation:ambient 15s ease-in-out infinite alternate;
 }
 
 .ambient.one{
-    width:300px;
-    height:300px;
-    background:var(--rose2);
-    left:-150px;
-    top:-90px;
+ width:300px;
+ height:300px;
+ left:-150px;
+ top:-80px;
+ background:#e7bfc6;
 }
 
 .ambient.two{
-    width:320px;
-    height:320px;
-    background:var(--lav);
-    right:-150px;
-    bottom:-110px;
-    animation-delay:-5s;
+ width:330px;
+ height:330px;
+ right:-160px;
+ bottom:-120px;
+ background:#dcd7e8;
+ animation-delay:-5s;
 }
 
-@keyframes ambientMove{
-    to{
-        transform:
-            translate(35px,25px)
-            scale(1.08);
-    }
+@keyframes ambient{
+ to{
+  transform:translate(35px,25px) scale(1.08);
+ }
 }
 
 
-/* =========================================================
-   CINEMATIC RAIN
-========================================================= */
+/* =====================================================
+   RAIN
+===================================================== */
 
-#rainLayer{
-    position:fixed;
-    inset:-12%;
-    z-index:120;
-    pointer-events:none;
-    overflow:hidden;
+#rain{
+ position:fixed;
+ inset:-15vh -20vw;
+ z-index:80;
+ pointer-events:none;
+ overflow:hidden;
 
-    transform:
-        rotate(8deg)
-        scale(1.12);
-
-    transform-origin:center;
-
-    opacity:.58;
+ transform:rotate(8deg);
+ transform-origin:center;
 }
 
 .rain-drop{
-    position:absolute;
-    top:-12vh;
+ position:absolute;
+ top:-15vh;
 
-    width:1px;
-    height:55px;
+ width:1px;
+ height:var(--h);
 
-    border-radius:999px;
+ border-radius:999px;
 
-    background:linear-gradient(
-        to bottom,
-        rgba(255,255,255,0),
-        rgba(202,219,230,.38),
-        rgba(255,255,255,.08)
-    );
+ background:linear-gradient(
+   to bottom,
+   transparent,
+   rgba(255,255,255,.62),
+   rgba(205,220,240,.18)
+ );
 
-    filter:blur(.15px);
+ opacity:var(--o);
+ filter:blur(var(--blur));
 
-    animation:
-        rainFall var(--duration)
-        linear infinite;
-
-    animation-delay:var(--delay);
-    left:var(--left);
+ animation:rainFall var(--speed) linear infinite;
+ animation-delay:var(--delay);
 }
 
-.rain-drop.deep{
-    width:1.5px;
-    height:76px;
-    opacity:.42;
-    filter:blur(.45px);
+.rain-drop.bright{
+ width:1.4px;
+ background:linear-gradient(
+   to bottom,
+   transparent,
+   rgba(255,255,255,.85),
+   transparent
+ );
 }
 
 .rain-drop.soft{
-    height:38px;
-    opacity:.22;
-    filter:blur(1px);
+ opacity:.18;
 }
 
 @keyframes rainFall{
+ from{
+  transform:translate3d(0,-20vh,0);
+ }
+ to{
+  transform:translate3d(var(--drift),125vh,0);
+ }
+}
 
-    0%{
-        transform:
-            translate3d(0,-12vh,0);
-        opacity:0;
-    }
+#rainGround{
+ position:fixed;
+ left:0;
+ right:0;
+ bottom:0;
+ height:20vh;
+ z-index:81;
+ pointer-events:none;
+ overflow:hidden;
+}
 
-    8%{
-        opacity:var(--opacity);
-    }
+.splash{
+ position:absolute;
+ width:12px;
+ height:4px;
+ border:1px solid rgba(255,255,255,.38);
+ border-top:0;
+ border-radius:50%;
+ opacity:0;
+ animation:splash .65s ease-out forwards;
+}
 
-    84%{
-        opacity:var(--opacity);
-    }
-
-    100%{
-        transform:
-            translate3d(-17vw,125vh,0);
-        opacity:0;
-    }
+@keyframes splash{
+ 0%{
+  opacity:0;
+  transform:scale(.2);
+ }
+ 20%{
+  opacity:.45;
+ }
+ 100%{
+  opacity:0;
+  transform:translateY(-4px) scale(1.8);
+ }
 }
 
 
-/* =========================================================
-   PARTICLES
-========================================================= */
-
-.particle{
-    position:absolute;
-
-    width:3px;
-    height:3px;
-
-    border-radius:50%;
-
-    background:var(--gold);
-
-    opacity:0;
-
-    pointer-events:none;
-
-    animation:
-        particleFloat
-        linear infinite;
-}
-
-@keyframes particleFloat{
-
-    0%{
-        transform:translateY(110vh);
-        opacity:0;
-    }
-
-    18%{
-        opacity:.20;
-    }
-
-    80%{
-        opacity:.08;
-    }
-
-    100%{
-        transform:translateY(-10vh);
-        opacity:0;
-    }
-}
-
-
-/* =========================================================
+/* =====================================================
    SCENES
-========================================================= */
+===================================================== */
 
 .scene{
-    position:absolute;
-    inset:0;
+ position:absolute;
+ inset:0;
+ z-index:10;
 
-    z-index:5;
+ display:flex;
+ align-items:center;
+ justify-content:center;
 
-    display:flex;
-    align-items:center;
-    justify-content:center;
+ padding:18px;
 
-    padding:18px;
+ opacity:0;
+ visibility:hidden;
+ pointer-events:none;
 
-    opacity:0;
-    visibility:hidden;
-    pointer-events:none;
+ transform:translateY(24px) scale(.985);
+ filter:blur(7px);
 
-    transform:
-        translateY(20px)
-        scale(.985);
-
-    filter:blur(5px);
-
-    transition:
-        opacity .65s ease,
-        transform .8s var(--ease),
-        filter .65s ease,
-        visibility 0s linear .8s;
+ transition:
+ opacity .7s ease,
+ transform .9s var(--ease),
+ filter .7s ease;
 }
 
 .scene.active{
-    opacity:1;
-    visibility:visible;
-    pointer-events:auto;
+ opacity:1;
+ visibility:visible;
+ pointer-events:auto;
 
-    transform:none;
-    filter:blur(0);
-
-    transition:
-        opacity .65s ease,
-        transform .8s var(--ease),
-        filter .65s ease;
+ transform:none;
+ filter:blur(0);
 }
 
 .content{
-    width:min(92vw,700px);
-    text-align:center;
-    position:relative;
-}
-
-.eyebrow{
-    font-size:8px;
-    font-weight:700;
-    letter-spacing:3.5px;
-    text-transform:uppercase;
-    color:#988a8f;
-    margin-bottom:15px;
+ width:min(92vw,700px);
+ text-align:center;
+ position:relative;
 }
 
 h1,
 h2{
-    font-family:var(--luxury);
-    font-weight:500;
-    letter-spacing:-1.5px;
+ font-family:var(--luxury);
+ font-weight:500;
+ letter-spacing:-1px;
 }
 
 h1{
-    font-size:clamp(40px,10vw,72px);
-    line-height:1.03;
+ font-size:clamp(40px,10vw,72px);
+ line-height:1.04;
 }
 
 h2{
-    font-size:clamp(30px,7.5vw,52px);
-    line-height:1.08;
+ font-size:clamp(31px,7.5vw,53px);
+ line-height:1.08;
 }
 
 p{
-    max-width:500px;
-    margin:15px auto 0;
-    color:var(--muted);
-    font-size:12px;
-    line-height:1.8;
+ max-width:500px;
+ margin:15px auto 0;
+ color:var(--muted);
+ font-size:12px;
+ line-height:1.8;
 }
 
 .accent{
-    color:var(--rose);
+ color:var(--rose);
 }
 
 .serif{
-    font-family:var(--serif);
-    font-style:italic;
+ font-family:var(--serif);
+ font-style:italic;
 }
 
-
-/* =========================================================
-   BUTTON
-========================================================= */
+.eyebrow{
+ font-size:8px;
+ font-weight:600;
+ letter-spacing:3.5px;
+ text-transform:uppercase;
+ color:#988a8f;
+ margin-bottom:15px;
+}
 
 .btn{
-    border:1px solid var(--line);
+ border:1px solid var(--line);
+ background:rgba(255,255,255,.88);
+ color:var(--ink);
 
-    background:rgba(255,255,255,.82);
+ border-radius:100px;
+ padding:12px 21px;
+ margin-top:23px;
 
-    color:var(--ink);
+ font-size:9px;
+ font-weight:600;
+ letter-spacing:1.5px;
 
-    border-radius:100px;
+ cursor:pointer;
 
-    padding:12px 21px;
+ box-shadow:0 10px 32px rgba(70,50,55,.08);
 
-    margin-top:23px;
-
-    font-size:9px;
-    font-weight:700;
-
-    letter-spacing:1.5px;
-
-    cursor:pointer;
-
-    box-shadow:
-        0 10px 32px
-        rgba(70,50,55,.07);
-
-    opacity:0;
-    transform:translateY(9px);
-
-    transition:
-        transform .25s ease,
-        box-shadow .25s ease;
+ transition:
+ transform .3s ease,
+ box-shadow .3s ease;
 }
 
-.scene.active .btn{
-    animation:
-        buttonIn
-        .8s
-        .9s
-        var(--ease)
-        forwards;
-}
-
-.btn.primary{
-    background:var(--rose2);
-    border-color:transparent;
+.btn:hover{
+ transform:translateY(-2px);
+ box-shadow:0 15px 35px rgba(70,50,55,.13);
 }
 
 .btn:active{
-    transform:scale(.94);
+ transform:scale(.94);
+}
+
+.btn.primary{
+ background:var(--rose2);
+ border-color:transparent;
+}
+
+.scene.active .btn{
+ animation:buttonIn .8s .9s var(--ease) both;
 }
 
 @keyframes buttonIn{
-    to{
-        opacity:1;
-        transform:none;
-    }
+ from{
+  opacity:0;
+  transform:translateY(10px);
+ }
+ to{
+  opacity:1;
+  transform:none;
+ }
 }
 
 
-/* =========================================================
+/* =====================================================
+   PARTICLES
+===================================================== */
+
+.particle{
+ position:absolute;
+ width:3px;
+ height:3px;
+ border-radius:50%;
+ background:var(--gold);
+ opacity:0;
+
+ animation:particle linear infinite;
+}
+
+@keyframes particle{
+ from{
+  transform:translateY(110vh);
+  opacity:0;
+ }
+ 20%{opacity:.2}
+ 80%{opacity:.1}
+ to{
+  transform:translateY(-10vh);
+  opacity:0;
+ }
+}
+
+
+/* =====================================================
    SCENE 1
-========================================================= */
+===================================================== */
 
-.opening-wrap{
-    min-height:380px;
-
-    display:flex;
-    flex-direction:column;
-
-    align-items:center;
-    justify-content:center;
+.opening{
+ min-height:390px;
+ display:flex;
+ flex-direction:column;
+ justify-content:center;
+ align-items:center;
 }
 
-.date-mark{
-    font-size:8px;
-    letter-spacing:4px;
-    color:#a19397;
-
-    opacity:0;
-    transform:translateY(10px);
+.date{
+ font-size:8px;
+ letter-spacing:4px;
+ color:#988a8f;
+ opacity:0;
 }
 
-.scene.active .date-mark{
-    animation:
-        slowUp
-        .8s
-        .4s
-        var(--ease)
-        forwards;
+.scene.active .date{
+ animation:up .9s .35s var(--ease) forwards;
 }
 
-.opening-line{
-    margin-top:25px;
-
-    font-family:var(--serif);
-
-    font-size:clamp(28px,7vw,44px);
-
-    line-height:1.15;
-
-    color:#4c4246;
-
-    opacity:0;
-    transform:translateY(15px);
+.opening-title{
+ margin-top:24px;
+ font-family:var(--serif);
+ font-size:clamp(29px,7vw,46px);
+ line-height:1.15;
+ opacity:0;
+ transform:translateY(14px);
 }
 
-.scene.active .opening-line{
-    animation:
-        slowUp
-        1s
-        1.1s
-        var(--ease)
-        forwards;
+.scene.active .opening-title{
+ animation:up 1s 1s var(--ease) forwards;
 }
 
-.opening-line.second{
-    margin-top:8px;
-    color:var(--rose);
+.opening-title span{
+ color:var(--rose);
+ font-style:italic;
 }
 
-.scene.active .opening-line.second{
-    animation:
-        slowUp
-        1s
-        2.1s
-        var(--ease)
-        forwards;
+.open-line{
+ width:0;
+ height:1px;
+ background:var(--gold);
+ margin-top:25px;
 }
 
-.opening-divider{
-    width:0;
-    height:1px;
-
-    background:var(--gold);
-
-    margin-top:24px;
-
-    opacity:.7;
+.scene.active .open-line{
+ animation:line .8s 2.25s var(--ease) forwards;
 }
 
-.scene.active .opening-divider{
-    animation:
-        lineGrow
-        .8s
-        3.2s
-        var(--ease)
-        forwards;
+.open-small{
+ margin-top:16px;
+ font-size:10px;
+ color:#918287;
+ opacity:0;
 }
 
-@keyframes lineGrow{
-    to{
-        width:110px;
-    }
+.scene.active .open-small{
+ animation:up .8s 2.6s forwards;
 }
 
-.opening-sub{
-    margin-top:17px;
-
-    font-size:10px;
-
-    color:#8d8084;
-
-    opacity:0;
-    transform:translateY(8px);
+@keyframes line{
+ to{width:110px}
 }
 
-.scene.active .opening-sub{
-    animation:
-        slowUp
-        .7s
-        3.5s
-        var(--ease)
-        forwards;
-}
-
-@keyframes slowUp{
-    to{
-        opacity:1;
-        transform:none;
-    }
+@keyframes up{
+ from{
+  opacity:0;
+  transform:translateY(14px);
+ }
+ to{
+  opacity:1;
+  transform:none;
+ }
 }
 
 
-/* =========================================================
+/* =====================================================
    SCENE 2 — ENVELOPE
-========================================================= */
+===================================================== */
 
 .envelope-stage{
-    height:320px;
-
-    display:grid;
-    place-items:center;
-
-    perspective:1100px;
+ height:325px;
+ display:grid;
+ place-items:center;
+ perspective:1000px;
 }
 
 .envelope{
-    width:min(330px,84vw);
-    height:215px;
+ width:min(330px,84vw);
+ height:210px;
+ position:relative;
+ cursor:pointer;
+ transform-style:preserve-3d;
 
-    position:relative;
-
-    cursor:pointer;
-
-    transform-style:preserve-3d;
-
-    opacity:0;
-    transform:
-        translateY(20px)
-        scale(.94);
+ opacity:0;
+ transform:translateY(20px) scale(.94);
 }
 
 .scene.active .envelope{
-    animation:
-        envelopeIn
-        1s
-        .45s
-        var(--ease)
-        forwards;
+ animation:envIn 1s .5s var(--ease) forwards;
 }
 
-@keyframes envelopeIn{
-    to{
-        opacity:1;
-        transform:none;
-    }
-}
-
-.envelope-shadow{
-    position:absolute;
-
-    left:8%;
-    right:8%;
-    bottom:2px;
-
-    height:30px;
-
-    border-radius:50%;
-
-    background:rgba(66,45,53,.15);
-
-    filter:blur(17px);
+@keyframes envIn{
+ to{
+  opacity:1;
+  transform:none;
+ }
 }
 
 .envelope-back{
-    position:absolute;
-    inset:0;
-
-    border-radius:8px;
-
-    background:
-        linear-gradient(
-            145deg,
-            #fffdf9,
-            #f4e9e1
-        );
-
-    box-shadow:
-        0 25px 75px
-        rgba(66,45,53,.14);
-
-    overflow:hidden;
+ position:absolute;
+ inset:0;
+ border-radius:8px;
+ background:linear-gradient(145deg,#fffdf9,#f0e2dc);
+ box-shadow:var(--shadow);
+ overflow:hidden;
 }
 
 .envelope-back:after{
-    content:"";
+ content:"";
+ position:absolute;
+ inset:0;
 
-    position:absolute;
-    inset:0;
-
-    background:
-        linear-gradient(
-            32deg,
-            transparent 49.5%,
-            rgba(184,109,124,.12) 50%,
-            transparent 50.5%
-        ),
-
-        linear-gradient(
-            -32deg,
-            transparent 49.5%,
-            rgba(184,109,124,.10) 50%,
-            transparent 50.5%
-        );
+ background:
+ linear-gradient(
+  32deg,
+  transparent 49.5%,
+  rgba(184,109,124,.13) 50%,
+  transparent 50.5%
+ ),
+ linear-gradient(
+  -32deg,
+  transparent 49.5%,
+  rgba(184,109,124,.11) 50%,
+  transparent 50.5%
+ );
 }
 
 .flap{
-    position:absolute;
+ position:absolute;
+ z-index:8;
 
-    z-index:8;
+ width:100%;
+ height:59%;
+ left:0;
+ top:0;
 
-    left:0;
-    top:0;
+ background:linear-gradient(
+  145deg,
+  #f7e8e0,
+  #e9d0cb
+ );
 
-    width:100%;
-    height:58%;
+ clip-path:polygon(0 0,100% 0,50% 100%);
 
-    background:
-        linear-gradient(
-            145deg,
-            #f6e8df,
-            #ead2ce
-        );
+ transform-origin:50% 0;
 
-    clip-path:
-        polygon(
-            0 0,
-            100% 0,
-            50% 100%
-        );
-
-    transform-origin:50% 0;
-
-    transition:
-        transform 1s var(--ease);
-
-    backface-visibility:hidden;
+ transition:transform 1.05s var(--ease);
+ backface-visibility:hidden;
 }
 
 .envelope.open .flap{
-    transform:rotateX(180deg);
+ transform:rotateX(180deg);
 }
 
 .letter{
-    position:absolute;
+ position:absolute;
+ z-index:6;
 
-    z-index:6;
+ left:7%;
+ width:86%;
+ height:170px;
+ bottom:10px;
 
-    left:7%;
+ padding:24px 20px;
 
-    width:86%;
-    height:178px;
+ background:#fffdf9;
 
-    bottom:10px;
+ box-shadow:0 10px 30px rgba(60,40,45,.12);
 
-    padding:25px 22px;
-
-    background:
-        linear-gradient(
-            rgba(255,255,255,.92),
-            rgba(255,253,249,.97)
-        );
-
-    border-radius:4px;
-
-    box-shadow:
-        0 10px 30px
-        rgba(60,40,45,.12);
-
-    transition:
-        transform 1s .18s var(--ease),
-        box-shadow .8s ease;
+ transition:transform 1.1s .15s var(--ease);
 }
 
 .envelope.open .letter{
-    transform:translateY(-100px);
-
-    box-shadow:
-        0 25px 60px
-        rgba(60,40,45,.16);
-}
-
-.letter:after{
-    content:"";
-
-    position:absolute;
-    inset:8px;
-
-    border:1px solid
-        rgba(184,109,124,.12);
+ transform:translateY(-96px);
 }
 
 .letter-name{
-    font-family:var(--luxury);
-    font-size:20px;
-    color:var(--rose);
-    margin-bottom:10px;
+ font-family:var(--luxury);
+ font-size:21px;
+ color:var(--rose);
 }
 
 .letter-preview{
-    font-family:var(--serif);
-    font-style:italic;
-    font-size:17px;
-    line-height:1.3;
-    color:#66585d;
+ margin-top:10px;
+ font-family:var(--serif);
+ font-style:italic;
+ font-size:18px;
+ color:#65585d;
 }
 
 .seal{
-    position:absolute;
+ position:absolute;
+ z-index:15;
+ left:50%;
+ top:54%;
 
-    z-index:14;
+ width:43px;
+ height:43px;
 
-    left:50%;
-    top:54%;
+ transform:translate(-50%,-50%);
 
-    width:42px;
-    height:42px;
+ display:grid;
+ place-items:center;
 
-    transform:
-        translate(-50%,-50%);
+ border-radius:50%;
 
-    border-radius:50%;
+ background:radial-gradient(
+   circle at 35% 30%,
+   #d88d99,
+   #a75d6c
+ );
 
-    display:grid;
-    place-items:center;
+ color:#fff;
+ font-family:var(--luxury);
 
-    background:
-        radial-gradient(
-            circle at 35% 30%,
-            #d88d99,
-            #a75d6c
-        );
+ box-shadow:0 7px 18px rgba(100,55,65,.2);
 
-    color:white;
-
-    font-family:var(--luxury);
-
-    box-shadow:
-        0 7px 17px
-        rgba(100,55,65,.2);
-
-    transition:.6s;
+ transition:.6s;
 }
 
 .envelope.open .seal{
-    transform:
-        translate(-50%,-50%)
-        scale(.65)
-        rotate(-18deg);
-
-    opacity:0;
-}
-
-.letter-glow{
-    position:absolute;
-
-    z-index:3;
-
-    width:150px;
-    height:110px;
-
-    left:50%;
-    top:52%;
-
-    transform:
-        translate(-50%,-50%);
-
-    background:
-        radial-gradient(
-            circle,
-            rgba(255,245,206,.8),
-            transparent 70%
-        );
-
-    filter:blur(8px);
-
-    opacity:0;
-
-    transition:opacity 1s;
-}
-
-.envelope.open .letter-glow{
-    opacity:1;
+ opacity:0;
+ transform:translate(-50%,-50%) scale(.6);
 }
 
 .envelope-hint{
-    position:absolute;
+ position:absolute;
+ bottom:-30px;
+ left:50%;
+ transform:translateX(-50%);
 
-    left:50%;
-    bottom:-30px;
+ white-space:nowrap;
 
-    transform:translateX(-50%);
-
-    white-space:nowrap;
-
-    font-size:9px;
-    letter-spacing:1.5px;
-
-    color:#9a8b90;
-
-    opacity:0;
+ font-size:9px;
+ letter-spacing:1.5px;
+ color:#9a8b90;
 }
 
 .scene.active .envelope-hint{
-    animation:
-        hintIn
-        .7s
-        1.35s
-        forwards;
+ animation:hint 1s 1.5s both;
 }
 
-@keyframes hintIn{
-    to{
-        opacity:1;
-    }
+@keyframes hint{
+ from{opacity:0}
+ to{opacity:1}
 }
 
 
-/* =========================================================
-   SCENE 3 — MESSAGE
-========================================================= */
+/* =====================================================
+   SCENE 3
+===================================================== */
 
 .message-card{
-    width:min(580px,91vw);
+ width:min(580px,91vw);
+ padding:30px 24px;
 
-    padding:28px 25px;
+ background:rgba(255,253,249,.9);
 
-    background:
-        rgba(255,253,249,.88);
+ border:1px solid var(--line);
+ border-radius:6px;
 
-    border:1px solid
-        rgba(100,70,78,.10);
-
-    box-shadow:
-        0 25px 75px
-        rgba(66,45,53,.14);
-
-    border-radius:5px;
-
-    position:relative;
-}
-
-.message-card:before,
-.message-card:after{
-    content:"";
-
-    position:absolute;
-
-    width:38px;
-    height:38px;
-
-    border-color:
-        rgba(184,109,124,.25);
-}
-
-.message-card:before{
-    left:13px;
-    top:13px;
-
-    border-left:1px solid;
-    border-top:1px solid;
-}
-
-.message-card:after{
-    right:13px;
-    bottom:13px;
-
-    border-right:1px solid;
-    border-bottom:1px solid;
+ box-shadow:var(--shadow);
 }
 
 .message-label{
-    font-size:8px;
-    letter-spacing:3px;
-    color:#9b8b90;
-    text-transform:uppercase;
-    margin-bottom:14px;
+ font-size:8px;
+ letter-spacing:3px;
+ color:#9b8b90;
+ text-transform:uppercase;
 }
 
 .message-title{
-    font-family:var(--luxury);
-    font-size:26px;
-    color:var(--rose);
-    margin-bottom:16px;
+ margin-top:13px;
+ font-family:var(--luxury);
+ font-size:27px;
+ color:var(--rose);
 }
 
 .message-text{
-    font-family:var(--serif);
-    font-size:20px;
-    line-height:1.5;
-    color:#564a4e;
+ margin-top:18px;
+ font-family:var(--serif);
+ font-size:20px;
+ line-height:1.5;
+ color:#564a4e;
 }
 
 .message-text span{
-    display:block;
-
-    opacity:0;
-    transform:translateY(9px);
-
-    margin-bottom:7px;
+ display:block;
+ opacity:0;
+ transform:translateY(8px);
+ margin-top:7px;
 }
 
-.scene.active
-.message-text span:nth-child(1){
-    animation:messageIn .65s .55s forwards;
+.scene.active .message-text span{
+ animation:message .7s forwards;
 }
 
-.scene.active
-.message-text span:nth-child(2){
-    animation:messageIn .65s 1.25s forwards;
+.scene.active .message-text span:nth-child(1){
+ animation-delay:.5s;
 }
 
-.scene.active
-.message-text span:nth-child(3){
-    animation:messageIn .65s 1.95s forwards;
+.scene.active .message-text span:nth-child(2){
+ animation-delay:1.3s;
 }
 
-.scene.active
-.message-text span:nth-child(4){
-    animation:messageIn .65s 2.65s forwards;
+.scene.active .message-text span:nth-child(3){
+ animation-delay:2.1s;
 }
 
-@keyframes messageIn{
-    to{
-        opacity:1;
-        transform:none;
-    }
+.scene.active .message-text span:nth-child(4){
+ animation-delay:2.9s;
+}
+
+@keyframes message{
+ to{
+  opacity:1;
+  transform:none;
+ }
 }
 
 .message-sign{
-    margin-top:18px;
-
-    font-family:var(--luxury);
-    font-style:italic;
-
-    font-size:16px;
-
-    color:var(--rose);
-
-    opacity:0;
+ margin-top:18px;
+ font-family:var(--luxury);
+ font-style:italic;
+ color:var(--rose);
+ opacity:0;
 }
 
 .scene.active .message-sign{
-    animation:
-        messageIn
-        .7s
-        3.35s
-        forwards;
-}
-
-.message-next{
-    opacity:0;
-}
-
-.scene.active .message-next{
-    animation:
-        buttonIn
-        .7s
-        3.75s
-        forwards!important;
+ animation:up .8s 3.7s forwards;
 }
 
 
-/* =========================================================
+/* =====================================================
    SCENE 4 — MEMORIES
-========================================================= */
+===================================================== */
 
 .memory-area{
-    height:355px;
-
-    position:relative;
-
-    display:grid;
-    place-items:center;
+ height:350px;
+ position:relative;
+ display:grid;
+ place-items:center;
 }
 
 .memory-card{
-    position:absolute;
+ position:absolute;
 
-    width:min(275px,76vw);
+ width:min(275px,76vw);
 
-    padding:
-        9px
-        9px
-        15px;
+ padding:9px 9px 15px;
 
-    background:#fff;
+ background:#fff;
 
-    border-radius:4px;
+ box-shadow:var(--shadow);
+ border-radius:4px;
 
-    box-shadow:
-        0 25px 60px
-        rgba(66,45,53,.14);
+ opacity:0;
+ transform:translateY(25px) scale(.94) rotate(4deg);
 
-    opacity:0;
-
-    transform:
-        translateY(25px)
-        scale(.95)
-        rotate(3deg);
-
-    transition:
-        opacity .55s ease,
-        transform .7s var(--ease);
+ transition:
+ opacity .6s ease,
+ transform .75s var(--ease);
 }
 
 .memory-card.active{
-    opacity:1;
-
-    transform:
-        translateY(0)
-        scale(1)
-        rotate(-2deg);
+ opacity:1;
+ transform:translateY(0) scale(1) rotate(-2deg);
 }
 
 .memory-card img{
-    display:block;
+ width:100%;
+ height:225px;
 
-    width:100%;
-    height:225px;
+ display:block;
 
-    object-fit:contain;
-    object-position:center;
+ object-fit:contain;
+ object-position:center;
 
-    background:#faf7f4;
-
-    border-radius:2px;
+ background:#faf7f4;
 }
 
 .memory-caption{
-    margin-top:8px;
+ margin-top:8px;
 
-    font-family:var(--serif);
-    font-style:italic;
+ font-family:var(--serif);
+ font-style:italic;
 
-    font-size:17px;
-
-    color:#67595e;
+ font-size:17px;
+ color:#67595e;
 }
 
 .memory-note{
-    position:absolute;
+ position:absolute;
+ right:-18px;
+ top:-17px;
 
-    right:-18px;
-    top:-18px;
+ padding:6px 10px;
 
-    padding:6px 10px;
+ background:#fff1a9;
 
-    background:#fff1a9;
+ font-family:var(--serif);
+ font-style:italic;
 
-    color:#6a6047;
+ font-size:13px;
 
-    font-family:var(--serif);
-    font-style:italic;
-
-    font-size:13px;
-
-    transform:rotate(7deg);
-
-    box-shadow:
-        0 5px 13px
-        rgba(50,40,20,.08);
+ transform:rotate(7deg);
 }
 
-.no-photo-card{
-    height:225px;
+.no-photo{
+ height:225px;
 
-    display:flex;
+ display:flex;
+ flex-direction:column;
+ justify-content:center;
+ align-items:center;
 
-    flex-direction:column;
+ padding:20px;
 
-    align-items:center;
-    justify-content:center;
+ background:linear-gradient(
+  145deg,
+  #fffdf9,
+  #fff5ef
+ );
 
-    text-align:center;
+ border:1px dashed rgba(184,109,124,.3);
 
-    padding:20px;
-
-    background:
-        linear-gradient(
-            145deg,
-            #fffdf9,
-            #fff5ef
-        );
-
-    border:1px dashed
-        rgba(184,109,124,.3);
+ text-align:center;
 }
 
-.camera{
-    font-size:28px;
-    opacity:.6;
+.no-photo-icon{
+ font-size:28px;
+ opacity:.6;
 }
 
 .no-photo-title{
-    margin-top:10px;
-
-    font-size:13px;
-    line-height:1.5;
-
-    font-weight:600;
+ margin-top:10px;
+ font-size:13px;
+ font-weight:600;
+ line-height:1.5;
 }
 
 .no-photo-text{
-    margin-top:9px;
-
-    color:var(--rose);
-
-    font-family:var(--serif);
-    font-style:italic;
-
-    font-size:17px;
-
-    line-height:1.4;
-}
-
-.no-photo-small{
-    margin-top:9px;
-
-    font-size:8px;
-    color:#9a8d91;
-
-    letter-spacing:.4px;
+ margin-top:9px;
+ color:var(--rose);
+ font-family:var(--serif);
+ font-style:italic;
+ font-size:17px;
+ line-height:1.35;
 }
 
 .dots{
-    position:absolute;
+ position:absolute;
+ bottom:0;
 
-    bottom:0;
-
-    display:flex;
-    gap:7px;
+ display:flex;
+ gap:7px;
 }
 
 .dot{
-    width:6px;
-    height:6px;
-
-    border-radius:50%;
-
-    background:#d8ced1;
-
-    transition:.4s;
+ width:6px;
+ height:6px;
+ border-radius:50%;
+ background:#d8ced1;
+ transition:.4s;
 }
 
 .dot.active{
-    background:var(--rose);
-
-    transform:scale(1.35);
+ background:var(--rose);
+ transform:scale(1.35);
 }
 
 
-/* =========================================================
+/* =====================================================
    SCENE 5 — GIFT
-========================================================= */
+===================================================== */
 
 .gift{
-    width:150px;
-    height:145px;
+ width:155px;
+ height:150px;
 
-    margin:30px auto;
+ margin:28px auto;
 
-    position:relative;
+ position:relative;
+ cursor:pointer;
 
-    cursor:pointer;
-
-    opacity:0;
-    transform:translateY(15px);
+ opacity:0;
 }
 
 .scene.active .gift{
-    animation:
-        giftIn
-        1s
-        .6s
-        var(--ease)
-        forwards,
-
-        giftFloat
-        3.5s
-        1.8s
-        ease-in-out
-        infinite;
+ animation:
+  giftIn .9s .6s var(--ease) forwards,
+  floatGift 3s 1.7s ease-in-out infinite;
 }
 
 @keyframes giftIn{
-    to{
-        opacity:1;
-        transform:none;
-    }
+ to{
+  opacity:1;
+ }
 }
 
-@keyframes giftFloat{
-    50%{
-        transform:translateY(-8px);
-    }
+@keyframes floatGift{
+ 50%{
+  transform:translateY(-8px);
+ }
 }
 
 .gift-body{
-    position:absolute;
+ position:absolute;
 
-    left:8px;
-    right:8px;
-    bottom:0;
+ left:8px;
+ right:8px;
+ bottom:0;
+ height:90px;
 
-    height:87px;
+ border-radius:6px;
 
-    border-radius:5px;
+ background:linear-gradient(
+  135deg,
+  #edb6bf,
+  #d993a1
+ );
 
-    background:
-        linear-gradient(
-            135deg,
-            #edb6bf,
-            #dc98a5
-        );
-
-    box-shadow:
-        0 22px 40px
-        rgba(100,55,65,.17);
+ box-shadow:0 22px 40px rgba(100,55,65,.18);
 }
 
 .gift-lid{
-    position:absolute;
+ position:absolute;
+ z-index:5;
 
-    z-index:4;
+ left:1px;
+ right:1px;
+ top:30px;
+ height:31px;
 
-    left:1px;
-    right:1px;
+ border-radius:6px;
 
-    top:30px;
+ background:#f0c8cf;
 
-    height:30px;
-
-    border-radius:5px;
-
-    background:#f2cbd0;
-
-    transition:
-        1s var(--ease);
+ transition:1s var(--ease);
 }
 
 .gift.open .gift-lid{
-    transform:
-        translateY(-58px)
-        rotate(-5deg);
+ transform:translateY(-60px) rotate(-5deg);
 }
 
 .ribbon-v{
-    position:absolute;
+ position:absolute;
 
-    width:13px;
+ width:13px;
+ top:0;
+ bottom:0;
+ left:50%;
 
-    top:0;
-    bottom:0;
+ transform:translateX(-50%);
 
-    left:50%;
-
-    transform:translateX(-50%);
-
-    background:#e7c66f;
+ background:#e5c36c;
 }
 
 .ribbon-h{
-    position:absolute;
+ position:absolute;
 
-    height:9px;
+ height:9px;
+ left:0;
+ right:0;
+ top:50%;
 
-    left:0;
-    right:0;
+ transform:translateY(-50%);
 
-    top:50%;
-
-    transform:translateY(-50%);
-
-    background:#e7c66f;
+ background:#e5c36c;
 }
 
 .bow{
-    position:absolute;
+ position:absolute;
+ z-index:8;
 
-    z-index:6;
+ width:58px;
+ height:32px;
 
-    left:50%;
-    top:12px;
+ top:10px;
+ left:50%;
 
-    width:55px;
-    height:30px;
-
-    transform:translateX(-50%);
-
-    pointer-events:none;
+ transform:translateX(-50%);
 }
 
 .bow:before,
 .bow:after{
-    content:"";
+ content:"";
 
-    position:absolute;
+ position:absolute;
 
-    top:3px;
+ top:3px;
 
-    width:28px;
-    height:20px;
+ width:29px;
+ height:21px;
 
-    border-radius:
-        70% 30%
-        70% 30%;
+ border-radius:70% 30% 70% 30%;
 
-    background:
-        linear-gradient(
-            145deg,
-            #e7c66f,
-            #d6ae50
-        );
+ background:linear-gradient(
+  145deg,
+  #ebcd76,
+  #d3aa4d
+ );
 }
 
 .bow:before{
-    left:0;
-    transform:rotate(25deg);
+ left:0;
+ transform:rotate(25deg);
 }
 
 .bow:after{
-    right:0;
-    transform:
-        scaleX(-1)
-        rotate(25deg);
+ right:0;
+ transform:scaleX(-1) rotate(25deg);
 }
 
 
-/* =========================================================
-   SCENE 7 — QUESTION
-========================================================= */
+/* =====================================================
+   SCENE 6
+===================================================== */
 
-.choice{
-    height:105px;
-
-    display:flex;
-
-    justify-content:center;
-
-    align-items:flex-start;
-
-    gap:14px;
-
-    position:relative;
+.six-icon{
+ font-size:38px;
+ margin:20px 0;
+ animation:pulse 2s ease-in-out infinite;
 }
 
-.choice .btn{
-    animation:none!important;
-
-    opacity:1;
-
-    transform:none;
+@keyframes pulse{
+ 50%{
+  transform:scale(1.08);
+ }
 }
 
 
-/* =========================================================
-   SCENE 8 — BALLOON POP
-========================================================= */
+/* =====================================================
+   SCENE 7 — BALLOON POP
+===================================================== */
 
 .balloon-stage{
-    height:330px;
-
-    position:relative;
-
-    display:flex;
-
-    justify-content:center;
-
-    align-items:center;
+ height:330px;
+ position:relative;
+ display:grid;
+ place-items:center;
 }
 
 .balloon{
-    width:105px;
-    height:130px;
+ width:105px;
+ height:135px;
 
-    position:relative;
+ border-radius:52% 48% 48% 48%;
 
-    cursor:pointer;
+ position:relative;
 
-    transform:
-        translateY(180px)
-        rotate(-4deg);
+ cursor:pointer;
 
-    opacity:0;
+ background:
+ radial-gradient(
+  circle at 32% 25%,
+  rgba(255,255,255,.72),
+  transparent 15%
+ ),
+ linear-gradient(
+  145deg,
+  #e8b1bb,
+  #b86d7c
+ );
 
-    filter:
-        drop-shadow(
-            0 18px 20px
-            rgba(80,55,65,.13)
-        );
-}
+ box-shadow:
+ 0 20px 45px rgba(120,65,75,.20),
+ inset -12px -12px 25px rgba(100,50,60,.10);
 
-.scene.active .balloon{
-    animation:
-        balloonRise
-        2.4s
-        .25s
-        var(--ease)
-        forwards,
+ transform:translateY(40px);
+ opacity:0;
 
-        balloonFloat
-        2.8s
-        2.7s
-        ease-in-out
-        infinite;
+ animation:balloonRise 2s .4s var(--ease) forwards,
+           balloonFloat 3s 2.4s ease-in-out infinite;
 }
 
 @keyframes balloonRise{
-    to{
-        opacity:1;
-
-        transform:
-            translateY(0)
-            rotate(-4deg);
-    }
+ to{
+  opacity:1;
+  transform:translateY(0);
+ }
 }
 
 @keyframes balloonFloat{
-    50%{
-        transform:
-            translateY(-13px)
-            rotate(4deg);
-    }
+ 50%{
+  transform:translateY(-12px) rotate(2deg);
+ }
 }
 
-.balloon-body{
-    position:absolute;
+.balloon:after{
+ content:"";
+ position:absolute;
 
-    width:100px;
-    height:120px;
+ width:10px;
+ height:10px;
 
-    left:2px;
-    top:0;
+ bottom:-5px;
+ left:50%;
 
-    border-radius:
-        50%
-        50%
-        48%
-        48%;
+ transform:translateX(-50%) rotate(45deg);
 
-    background:
-        radial-gradient(
-            circle at 32% 25%,
-            rgba(255,255,255,.75) 0 7%,
-            transparent 8%
-        ),
-
-        linear-gradient(
-            145deg,
-            #edb7c0,
-            #c97887
-        );
-
-    box-shadow:
-        inset
-        -12px
-        -14px
-        25px
-        rgba(110,55,70,.13);
-}
-
-.balloon-knot{
-    position:absolute;
-
-    left:45px;
-    top:113px;
-
-    width:13px;
-    height:14px;
-
-    background:#bd7180;
-
-    clip-path:
-        polygon(
-            0 0,
-            100% 0,
-            50% 100%
-        );
+ background:#b86d7c;
 }
 
 .balloon-string{
-    position:absolute;
+ position:absolute;
 
-    left:51px;
-    top:125px;
+ width:1px;
+ height:130px;
 
-    width:1px;
-    height:115px;
+ background:rgba(100,80,85,.35);
 
-    background:
-        linear-gradient(
-            to bottom,
-            rgba(120,90,95,.55),
-            transparent
-        );
+ left:50%;
+ top:100%;
+
+ transform:rotate(3deg);
+ transform-origin:top;
 }
 
-.balloon-hint{
-    position:absolute;
+.pop-text{
+ position:absolute;
+ opacity:0;
 
-    bottom:8px;
-
-    font-size:9px;
-
-    letter-spacing:1.5px;
-
-    color:#988b90;
-
-    opacity:0;
+ font-family:var(--luxury);
+ font-size:28px;
+ color:var(--rose);
+ pointer-events:none;
 }
 
-.scene.active .balloon-hint{
-    animation:
-        slowUp
-        .7s
-        2.9s
-        forwards;
+.balloon-stage.popped .balloon{
+ animation:none;
+ opacity:0;
+ transform:scale(1.45);
+ transition:.35s;
 }
 
-.pop-piece{
-    position:absolute;
-
-    width:7px;
-    height:11px;
-
-    border-radius:2px;
-
-    background:var(--rose);
-
-    pointer-events:none;
-
-    animation:
-        popPiece
-        .75s
-        ease-out
-        forwards;
+.balloon-stage.popped .pop-text{
+ animation:popReveal .8s .15s forwards;
 }
 
-@keyframes popPiece{
-    to{
-        transform:
-            translate(
-                var(--x),
-                var(--y)
-            )
-            rotate(
-                var(--r)
-            );
+@keyframes popReveal{
+ 0%{
+  opacity:0;
+  transform:scale(.5);
+ }
+ 60%{
+  opacity:1;
+  transform:scale(1.15);
+ }
+ 100%{
+  opacity:1;
+  transform:scale(1);
+ }
+}
 
-        opacity:0;
-    }
+.pop-particle{
+ position:absolute;
+ width:7px;
+ height:7px;
+ border-radius:50%;
+ background:var(--rose);
+ pointer-events:none;
+ animation:popParticle .8s ease-out forwards;
+}
+
+@keyframes popParticle{
+ to{
+  transform:translate(var(--x),var(--y)) scale(.1);
+  opacity:0;
+ }
 }
 
 
-/* =========================================================
+/* =====================================================
+   SCENE 8
+===================================================== */
+
+.fake-end{
+ font-family:var(--luxury);
+ font-size:clamp(42px,11vw,75px);
+}
+
+.fake-small{
+ margin-top:18px;
+ font-family:var(--serif);
+ font-style:italic;
+ font-size:23px;
+ color:var(--rose);
+}
+
+
+/* =====================================================
    SCENE 9
-========================================================= */
+===================================================== */
 
-.reveal-card{
-    width:min(550px,90vw);
-
-    padding:35px 25px;
-
-    background:
-        rgba(255,253,249,.85);
-
-    border:
-        1px solid
-        rgba(100,70,78,.10);
-
-    box-shadow:
-        0 25px 75px
-        rgba(66,45,53,.14);
-
-    border-radius:8px;
-}
-
-.reveal-text{
-    font-family:var(--serif);
-
-    font-size:25px;
-
-    line-height:1.5;
-
-    color:#55494d;
+.surprise-reveal{
+ margin-top:20px;
+ font-family:var(--serif);
+ font-size:22px;
+ color:#77696e;
 }
 
 
-/* =========================================================
+/* =====================================================
    SCENE 10 — CAKE
-========================================================= */
+===================================================== */
 
 .cake-stage{
-    width:390px;
-    height:330px;
+ width:390px;
+ height:340px;
 
-    margin:0 auto;
+ margin:5px auto 0;
 
-    position:relative;
+ position:relative;
 
-    touch-action:none;
-    user-select:none;
+ touch-action:none;
+ user-select:none;
 }
 
 .plate{
-    position:absolute;
+ position:absolute;
 
-    width:285px;
-    height:25px;
+ width:285px;
+ height:25px;
 
-    left:50%;
-    bottom:10px;
+ left:50%;
+ bottom:8px;
 
-    transform:translateX(-50%);
+ transform:translateX(-50%);
 
-    border-radius:50%;
+ border-radius:50%;
 
-    background:
-        radial-gradient(
-            ellipse at center,
-            #fff,
-            #e9dedc 68%,
-            #d8cbca
-        );
+ background:
+ radial-gradient(
+  ellipse at center,
+  #fff,
+  #e8dedc 68%,
+  #d3c7c7
+ );
 
-    box-shadow:
-        0 12px 20px
-        rgba(70,50,55,.14),
-
-        inset
-        0 2px 4px
-        rgba(255,255,255,.8);
+ box-shadow:
+ 0 12px 20px rgba(70,50,55,.14),
+  inset 0 2px 4px rgba(255,255,255,.8);
 }
 
 .cake{
-    position:absolute;
+ position:absolute;
 
-    width:220px;
-    height:155px;
+ width:220px;
+ height:155px;
 
-    left:50%;
-    bottom:30px;
+ left:50%;
+ bottom:30px;
 
-    transform:translateX(-50%);
+ transform:translateX(-50%);
 
-    filter:
-        drop-shadow(
-            0 15px 12px
-            rgba(80,50,55,.10)
-        );
+ filter:drop-shadow(
+  0 15px 12px rgba(80,50,55,.12)
+ );
+
+ transition:transform .8s var(--ease);
 }
 
 .cake-body{
-    position:absolute;
+ position:absolute;
 
-    left:0;
-    right:0;
-    bottom:0;
+ left:0;
+ right:0;
+ bottom:0;
 
-    height:100px;
+ height:100px;
 
-    border-radius:
-        10px
-        10px
-        14px
-        14px;
+ border-radius:10px 10px 14px 14px;
 
-    background:
-        linear-gradient(
-            90deg,
-            #d994a0,
-            #edb8bf 18%,
-            #e3a5b0 50%,
-            #efbbc2 82%,
-            #d9929f
-        );
+ background:
+ linear-gradient(
+  90deg,
+  #d68d9a,
+  #edb7bf 20%,
+  #e2a5af 50%,
+  #efbbc2 80%,
+  #d68f9c
+ );
 
-    box-shadow:
-        inset
-        0 9px 15px
-        rgba(255,255,255,.28),
-
-        inset
-        0 -9px 12px
-        rgba(140,70,80,.10);
+ box-shadow:
+ inset 0 9px 15px rgba(255,255,255,.28),
+ inset 0 -9px 12px rgba(140,70,80,.1);
 }
 
 .cake-body:before{
-    content:"";
+ content:"";
 
-    position:absolute;
+ position:absolute;
 
-    left:0;
-    right:0;
-    top:31px;
+ left:0;
+ right:0;
+ top:31px;
 
-    height:5px;
+ height:5px;
 
-    background:#f9dace;
+ background:#f8d8d0;
 
-    box-shadow:
-        0 27px 0 #f9dace,
-        0 54px 0 #f9dace;
+ box-shadow:
+ 0 27px 0 #f8d8d0,
+ 0 54px 0 #f8d8d0;
 }
 
 .top-cake{
-    position:absolute;
+ position:absolute;
 
-    width:190px;
-    height:48px;
+ width:190px;
+ height:48px;
 
-    left:15px;
-    top:12px;
+ left:15px;
+ top:12px;
 
-    border-radius:50%;
+ border-radius:50%;
 
-    background:
-        radial-gradient(
-            ellipse at 48% 40%,
-            #fffdf5 0 18%,
-            #faeadc 48%,
-            #f1d6c8
-        );
+ background:
+ radial-gradient(
+  ellipse at 48% 40%,
+  #fffdf5,
+  #f9e8da 50%,
+  #efd3c5
+ );
 
-    box-shadow:
-        0 4px 8px
-        rgba(100,60,60,.12),
-
-        inset
-        0 4px 7px
-        rgba(255,255,255,.75);
+ box-shadow:
+ 0 4px 8px rgba(100,60,60,.12),
+ inset 0 4px 7px rgba(255,255,255,.75);
 }
 
 .frosting{
-    position:absolute;
+ position:absolute;
 
-    width:200px;
-    height:31px;
+ width:200px;
+ height:31px;
 
-    left:10px;
-    top:34px;
+ left:10px;
+ top:34px;
 
-    border-radius:
-        0 0
-        50% 50%;
+ border-radius:0 0 50% 50%;
 
-    background:
-        linear-gradient(
-            #fff8ef,
-            #f9e5d9
-        );
-
-    box-shadow:
-        inset
-        0 4px 6px
-        rgba(255,255,255,.75);
+ background:linear-gradient(
+  #fff8ef,
+  #f7e1d6
+ );
 }
 
 .drip{
-    position:absolute;
+ position:absolute;
 
-    width:15px;
+ width:15px;
 
-    background:
-        linear-gradient(
-            #fff7ec,
-            #f3dcd1
-        );
+ background:linear-gradient(
+  #fff7ec,
+  #f1d9cf
+ );
 
-    border-radius:
-        0 0
-        10px
-        10px;
+ border-radius:0 0 10px 10px;
 }
 
 .drip.a{
-    height:24px;
-    left:40px;
+ height:24px;
+ left:40px;
 }
 
 .drip.b{
-    height:18px;
-    left:88px;
+ height:18px;
+ left:88px;
 }
 
 .drip.c{
-    height:29px;
-    left:137px;
+ height:29px;
+ left:137px;
 }
 
 .candle{
-    position:absolute;
+ position:absolute;
 
-    z-index:6;
+ z-index:5;
 
-    bottom:113px;
+ bottom:113px;
 
-    width:10px;
-    height:40px;
+ width:10px;
+ height:40px;
 
-    border-radius:5px;
+ border-radius:5px;
 
-    background:
-        repeating-linear-gradient(
-            135deg,
-            #d6b8dc 0 5px,
-            #f1def1 5px 10px
-        );
+ background:
+ repeating-linear-gradient(
+  135deg,
+  #d6b8dc 0 5px,
+  #f1def1 5px 10px
+ );
 }
 
 .c1{left:73px}
@@ -1888,717 +1416,424 @@ p{
 .c3{left:137px}
 
 .flame{
-    position:absolute;
+ position:absolute;
 
-    width:13px;
-    height:19px;
+ width:13px;
+ height:19px;
 
-    left:-1.5px;
-    top:-18px;
+ left:-1.5px;
+ top:-18px;
 
-    border-radius:
-        50%
-        50%
-        45%
-        45%;
+ border-radius:50%;
 
-    background:
-        radial-gradient(
-            circle at 50% 65%,
-            #fff9c7 0 20%,
-            #f4cf6a 28% 60%,
-            transparent 63%
-        );
+ background:
+ radial-gradient(
+  circle at 50% 65%,
+  #fff9c7 0 20%,
+  #f4cf6a 30% 60%,
+  transparent 63%
+ );
 
-    filter:
-        drop-shadow(
-            0 0 5px
-            rgba(240,190,80,.45)
-        );
+ filter:drop-shadow(
+  0 0 5px rgba(240,190,80,.5)
+ );
 
-    animation:
-        flame
-        .55s
-        ease-in-out
-        infinite
-        alternate;
+ animation:flame .55s ease-in-out infinite alternate;
 }
 
 @keyframes flame{
-    from{
-        transform:
-            rotate(-3deg)
-            scale(.92);
-    }
-
-    to{
-        transform:
-            rotate(4deg)
-            scale(1.08);
-    }
+ from{
+  transform:rotate(-3deg) scale(.92);
+ }
+ to{
+  transform:rotate(4deg) scale(1.08);
+ }
 }
 
 
-/* =========================================================
-   REALISTIC KNIFE
-========================================================= */
+/* REALISTIC KNIFE */
 
 .knife{
-    position:absolute;
+ position:absolute;
 
-    z-index:30;
+ z-index:30;
 
-    width:145px;
-    height:13px;
+ width:145px;
+ height:16px;
 
-    right:-3px;
-    top:143px;
+ right:-4px;
+ top:143px;
 
-    border-radius:7px;
+ border-radius:4px;
 
-    background:
-        linear-gradient(
-            to bottom,
-            #ffffff 0%,
-            #ededed 45%,
-            #aaa 100%
-        );
+ background:
+ linear-gradient(
+  to bottom,
+  #fff 0%,
+  #e9e9e9 48%,
+  #a7a7a7 100%
+ );
 
-    transform:
-        rotate(-42deg);
+ transform:rotate(-42deg);
 
-    transform-origin:
-        100% 50%;
+ transform-origin:100% 50%;
 
-    cursor:grab;
+ cursor:grab;
 
-    box-shadow:
-        0 5px 12px
-        rgba(60,50,50,.22),
+ box-shadow:
+ 0 5px 13px rgba(50,45,45,.25),
+ inset 0 1px 2px white;
 
-        inset
-        0 1px 1px
-        rgba(255,255,255,.9);
-
-    transition:
-        transform .5s var(--ease);
+ transition:transform .45s var(--ease);
 }
 
 .knife:before{
-    content:"";
+ content:"";
 
-    position:absolute;
+ position:absolute;
 
-    left:8px;
-    top:2px;
+ left:10px;
+ top:3px;
 
-    width:95px;
-    height:2px;
+ width:98px;
+ height:2px;
 
-    border-radius:50%;
+ border-radius:50%;
 
-    background:
-        rgba(255,255,255,.85);
+ background:rgba(255,255,255,.9);
 }
 
 .knife:after{
-    content:"";
+ content:"";
 
-    position:absolute;
+ position:absolute;
 
-    right:-37px;
-    top:-4px;
+ right:-37px;
+ top:-3px;
 
-    width:42px;
-    height:20px;
+ width:42px;
+ height:22px;
 
-    border-radius:
-        5px
-        7px
-        7px
-        5px;
+ border-radius:5px 7px 7px 5px;
 
-    background:
-        linear-gradient(
-            145deg,
-            #9b7a80,
-            #6d5057
-        );
+ background:
+ linear-gradient(
+  145deg,
+  #9b7a80,
+  #624a50
+ );
 
-    box-shadow:
-        0 3px 5px
-        rgba(60,40,45,.18);
+ box-shadow:0 3px 6px rgba(60,40,45,.2);
 }
 
 .knife.dragging{
-    cursor:grabbing;
+ cursor:grabbing;
 }
 
 .cut-line{
-    position:absolute;
+ position:absolute;
 
-    z-index:8;
+ z-index:8;
 
-    width:4px;
-    height:96px;
+ width:4px;
+ height:95px;
 
-    left:106px;
-    top:53px;
+ left:106px;
+ top:53px;
 
-    background:
-        linear-gradient(
-            to bottom,
-            rgba(140,70,80,.05),
-            rgba(140,70,80,.35),
-            rgba(140,70,80,.12)
-        );
+ background:
+ linear-gradient(
+  to bottom,
+  transparent,
+  rgba(125,60,70,.38),
+  transparent
+ );
 
-    opacity:0;
+ opacity:0;
 
-    transform:
-        rotate(4deg)
-        scaleY(.05);
+ transform:rotate(4deg) scaleY(.05);
 
-    transform-origin:top;
+ transform-origin:top;
 
-    transition:
-        transform .9s var(--ease),
-        opacity .4s;
+ transition:
+ transform .8s var(--ease),
+ opacity .4s;
 }
 
 .cake.cut .cut-line{
-    opacity:1;
-
-    transform:
-        rotate(4deg)
-        scaleY(1);
+ opacity:1;
+ transform:rotate(4deg) scaleY(1);
 }
 
 .cut-hint{
-    font-family:var(--serif);
+ font-family:var(--serif);
+ font-style:italic;
 
-    font-style:italic;
+ font-size:14px;
 
-    font-size:13px;
+ color:#96888c;
 
-    color:#998d91;
-
-    transition:opacity .5s;
+ margin-top:-2px;
 }
 
 
-/* =========================================================
-   SCENE 11 — BIRTHDAY
-========================================================= */
+/* =====================================================
+   SCENE 11 — BALLOON BIRTHDAY
+===================================================== */
 
-.birthday-line{
-    margin-top:20px;
-
-    font-size:23px;
-
-    color:var(--rose);
-
-    opacity:0;
-
-    transform:translateY(10px);
+.birthday-stage{
+ height:310px;
+ position:relative;
+ overflow:hidden;
 }
 
-.scene.active .birthday-line{
-    animation:
-        slowUp
-        .8s
-        .8s
-        forwards;
+.birthday-title{
+ margin-top:30px;
+ opacity:0;
+ transform:translateY(20px);
 }
 
-.birthday-glow{
-    position:absolute;
-
-    width:250px;
-    height:250px;
-
-    left:50%;
-    top:50%;
-
-    transform:
-        translate(-50%,-50%);
-
-    background:
-        radial-gradient(
-            circle,
-            rgba(255,236,192,.35),
-            transparent 70%
-        );
-
-    filter:blur(15px);
-
-    pointer-events:none;
+.scene.active .birthday-title{
+ animation:birthdayIn 1.3s .8s var(--ease) forwards;
 }
 
-
-/* =========================================================
-   SCENE 12 — FINAL BALLOON REVEAL
-========================================================= */
-
-.final-content{
-    width:min(94vw,700px);
+@keyframes birthdayIn{
+ to{
+  opacity:1;
+  transform:none;
+ }
 }
 
-.final-intro{
-    opacity:0;
-    transform:translateY(14px);
+.float-balloon{
+ position:absolute;
+
+ bottom:-150px;
+
+ width:55px;
+ height:72px;
+
+ border-radius:50% 50% 48% 48%;
+
+ animation:floatUp var(--duration) linear forwards;
 }
 
-.scene.active .final-intro{
-    animation:
-        slowUp
-        .8s
-        .25s
-        var(--ease)
-        forwards;
+.float-balloon:after{
+ content:"";
+
+ position:absolute;
+
+ bottom:-4px;
+ left:50%;
+
+ width:7px;
+ height:7px;
+
+ transform:translateX(-50%) rotate(45deg);
+
+ background:inherit;
 }
 
-.final-balloon-stage{
-    height:300px;
-
-    position:relative;
-
-    display:flex;
-
-    justify-content:center;
-
-    align-items:center;
-}
-
-.final-balloon{
-    width:92px;
-    height:115px;
-
-    position:relative;
-
-    cursor:pointer;
-
-    transform:
-        translateY(170px);
-
-    opacity:0;
-
-    filter:
-        drop-shadow(
-            0 18px 22px
-            rgba(80,55,65,.14)
-        );
-}
-
-.scene.active .final-balloon{
-    animation:
-        finalBalloonRise
-        2.3s
-        .45s
-        var(--ease)
-        forwards,
-
-        finalBalloonFloat
-        3s
-        2.8s
-        ease-in-out
-        infinite;
-}
-
-@keyframes finalBalloonRise{
-    to{
-        opacity:1;
-        transform:translateY(0);
-    }
-}
-
-@keyframes finalBalloonFloat{
-    50%{
-        transform:
-            translateY(-12px)
-            rotate(3deg);
-    }
-}
-
-.final-balloon-body{
-    position:absolute;
-
-    width:92px;
-    height:112px;
-
-    border-radius:
-        50%
-        50%
-        48%
-        48%;
-
-    background:
-        radial-gradient(
-            circle at 30% 23%,
-            rgba(255,255,255,.8) 0 7%,
-            transparent 8%
-        ),
-
-        linear-gradient(
-            145deg,
-            #efd0d5,
-            #b66a79
-        );
-}
-
-.final-balloon-knot{
-    position:absolute;
-
-    left:40px;
-    top:104px;
-
-    width:12px;
-    height:13px;
-
-    background:#ad6675;
-
-    clip-path:
-        polygon(
-            0 0,
-            100% 0,
-            50% 100%
-        );
-}
-
-.final-balloon-string{
-    position:absolute;
-
-    left:46px;
-    top:116px;
-
-    width:1px;
-    height:105px;
-
-    background:
-        linear-gradient(
-            to bottom,
-            rgba(100,75,80,.5),
-            transparent
-        );
-}
-
-.final-hint{
-    position:absolute;
-
-    bottom:8px;
-
-    font-size:9px;
-
-    letter-spacing:1.5px;
-
-    color:#998c91;
-
-    opacity:0;
-}
-
-.scene.active .final-hint{
-    animation:
-        slowUp
-        .7s
-        2.7s
-        forwards;
+@keyframes floatUp{
+ to{
+  transform:
+   translate(
+    var(--x),
+    -470px
+   )
+   rotate(var(--r));
+ }
 }
 
 
-/* =========================================================
-   FINAL MESSAGE
-========================================================= */
+/* =====================================================
+   SCENE 12 — FINAL
+===================================================== */
 
-.final-message{
-    display:none;
-
-    width:min(560px,91vw);
-
-    margin:auto;
-
-    padding:27px 22px;
-
-    background:
-        rgba(255,253,249,.86);
-
-    border:
-        1px solid
-        rgba(100,70,78,.10);
-
-    border-radius:8px;
-
-    box-shadow:
-        0 25px 75px
-        rgba(66,45,53,.13);
-
-    animation:
-        messageCardIn
-        1.1s
-        var(--ease)
-        forwards;
+.final-wrap{
+ width:min(92vw,650px);
 }
 
-.final-message.show{
-    display:block;
+.final-title{
+ opacity:0;
+ transform:translateY(15px);
 }
 
-@keyframes messageCardIn{
-    from{
-        opacity:0;
-        transform:
-            translateY(22px)
-            scale(.96);
-        filter:blur(4px);
-    }
-
-    to{
-        opacity:1;
-        transform:none;
-        filter:none;
-    }
+.scene.active .final-title{
+ animation:up 1s .4s forwards;
 }
 
-.final-message .small{
-    font-size:8px;
+.final-card{
+ margin:25px auto 0;
 
-    letter-spacing:3px;
+ width:min(540px,90vw);
 
-    color:#9b8b90;
+ padding:27px 21px;
 
-    text-transform:uppercase;
+ background:rgba(255,255,255,.82);
+
+ border:1px solid var(--line);
+
+ border-radius:22px;
+
+ box-shadow:var(--shadow);
+
+ opacity:0;
+ transform:translateY(18px) scale(.97);
 }
 
-.final-message h2{
-    margin-top:13px;
-
-    font-size:
-        clamp(
-            29px,
-            7vw,
-            47px
-        );
+.scene.active .final-card{
+ animation:finalCard 1s 1.2s var(--ease) forwards;
 }
 
-.type-line{
-    margin-top:19px;
-
-    font-family:var(--serif);
-
-    font-size:20px;
-
-    line-height:1.55;
-
-    color:#5b4e53;
-
-    min-height:100px;
+@keyframes finalCard{
+ to{
+  opacity:1;
+  transform:none;
+ }
 }
 
-.final-sign{
-    margin-top:17px;
+.final-main{
+ font-family:var(--luxury);
 
-    font-family:var(--luxury);
+ font-size:24px;
+ line-height:1.45;
+}
 
-    font-style:italic;
+.final-main span{
+ color:var(--rose);
+}
 
-    font-size:18px;
+.final-line{
+ margin-top:14px;
 
-    color:var(--rose);
+ font-family:var(--serif);
+ font-style:italic;
 
-    opacity:0;
+ font-size:21px;
 
-    animation:
-        slowUp
-        .8s
-        3.5s
-        forwards;
+ color:var(--rose);
 }
 
 .final-small{
-    margin-top:9px;
+ margin-top:10px;
 
-    font-size:9px;
+ font-size:11px;
+ line-height:1.7;
 
-    color:#9b8d90;
+ color:#817477;
+}
 
-    opacity:0;
+.final-end{
+ margin-top:20px;
 
-    animation:
-        slowUp
-        .8s
-        4s
-        forwards;
+ font-family:var(--luxury);
+ font-style:italic;
+
+ font-size:20px;
+
+ color:var(--rose);
+
+ opacity:0;
+}
+
+.scene.active .final-end{
+ animation:up 1s 2.6s forwards;
 }
 
 
-/* =========================================================
-   CONFETTI
-========================================================= */
-
-.confetti{
-    position:fixed;
-
-    top:-20px;
-
-    width:6px;
-    height:10px;
-
-    z-index:100;
-
-    animation:
-        fall
-        3.5s
-        linear
-        forwards;
-}
-
-@keyframes fall{
-    to{
-        transform:
-            translate(
-                var(--x),
-                110vh
-            )
-            rotate(700deg);
-
-        opacity:0;
-    }
-}
-
-
-/* =========================================================
-   CRUMBS
-========================================================= */
-
-.crumb{
-    position:absolute;
-
-    z-index:40;
-
-    width:5px;
-    height:5px;
-
-    border-radius:50%;
-
-    background:#e8b7ad;
-
-    pointer-events:none;
-
-    animation:
-        crumb
-        .9s
-        ease-out
-        forwards;
-}
-
-@keyframes crumb{
-    to{
-        transform:
-            translate(
-                var(--x),
-                var(--y)
-            )
-            rotate(180deg);
-
-        opacity:0;
-    }
-}
-
-
-/* =========================================================
-   FLASH
-========================================================= */
+/* =====================================================
+   FLASH / CONFETTI
+===================================================== */
 
 #flash{
-    position:fixed;
+ position:fixed;
+ inset:0;
 
-    inset:0;
+ z-index:150;
 
-    z-index:150;
+ background:white;
 
-    background:white;
+ opacity:0;
+ pointer-events:none;
+}
 
-    opacity:0;
+.confetti{
+ position:fixed;
 
-    pointer-events:none;
+ top:-20px;
+
+ width:6px;
+ height:10px;
+
+ z-index:140;
+
+ animation:confettiFall 3.5s linear forwards;
+}
+
+@keyframes confettiFall{
+ to{
+  transform:
+   translate(var(--x),110vh)
+   rotate(720deg);
+
+  opacity:0;
+ }
 }
 
 
-/* =========================================================
+/* =====================================================
    MOBILE
-========================================================= */
+===================================================== */
 
 @media(max-width:600px){
 
-    .scene{
-        padding:14px;
-    }
+ .scene{
+  padding:14px;
+ }
 
-    .opening-wrap{
-        min-height:355px;
-    }
+ .opening{
+  min-height:350px;
+ }
 
-    .opening-line{
-        font-size:29px;
-    }
+ .opening-title{
+  font-size:30px;
+ }
 
-    .envelope-stage{
-        height:320px;
-    }
+ .message-card{
+  padding:25px 19px;
+ }
 
-    .letter{
-        height:170px;
-    }
+ .message-text{
+  font-size:18px;
+ }
 
-    .envelope.open .letter{
-        transform:translateY(-95px);
-    }
+ .memory-area{
+  height:350px;
+ }
 
-    .message-card{
-        padding:25px 19px;
-    }
+ .memory-card{
+  width:76vw;
+ }
 
-    .message-text{
-        font-size:18px;
-    }
+ .memory-card img,
+ .no-photo{
+  height:215px;
+ }
 
-    .memory-area{
-        height:350px;
-    }
+ .cake-stage{
+  transform:scale(.86);
+  transform-origin:center;
+  margin-top:-4px;
+ }
 
-    .memory-card{
-        width:76vw;
-    }
+ .birthday-title{
+  font-size:43px;
+ }
 
-    .memory-card img,
-    .no-photo-card{
-        height:215px;
-    }
+ .final-main{
+  font-size:21px;
+ }
 
-    .cake-stage{
-        transform:scale(.87);
-        transform-origin:center;
-        margin-top:-3px;
-    }
-
-    .final-balloon-stage{
-        height:275px;
-    }
-}
-
-
-/* =========================================================
-   REDUCED MOTION
-========================================================= */
-
-@media(prefers-reduced-motion:reduce){
-
-    *,
-    *:before,
-    *:after{
-        animation-duration:.01ms!important;
-        animation-iteration-count:1!important;
-        transition-duration:.01ms!important;
-    }
 }
 
 </style>
@@ -2607,160 +1842,57 @@ p{
 
 <body>
 
-
-<!-- =======================================================
-     RAIN
-======================================================= -->
-
-<div id="rainLayer"></div>
-
-
 <div id="app">
 
-    <div class="ambient one"></div>
-    <div class="ambient two"></div>
+<div class="ambient one"></div>
+<div class="ambient two"></div>
 
-</div>
-
-
-<div id="flash"></div>
-
-
-<script>
-
-/* =========================================================
-   CREATE PARTICLES
-========================================================= */
-
-for(let i=0;i<28;i++){
-
-    const p =
-        document.createElement("div");
-
-    p.className="particle";
-
-    p.style.left =
-        Math.random()*100+"%";
-
-    p.style.animationDuration =
-        (11+Math.random()*10)+"s";
-
-    p.style.animationDelay =
-        (Math.random()*10)+"s";
-
-    document.getElementById("app")
-        .appendChild(p);
-}
+<!-- RAIN -->
+<div id="rain"></div>
+<div id="rainGround"></div>
 
 
-/* =========================================================
-   CREATE RAIN
-========================================================= */
+<!-- ===================================================
+     SCENE 1
+=================================================== -->
 
-const rainLayer =
-    document.getElementById("rainLayer");
-
-function createRain(){
-
-    if(!rainLayer) return;
-
-    const amount =
-        window.innerWidth < 600
-        ? 105
-        : 150;
-
-    for(let i=0;i<amount;i++){
-
-        const drop =
-            document.createElement("span");
-
-        drop.className="rain-drop";
-
-        const random =
-            Math.random();
-
-        if(random>.82){
-
-            drop.classList.add("deep");
-
-        }else if(random<.18){
-
-            drop.classList.add("soft");
-        }
-
-        drop.style.setProperty(
-            "--left",
-            (Math.random()*120-10)+"%"
-        );
-
-        drop.style.setProperty(
-            "--duration",
-            (.75+Math.random()*.9)+"s"
-        );
-
-        drop.style.setProperty(
-            "--delay",
-            (-Math.random()*3)+"s"
-        );
-
-        drop.style.setProperty(
-            "--opacity",
-            (.18+Math.random()*.42)
-        );
-
-        rainLayer.appendChild(drop);
-    }
-}
-
-createRain();
-
-
-/* =========================================================
-   SCENES
-========================================================= */
-
-const sceneHTML = {
-
-1:`
 <section class="scene active" id="s1">
 
 <div class="content">
 
-<div class="opening-wrap">
+<div class="opening">
 
-<div class="date-mark">
+<div class="date">
 A LITTLE SOMETHING · 2026
 </div>
 
-<div class="opening-line">
+<div class="opening-title">
 Aaj kuch alag sa<br>
-karne ka mann tha…
+karne ka mann tha…<br>
+<span>toh ek chhoti si yaad bana di.</span>
 </div>
 
-<div class="opening-line second">
-Toh socha… ek chhoti si yaad bana dete hain. ✦
+<div class="open-line"></div>
+
+<div class="open-small">
+Bas thoda sa waqt dijiye… ✦
 </div>
 
-<div class="opening-divider"></div>
-
-<div class="opening-sub">
-Bas thoda sa waqt dijiye…
-</div>
-
-</div>
-
-<button
-class="btn primary"
-onclick="go(2)">
+<button class="btn primary" onclick="go(2)">
 AAGE BADHEIN →
 </button>
 
 </div>
 
-</section>
-`,
+</div>
 
-2:`
+</section>
+
+
+<!-- ===================================================
+     SCENE 2
+=================================================== -->
+
 <section class="scene" id="s2">
 
 <div class="content">
@@ -2776,14 +1908,9 @@ Kuch likha hai,<br>
 
 <div class="envelope-stage">
 
-<div
-class="envelope"
-id="envelope"
-onclick="openLetter()">
+<div class="envelope" id="envelope" onclick="openLetter()">
 
-<div class="envelope-shadow"></div>
 <div class="envelope-back"></div>
-<div class="letter-glow"></div>
 
 <div class="letter">
 
@@ -2814,9 +1941,12 @@ TAP TO OPEN
 </div>
 
 </section>
-`,
 
-3:`
+
+<!-- ===================================================
+     SCENE 3
+=================================================== -->
+
 <section class="scene" id="s3">
 
 <div class="content">
@@ -2845,7 +1975,7 @@ jo aap thoda ruk kar dekhein…
 </span>
 
 <span>
-Kuch photos, kuch chhoti si memories,
+Kuch photos, kuch memories,
 aur thoda sa woh jo words mein
 properly explain nahi hota.
 </span>
@@ -2862,9 +1992,7 @@ aur aap hamesha khush rahen. 🩵
 — from someone who remembers :)
 </div>
 
-<button
-class="btn primary message-next"
-onclick="go(4)">
+<button class="btn primary" onclick="go(4)">
 MEMORIES DEKHEIN ✦
 </button>
 
@@ -2873,9 +2001,12 @@ MEMORIES DEKHEIN ✦
 </div>
 
 </section>
-`,
 
-4:`
+
+<!-- ===================================================
+     SCENE 4
+=================================================== -->
+
 <section class="scene" id="s4">
 
 <div class="content">
@@ -2897,9 +2028,7 @@ Kuch photos,<br>
 memory ✦
 </div>
 
-<img
-src="1000244923.png"
-alt="Memory 1">
+<img src="1000244923.png">
 
 <div class="memory-caption">
 Ek khoobsurat memory.
@@ -2914,9 +2043,7 @@ Ek khoobsurat memory.
 another one ✦
 </div>
 
-<img
-src="1000244922.png"
-alt="Memory 2">
+<img src="1000244922.png">
 
 <div class="memory-caption">
 Ek aur pyari si yaad…
@@ -2931,9 +2058,9 @@ Ek aur pyari si yaad…
 hmm… 👀
 </div>
 
-<div class="no-photo-card">
+<div class="no-photo">
 
-<div class="camera">
+<div class="no-photo-icon">
 📷
 </div>
 
@@ -2942,12 +2069,8 @@ Humari saath mein photo toh hai hi nahi 😅
 </div>
 
 <div class="no-photo-text">
-Lagta hai ye frame abhi kisi
+Lagta hai ye frame kisi
 future memory ka wait kar raha hai…
-</div>
-
-<div class="no-photo-small">
-Ek photo abhi baaki hai. ✦
 </div>
 
 </div>
@@ -2957,6 +2080,7 @@ Maybe someday. :)
 </div>
 
 </div>
+
 
 <div class="dots">
 
@@ -2968,19 +2092,19 @@ Maybe someday. :)
 
 </div>
 
-<button
-class="btn primary"
-id="memoryBtn"
-onclick="nextMemory()">
+<button class="btn primary" id="memoryBtn" onclick="nextMemory()">
 NEXT MEMORY →
 </button>
 
 </div>
 
 </section>
-`,
 
-5:`
+
+<!-- ===================================================
+     SCENE 5
+=================================================== -->
+
 <section class="scene" id="s5">
 
 <div class="content">
@@ -2994,10 +2118,7 @@ Ye bhi<br>
 <span class="accent">open kijiye. 🎁</span>
 </h2>
 
-<div
-class="gift"
-id="gift"
-onclick="openGift()">
+<div class="gift" id="gift" onclick="openGift()">
 
 <div class="gift-body">
 
@@ -3022,9 +2143,12 @@ Is baar thoda aur patience. 😌
 </div>
 
 </section>
-`,
 
-6:`
+
+<!-- ===================================================
+     SCENE 6
+=================================================== -->
+
 <section class="scene" id="s6">
 
 <div class="content">
@@ -3035,148 +2159,125 @@ Inside
 
 <h2>
 Abhi ek<br>
-<span class="accent">
-cheez aur baaki hai.
-</span>
+<span class="accent">cheez aur baaki hai.</span>
 </h2>
 
-<div
-class="serif"
-style="
-font-size:25px;
-margin-top:22px;
-color:var(--rose);
-">
+<div class="six-icon">
+✦
+</div>
+
+<div class="serif" style="font-size:25px;color:var(--rose)">
 Aur woh thodi important hai…
 </div>
 
-<button
-class="btn primary"
-onclick="go(7)">
+<button class="btn primary" onclick="go(7)">
 AAGE →
 </button>
 
 </div>
 
 </section>
-`,
 
-7:`
+
+<!-- ===================================================
+     SCENE 7 — BALLOON POP
+=================================================== -->
+
 <section class="scene" id="s7">
 
 <div class="content">
 
 <div class="eyebrow">
-Ek chhota sa question
+Before the surprise
 </div>
 
 <h2>
-Surprise ke liye<br>
-<span class="accent">
-ready?
-</span>
+Ek balloon pop<br>
+<span class="accent">karna hai. 🎈</span>
 </h2>
 
-<div class="choice">
+<div class="balloon-stage" id="balloonStage">
 
-<button
-class="btn primary"
-onclick="yesAnswer()">
-HAAN 🩵
-</button>
-
-<button
-class="btn"
-id="noBtn"
-onclick="noAnswer()">
-NAHI
-</button>
-
-</div>
-
-</div>
-
-</section>
-`,
-
-8:`
-<section class="scene" id="s8">
-
-<div class="content">
-
-<div class="eyebrow">
-One last little thing…
-</div>
-
-<h2>
-Pehle ye<br>
-<span class="accent">
-balloon pop kijiye. 🎈
-</span>
-</h2>
-
-<div class="balloon-stage">
-
-<div
-class="balloon"
-id="balloon"
-onclick="popBalloon()">
-
-<div class="balloon-body"></div>
-
-<div class="balloon-knot"></div>
+<div class="balloon" onclick="popBalloon()">
 
 <div class="balloon-string"></div>
 
 </div>
 
-<div class="balloon-hint">
-TAP THE BALLOON ✦
+<div class="pop-text">
+SURPRISE ✦
 </div>
 
+</div>
+
+<div class="serif" style="font-size:18px;color:#92858a">
+Balloon ko tap kijiye…
 </div>
 
 </div>
 
 </section>
-`,
 
-9:`
+
+<!-- ===================================================
+     SCENE 8
+=================================================== -->
+
+<section class="scene" id="s8">
+
+<div class="content">
+
+<div class="eyebrow">
+The end…
+</div>
+
+<div class="fake-end">
+Bas itna hi.
+</div>
+
+<div class="fake-small">
+…shayad. 👀
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ===================================================
+     SCENE 9
+=================================================== -->
+
 <section class="scene" id="s9">
 
 <div class="content">
 
-<div class="reveal-card">
-
 <div class="eyebrow">
-Wait…
+Wait.
 </div>
 
-<h2>
+<h1>
 Aapko laga<br>
-<span class="accent">
-khatam ho gaya? 😂
-</span>
-</h2>
+<span class="accent">khatam ho gaya? 😂</span>
+</h1>
 
-<div class="reveal-text">
-Nahi ji. Abhi main part baaki hai. ✦
+<div class="surprise-reveal">
+Nahi ji. Abhi main part baaki hai.
 </div>
 
-<button
-class="btn primary"
-onclick="go(10)">
-ASLI SURPRISE →
+<button class="btn primary" onclick="go(10)">
+ASLI SURPRISE ✦
 </button>
 
 </div>
 
-</div>
-
 </section>
-`,
 
-10:`
+
+<!-- ===================================================
+     SCENE 10 — CAKE
+=================================================== -->
+
 <section class="scene" id="s10">
 
 <div class="content">
@@ -3187,20 +2288,14 @@ The important part
 
 <h2>
 Cake cut karein,<br>
-<span class="accent">
-Pallavi? 🎂
-</span>
+<span class="accent">Pallavi? 🎂</span>
 </h2>
 
-<div
-class="cake-stage"
-id="cakeStage">
+<div class="cake-stage" id="cakeStage">
 
 <div class="plate"></div>
 
-<div
-class="cake"
-id="cake">
+<div class="cake" id="cake">
 
 <div class="cake-body"></div>
 
@@ -3230,63 +2325,63 @@ id="cake">
 
 </div>
 
-<div
-class="knife"
-id="knife">
-</div>
+
+<div class="knife" id="knife"></div>
 
 </div>
 
-<div
-class="cut-hint"
-id="cutHint">
+<div class="cut-hint" id="cutHint">
 Knife ko cake ke across smoothly drag kijiye ✦
 </div>
 
 </div>
 
 </section>
-`,
 
-11:`
+
+<!-- ===================================================
+     SCENE 11 — BIRTHDAY
+=================================================== -->
+
 <section class="scene" id="s11">
 
 <div class="content">
-
-<div class="birthday-glow"></div>
 
 <div class="eyebrow">
 And finally…
 </div>
 
-<h1>
+<div class="birthday-stage" id="birthdayStage">
+
+<h1 class="birthday-title">
 Happy Birthday,<br>
-<span class="accent">
-Pallavi! 🎉
-</span>
+<span class="accent">Pallavi! 🎉</span>
 </h1>
 
-<div class="birthday-line">
+</div>
+
+<div class="serif" style="font-size:22px;color:var(--rose)">
 Aaj ka cake officially cut ho gaya. ✨
 </div>
 
-<button
-class="btn primary"
-onclick="go(12)">
+<button class="btn primary" onclick="go(12)">
 EK LAST BAAT…
 </button>
 
 </div>
 
 </section>
-`,
 
-12:`
+
+<!-- ===================================================
+     SCENE 12 — FINAL
+=================================================== -->
+
 <section class="scene" id="s12">
 
-<div class="content final-content">
+<div class="content final-wrap">
 
-<div class="final-intro">
+<div class="final-title">
 
 <div class="eyebrow">
 Aur ek last baat…
@@ -3294,625 +2389,363 @@ Aur ek last baat…
 
 <h2>
 Kuch friendships<br>
-<span class="accent">
-bas bani rehni chahiye.
-</span>
+<span class="accent">bas bani rehni chahiye.</span>
 </h2>
 
 </div>
 
 
-<div
-class="final-balloon-stage"
-id="finalBalloonStage">
+<div class="final-card">
 
-<div
-class="final-balloon"
-id="finalBalloon"
-onclick="popFinalBalloon()">
-
-<div class="final-balloon-body"></div>
-
-<div class="final-balloon-knot"></div>
-
-<div class="final-balloon-string"></div>
-
+<div class="final-main">
+Aap meri life ki<br>
+<span>first friend hain.</span>
 </div>
 
-<div class="final-hint">
-EK LAST SURPRISE ✦
-</div>
-
-</div>
-
-
-<div
-class="final-message"
-id="finalMessage">
-
-<div class="small">
-A little truth
-</div>
-
-<h2>
-For you,
-<span class="accent">Pallavi.</span>
-</h2>
-
-<div
-class="type-line"
-id="typeLine">
-</div>
-
-<div class="final-sign">
-Happy Birthday once again. ✦
+<div class="final-line">
+Aur bas ek wish hai… ✨
 </div>
 
 <div class="final-small">
+Humari friendship aise hi rahe,
+chahe kuch bhi ho. 🩵
+</div>
+
+</div>
+
+<div class="final-end">
+Happy Birthday once again, Pallavi. ✦
+</div>
+
+<div class="serif" style="margin-top:8px;color:#9a8d91;font-size:15px">
 Ab jaaiye… birthday enjoy kijiye 😌🎂
 </div>
 
 </div>
 
+</section>
+
+
 </div>
 
-</section>
-`
-
-};
+<div id="flash"></div>
 
 
-/* =========================================================
-   INSERT SCENES
-========================================================= */
+<script>
 
-document.getElementById("app")
-    .insertAdjacentHTML(
-        "beforeend",
-        Object.values(sceneHTML).join("")
-    );
+/* =====================================================
+   RAIN ENGINE
+===================================================== */
+
+const rain =
+document.getElementById("rain");
+
+const rainGround =
+document.getElementById("rainGround");
+
+for(let i=0;i<110;i++){
+
+ const drop =
+ document.createElement("span");
+
+ drop.className="rain-drop";
+
+ const depth=Math.random();
+
+ drop.style.left =
+ Math.random()*120+"%";
+
+ drop.style.setProperty(
+  "--h",
+  (35+Math.random()*90)+"px"
+ );
+
+ drop.style.setProperty(
+  "--o",
+  .12+Math.random()*.42
+ );
+
+ drop.style.setProperty(
+  "--speed",
+  (.65+Math.random()*1.5)+"s"
+ );
+
+ drop.style.setProperty(
+  "--delay",
+  -(Math.random()*5)+"s"
+ );
+
+ drop.style.setProperty(
+  "--drift",
+  (8+Math.random()*30)+"vw"
+ );
+
+ drop.style.setProperty(
+  "--blur",
+  depth>.75 ? "1px" : "0px"
+ );
+
+ if(depth>.72)
+  drop.classList.add("soft");
+
+ if(depth>.91)
+  drop.classList.add("bright");
+
+ rain.appendChild(drop);
+}
 
 
-/* =========================================================
+/* ground rain impacts */
+
+function splash(){
+
+ const s =
+ document.createElement("span");
+
+ s.className="splash";
+
+ s.style.left =
+ Math.random()*100+"%";
+
+ s.style.bottom =
+ Math.random()*18+"px";
+
+ rainGround.appendChild(s);
+
+ setTimeout(()=>{
+  s.remove();
+ },700);
+}
+
+setInterval(()=>{
+ splash();
+ if(Math.random()>.55) splash();
+},100);
+
+
+/* =====================================================
+   PARTICLES
+===================================================== */
+
+for(let i=0;i<28;i++){
+
+ const p =
+ document.createElement("div");
+
+ p.className="particle";
+
+ p.style.left =
+ Math.random()*100+"%";
+
+ p.style.animationDuration =
+ (11+Math.random()*10)+"s";
+
+ p.style.animationDelay =
+ -(Math.random()*10)+"s";
+
+ document.getElementById("app")
+ .appendChild(p);
+}
+
+
+/* =====================================================
    NAVIGATION
-========================================================= */
+===================================================== */
 
 let busy=false;
 
 function go(n){
 
-    if(busy) return;
+ if(busy) return;
 
-    busy=true;
+ busy=true;
 
-    document
-        .querySelectorAll(".scene")
-        .forEach(scene=>{
-            scene.classList.remove("active");
-        });
+ document
+ .querySelectorAll(".scene")
+ .forEach(s=>{
+  s.classList.remove("active");
+ });
 
-    setTimeout(()=>{
+ setTimeout(()=>{
 
-        const target =
-            document.getElementById("s"+n);
+  const target =
+  document.getElementById("s"+n);
 
-        if(target){
+  if(target)
+   target.classList.add("active");
 
-            target.classList.add("active");
+  busy=false;
 
-        }
-
-        setTimeout(()=>{
-            busy=false;
-        },600);
-
-    },100);
-
+ },120);
 }
 
 
-/* =========================================================
+/* =====================================================
    LETTER
-========================================================= */
+===================================================== */
 
 let letterOpened=false;
 
 function openLetter(){
 
-    if(letterOpened) return;
+ if(letterOpened) return;
 
-    letterOpened=true;
+ letterOpened=true;
 
-    const envelope =
-        document.getElementById("envelope");
+ const env =
+ document.getElementById("envelope");
 
-    if(!envelope) return;
+ env.classList.add("open");
 
-    envelope.classList.add("open");
+ setTimeout(flash,650);
 
-    setTimeout(()=>{
-        flash();
-    },500);
-
-    setTimeout(()=>{
-        go(3);
-    },1700);
-
+ setTimeout(()=>{
+  go(3);
+ },1800);
 }
 
 
-/* =========================================================
+/* =====================================================
    MEMORIES
-========================================================= */
+===================================================== */
 
 let memory=1;
 
 function nextMemory(){
 
-    if(memory<3){
+ if(memory<3){
 
-        const oldCard =
-            document.getElementById(
-                "m"+memory
-            );
+  document
+  .getElementById("m"+memory)
+  .classList.remove("active");
 
-        const oldDot =
-            document.getElementById(
-                "d"+memory
-            );
+  document
+  .getElementById("d"+memory)
+  .classList.remove("active");
 
-        if(oldCard)
-            oldCard.classList.remove(
-                "active"
-            );
+  memory++;
 
-        if(oldDot)
-            oldDot.classList.remove(
-                "active"
-            );
+  setTimeout(()=>{
 
-        memory++;
+   document
+   .getElementById("m"+memory)
+   .classList.add("active");
 
-        setTimeout(()=>{
+   document
+   .getElementById("d"+memory)
+   .classList.add("active");
 
-            const newCard =
-                document.getElementById(
-                    "m"+memory
-                );
+  },180);
 
-            const newDot =
-                document.getElementById(
-                    "d"+memory
-                );
+  if(memory===3){
 
-            if(newCard)
-                newCard.classList.add(
-                    "active"
-                );
+   document
+   .getElementById("memoryBtn")
+   .textContent="AAGE CHALEIN ✦";
 
-            if(newDot)
-                newDot.classList.add(
-                    "active"
-                );
+  }
 
-        },160);
+ }else{
 
-        if(memory===3){
+  go(5);
 
-            const btn =
-                document.getElementById(
-                    "memoryBtn"
-                );
-
-            if(btn)
-                btn.textContent=
-                    "AAGE CHALEIN ✦";
-        }
-
-    }else{
-
-        go(5);
-
-    }
-
+ }
 }
 
 
-/* =========================================================
+/* =====================================================
    GIFT
-========================================================= */
+===================================================== */
 
 let giftOpened=false;
 
 function openGift(){
 
-    if(giftOpened) return;
+ if(giftOpened) return;
 
-    giftOpened=true;
+ giftOpened=true;
 
-    const gift =
-        document.getElementById("gift");
+ document
+ .getElementById("gift")
+ .classList.add("open");
 
-    if(gift)
-        gift.classList.add("open");
+ confetti(18);
 
-    setTimeout(()=>{
-        confetti(18);
-    },450);
-
-    setTimeout(()=>{
-        go(6);
-    },1250);
-
+ setTimeout(()=>{
+  go(6);
+ },1300);
 }
 
 
-/* =========================================================
-   QUESTION
-========================================================= */
-
-let noCount=0;
-
-function noAnswer(){
-
-    const button =
-        document.getElementById(
-            "noBtn"
-        );
-
-    if(!button) return;
-
-    noCount++;
-
-    if(noCount===1){
-
-        button.style.transform=
-            "translate(42px,-5px)";
-
-        button.textContent=
-            "Sochiye 😌";
-
-    }
-
-    else if(noCount===2){
-
-        button.style.transform=
-            "translate(-38px,13px)";
-
-        button.textContent=
-            "Pakka? 😂";
-
-    }
-
-    else{
-
-        button.style.opacity="0";
-
-        button.style.pointerEvents=
-            "none";
-    }
-
-}
-
-
-function yesAnswer(){
-
-    confetti(14);
-
-    go(8);
-
-}
-
-
-/* =========================================================
+/* =====================================================
    BALLOON POP
-========================================================= */
+===================================================== */
 
 let balloonPopped=false;
 
 function popBalloon(){
 
-    if(balloonPopped) return;
+ if(balloonPopped) return;
 
-    balloonPopped=true;
+ balloonPopped=true;
 
-    const balloon =
-        document.getElementById(
-            "balloon"
-        );
+ const stage =
+ document.getElementById("balloonStage");
 
-    if(!balloon) return;
+ stage.classList.add("popped");
 
-    const rect =
-        balloon.getBoundingClientRect();
+ flash();
 
-    const centerX =
-        rect.left + rect.width/2;
+ /* burst particles */
 
-    const centerY =
-        rect.top + rect.height/2;
+ for(let i=0;i<24;i++){
 
+  const p =
+  document.createElement("span");
 
-    for(let i=0;i<22;i++){
+  p.className="pop-particle";
 
-        const piece =
-            document.createElement(
-                "div"
-            );
+  p.style.left="50%";
+  p.style.top="48%";
 
-        piece.className=
-            "pop-piece";
+  p.style.setProperty(
+   "--x",
+   ((Math.random()-.5)*220)+"px"
+  );
 
-        piece.style.left=
-            centerX+"px";
+  p.style.setProperty(
+   "--y",
+   ((Math.random()-.5)*190)+"px"
+  );
 
-        piece.style.top=
-            centerY+"px";
+  stage.appendChild(p);
 
-        piece.style.setProperty(
-            "--x",
-            ((Math.random()-.5)*210)+"px"
-        );
+  setTimeout(()=>{
+   p.remove();
+  },900);
+ }
 
-        piece.style.setProperty(
-            "--y",
-            ((Math.random()-.5)*180)+"px"
-        );
+ confetti(20);
 
-        piece.style.setProperty(
-            "--r",
-            (Math.random()*720)+"deg"
-        );
+ setTimeout(()=>{
+  go(8);
+ },1700);
 
-        document.body.appendChild(piece);
-
-        setTimeout(()=>{
-            piece.remove();
-        },800);
-    }
-
-    balloon.animate(
-
-        [
-            {
-                transform:
-                    "scale(1)",
-                opacity:1
-            },
-
-            {
-                transform:
-                    "scale(1.35)",
-                opacity:.8
-            },
-
-            {
-                transform:
-                    "scale(0)",
-                opacity:0
-            }
-
-        ],
-
-        {
-            duration:350,
-            easing:"ease-out",
-            fill:"forwards"
-        }
-
-    );
-
-    flash();
-
-    setTimeout(()=>{
-        go(9);
-    },750);
-
+ setTimeout(()=>{
+  go(9);
+ },4200);
 }
 
 
-/* =========================================================
-   FINAL BALLOON
-========================================================= */
-
-let finalPopped=false;
-
-function popFinalBalloon(){
-
-    if(finalPopped) return;
-
-    finalPopped=true;
-
-    const balloon =
-        document.getElementById(
-            "finalBalloon"
-        );
-
-    if(!balloon) return;
-
-    const rect =
-        balloon.getBoundingClientRect();
-
-    const centerX =
-        rect.left + rect.width/2;
-
-    const centerY =
-        rect.top + rect.height/2;
-
-
-    for(let i=0;i<30;i++){
-
-        const piece =
-            document.createElement(
-                "div"
-            );
-
-        piece.className=
-            "pop-piece";
-
-        piece.style.left=
-            centerX+"px";
-
-        piece.style.top=
-            centerY+"px";
-
-        piece.style.background=
-            i%2
-            ? "#d9bb6d"
-            : "#b76d7c";
-
-        piece.style.setProperty(
-            "--x",
-            ((Math.random()-.5)*250)+"px"
-        );
-
-        piece.style.setProperty(
-            "--y",
-            ((Math.random()-.5)*210)+"px"
-        );
-
-        piece.style.setProperty(
-            "--r",
-            (Math.random()*720)+"deg"
-        );
-
-        document.body.appendChild(piece);
-
-        setTimeout(()=>{
-            piece.remove();
-        },850);
-    }
-
-
-    balloon.animate(
-
-        [
-            {
-                transform:"scale(1)",
-                opacity:1
-            },
-
-            {
-                transform:"scale(1.4)",
-                opacity:.75
-            },
-
-            {
-                transform:"scale(0)",
-                opacity:0
-            }
-
-        ],
-
-        {
-            duration:400,
-            easing:"ease-out",
-            fill:"forwards"
-        }
-
-    );
-
-    flash();
-
-    setTimeout(()=>{
-
-        const stage =
-            document.getElementById(
-                "finalBalloonStage"
-            );
-
-        const message =
-            document.getElementById(
-                "finalMessage"
-            );
-
-        if(stage)
-            stage.style.display="none";
-
-        if(message)
-            message.classList.add(
-                "show"
-            );
-
-        typeFinalMessage();
-
-    },650);
-
-}
-
-
-/* =========================================================
-   TYPEWRITER FINAL MESSAGE
-========================================================= */
-
-function typeFinalMessage(){
-
-    const element =
-        document.getElementById(
-            "typeLine"
-        );
-
-    if(!element) return;
-
-    const text =
-`Aap meri life ki first friend hain.
-Aur bas ek wish hai —
-humari friendship hamesha aise hi rahe.
-
-Chahe time kitna bhi badal jaaye,
-kuch logon ki jagah nahi badalni chahiye. 🩵`;
-
-    let index=0;
-
-    element.textContent="";
-
-    function type(){
-
-        if(index<text.length){
-
-            element.textContent +=
-                text[index];
-
-            index++;
-
-            let delay=32;
-
-            if(
-                text[index-1]==="." ||
-                text[index-1]==="—"
-            ){
-                delay=180;
-            }
-
-            if(
-                text[index-1]==="\n"
-            ){
-                delay=280;
-            }
-
-            setTimeout(
-                type,
-                delay
-            );
-
-        }
-
-    }
-
-    type();
-
-}
-
-
-/* =========================================================
+/* =====================================================
    CAKE KNIFE
-========================================================= */
+===================================================== */
 
-const knife=
-    document.getElementById("knife");
+const knife =
+document.getElementById("knife");
 
-const cake=
-    document.getElementById("cake");
+const cake =
+document.getElementById("cake");
 
 let dragging=false;
 let cutDone=false;
@@ -3923,414 +2756,390 @@ let startY=0;
 
 function pointer(e){
 
-    if(
-        e.touches &&
-        e.touches.length
-    ){
+ if(e.touches && e.touches.length){
 
-        return{
-            x:e.touches[0].clientX,
-            y:e.touches[0].clientY
-        };
+  return{
+   x:e.touches[0].clientX,
+   y:e.touches[0].clientY
+  };
 
-    }
+ }
 
-    return{
-        x:e.clientX,
-        y:e.clientY
-    };
+ return{
+  x:e.clientX,
+  y:e.clientY
+ };
 }
 
 
 function knifeDown(e){
 
-    if(cutDone) return;
+ if(cutDone) return;
 
-    const p=
-        pointer(e);
+ const p=pointer(e);
 
-    dragging=true;
+ dragging=true;
 
-    startX=p.x;
-    startY=p.y;
+ startX=p.x;
+ startY=p.y;
 
-    knife.classList.add(
-        "dragging"
-    );
+ knife.classList.add("dragging");
 
-    e.preventDefault();
+ e.preventDefault();
 }
 
 
 function knifeMove(e){
 
-    if(!dragging || cutDone)
-        return;
+ if(!dragging || cutDone)
+  return;
 
-    const p=
-        pointer(e);
+ const p=pointer(e);
 
-    const dx=
-        p.x-startX;
+ const dx=p.x-startX;
+ const dy=p.y-startY;
 
-    const dy=
-        p.y-startY;
+ const x=
+ Math.max(-110,Math.min(8,dx));
 
+ const y=
+ Math.max(-12,Math.min(45,dy));
 
-    const x=
-        Math.max(
-            -105,
-            Math.min(8,dx)
-        );
+ knife.style.transform=
+ `translate3d(${x}px,${y}px,0) rotate(-42deg)`;
 
-    const y=
-        Math.max(
-            -12,
-            Math.min(45,dy)
-        );
+ if(dx < -68){
+  cutCake();
+ }
 
-
-    knife.style.transform=
-        `translate3d(
-            ${x}px,
-            ${y}px,
-            0
-        )
-        rotate(-42deg)`;
-
-
-    if(dx<-68){
-
-        cutCake();
-
-    }
-
-    e.preventDefault();
+ e.preventDefault();
 }
 
 
 function knifeUp(){
 
-    if(!dragging)
-        return;
+ if(!dragging) return;
 
-    dragging=false;
+ dragging=false;
 
-    knife.classList.remove(
-        "dragging"
-    );
+ knife.classList.remove("dragging");
 
-    if(!cutDone){
+ if(!cutDone){
 
-        knife.style.transform=
-            "translate3d(0,0,0) rotate(-42deg)";
-    }
-
+  knife.style.transform=
+  "translate3d(0,0,0) rotate(-42deg)";
+ }
 }
 
 
-if(knife){
+knife.addEventListener(
+ "mousedown",
+ knifeDown
+);
 
-    knife.addEventListener(
-        "mousedown",
-        knifeDown
-    );
+window.addEventListener(
+ "mousemove",
+ knifeMove
+);
 
-    window.addEventListener(
-        "mousemove",
-        knifeMove
-    );
+window.addEventListener(
+ "mouseup",
+ knifeUp
+);
 
-    window.addEventListener(
-        "mouseup",
-        knifeUp
-    );
+knife.addEventListener(
+ "touchstart",
+ knifeDown,
+ {passive:false}
+);
 
-    knife.addEventListener(
-        "touchstart",
-        knifeDown,
-        {passive:false}
-    );
+window.addEventListener(
+ "touchmove",
+ knifeMove,
+ {passive:false}
+);
 
-    window.addEventListener(
-        "touchmove",
-        knifeMove,
-        {passive:false}
-    );
-
-    window.addEventListener(
-        "touchend",
-        knifeUp
-    );
-}
+window.addEventListener(
+ "touchend",
+ knifeUp
+);
 
 
-/* =========================================================
-   CAKE CUT
-========================================================= */
+/* =====================================================
+   CUT CAKE
+===================================================== */
 
 function cutCake(){
 
-    if(cutDone)
-        return;
+ if(cutDone) return;
 
-    cutDone=true;
+ cutDone=true;
+ dragging=false;
 
-    dragging=false;
+ cake.classList.add("cut");
 
-    cake.classList.add("cut");
+ document
+ .getElementById("cutHint")
+ .textContent="Perfect! 🎂✨";
 
-    const hint=
-        document.getElementById(
-            "cutHint"
-        );
+ knife.style.transition=
+ "transform 1s var(--ease)";
 
-    if(hint)
-        hint.textContent=
-            "Perfect! 🎂✨";
-
-
-    knife.style.transition=
-        "transform 1.1s cubic-bezier(.22,.75,.18,1)";
-
-    knife.style.transform=
-        "translate3d(-72px,5px,0) rotate(-42deg)";
+ knife.style.transform=
+ "translate3d(-72px,5px,0) rotate(-42deg)";
 
 
-    /* EXTINGUISH FLAMES */
+ /* candles */
 
-    setTimeout(()=>{
+ setTimeout(()=>{
 
-        document
-            .querySelectorAll(".flame")
-            .forEach(
-                (flame,index)=>{
+  document
+  .querySelectorAll(".flame")
+  .forEach((flame,index)=>{
 
-                    setTimeout(()=>{
+   setTimeout(()=>{
 
-                        flame.animate(
+    flame.animate(
 
-                            [
-                                {
-                                    opacity:1,
-                                    transform:
-                                        "translateY(0) scale(1)"
-                                },
+     [
+      {
+       opacity:1,
+       transform:"scale(1)"
+      },
+      {
+       opacity:.6,
+       transform:"translateY(-6px) scale(.7)"
+      },
+      {
+       opacity:0,
+       transform:"translateY(-18px) scale(.05)"
+      }
+     ],
 
-                                {
-                                    opacity:.7,
-                                    transform:
-                                        "translateY(-5px) scale(.75)"
-                                },
+     {
+      duration:800,
+      fill:"forwards",
+      easing:"ease-out"
+     }
 
-                                {
-                                    opacity:0,
-                                    transform:
-                                        "translateY(-17px) scale(.05)"
-                                }
+    );
 
-                            ],
+   },index*160);
 
-                            {
-                                duration:850,
-                                fill:"forwards",
-                                easing:"ease-out"
-                            }
+  });
 
-                        );
-
-                    },index*170);
-
-                }
-            );
-
-    },350);
+ },350);
 
 
-    /* CRUMBS */
+ /* crumbs */
 
-    setTimeout(()=>{
+ setTimeout(()=>{
 
-        const stage=
-            document.getElementById(
-                "cakeStage"
-            );
+  const stage =
+  document.getElementById("cakeStage");
 
-        for(let i=0;i<18;i++){
+  for(let i=0;i<18;i++){
 
-            const crumb=
-                document.createElement(
-                    "div"
-                );
+   const c =
+   document.createElement("span");
 
-            crumb.className="crumb";
+   c.className="splash";
 
-            crumb.style.left=
-                (102+Math.random()*125)+"px";
+   c.style.width="5px";
+   c.style.height="5px";
 
-            crumb.style.top=
-                (140+Math.random()*35)+"px";
+   c.style.left=
+   (105+Math.random()*110)+"px";
 
-            crumb.style.setProperty(
-                "--x",
-                ((Math.random()-.5)*125)+"px"
-            );
+   c.style.bottom=
+   (55+Math.random()*60)+"px";
 
-            crumb.style.setProperty(
-                "--y",
-                (25+Math.random()*75)+"px"
-            );
+   stage.appendChild(c);
 
-            stage.appendChild(crumb);
+   setTimeout(()=>{
+    c.remove();
+   },700);
+  }
 
-            setTimeout(()=>{
-                crumb.remove();
-            },1050);
-        }
-
-    },650);
+ },650);
 
 
-    /* CELEBRATION */
-
-    setTimeout(()=>{
-
-        flash();
-
-        confetti(55);
-
-    },1100);
+ setTimeout(()=>{
+  flash();
+  confetti(45);
+ },1100);
 
 
-    setTimeout(()=>{
-
-        go(11);
-
-    },2600);
-
+ setTimeout(()=>{
+  go(11);
+  createBirthdayBalloons();
+ },2500);
 }
 
 
-/* =========================================================
+/* =====================================================
+   BIRTHDAY BALLOONS
+===================================================== */
+
+function createBirthdayBalloons(){
+
+ const stage =
+ document.getElementById("birthdayStage");
+
+ const colors=[
+  "#e6b0ba",
+  "#d9c6df",
+  "#e8c976",
+  "#efcbbd",
+  "#c99ca7"
+ ];
+
+ for(let i=0;i<15;i++){
+
+  const b =
+  document.createElement("div");
+
+  b.className="float-balloon";
+
+  b.style.left=
+  Math.random()*100+"%";
+
+  b.style.background=
+  colors[
+   Math.floor(
+    Math.random()*colors.length
+   )
+  ];
+
+  b.style.setProperty(
+   "--x",
+   ((Math.random()-.5)*150)+"px"
+  );
+
+  b.style.setProperty(
+   "--r",
+   ((Math.random()-.5)*18)+"deg"
+  );
+
+  b.style.setProperty(
+   "--duration",
+   (4+Math.random()*4)+"s"
+  );
+
+  b.style.animationDelay=
+  Math.random()*1.5+"s";
+
+  stage.appendChild(b);
+
+  setTimeout(()=>{
+   b.remove();
+  },8500);
+ }
+}
+
+
+/* =====================================================
    FLASH
-========================================================= */
+===================================================== */
 
 function flash(){
 
-    const element=
-        document.getElementById(
-            "flash"
-        );
+ const f =
+ document.getElementById("flash");
 
-    if(!element) return;
+ f.animate(
 
-    element.animate(
+  [
+   {opacity:0},
+   {opacity:.38},
+   {opacity:0}
+  ],
 
-        [
-            {opacity:0},
-            {opacity:.38},
-            {opacity:0}
-        ],
-
-        {
-            duration:650,
-            easing:"ease-out"
-        }
-    );
+  {
+   duration:600,
+   easing:"ease-out"
+  }
+ );
 }
 
 
-/* =========================================================
+/* =====================================================
    CONFETTI
-========================================================= */
+===================================================== */
 
 function confetti(amount){
 
-    const colors=[
-        "#efcbd0",
-        "#e5c56e",
-        "#dfd9eb",
-        "#f3d8c6",
-        "#b86d7c"
-    ];
+ const colors=[
+  "#efcbd0",
+  "#e5c56e",
+  "#dfd9eb",
+  "#f3d8c6",
+  "#b86d7c"
+ ];
 
-    for(let i=0;i<amount;i++){
+ for(let i=0;i<amount;i++){
 
-        const c=
-            document.createElement(
-                "div"
-            );
+  const c =
+  document.createElement("div");
 
-        c.className="confetti";
+  c.className="confetti";
 
-        c.style.left=
-            Math.random()*100+"%";
+  c.style.left=
+  Math.random()*100+"%";
 
-        c.style.background=
-            colors[
-                Math.floor(
-                    Math.random()*colors.length
-                )
-            ];
+  c.style.background=
+  colors[
+   Math.floor(
+    Math.random()*colors.length
+   )
+  ];
 
-        c.style.setProperty(
-            "--x",
-            ((Math.random()-.5)*180)+"px"
-        );
+  c.style.setProperty(
+   "--x",
+   ((Math.random()-.5)*180)+"px"
+  );
 
-        c.style.animationDuration=
-            (2.2+Math.random()*1.6)+"s";
+  c.style.animationDuration=
+  (2.2+Math.random()*1.6)+"s";
 
-        c.style.animationDelay=
-            Math.random()*.2+"s";
+  document.body.appendChild(c);
 
-        document.body.appendChild(c);
-
-        setTimeout(()=>{
-            c.remove();
-        },4500);
-    }
+  setTimeout(()=>{
+   c.remove();
+  },4500);
+ }
 }
 
 
-/* =========================================================
+/* =====================================================
    PRELOAD PHOTOS
-========================================================= */
+===================================================== */
 
 [
-    "1000244923.png",
-    "1000244922.png"
-
+ "1000244923.png",
+ "1000244922.png"
 ].forEach(src=>{
 
-    const img=
-        new Image();
-
-    img.src=src;
+ const img=new Image();
+ img.src=src;
 
 });
 
 
-/* =========================================================
-   PREVENT SCROLL
-========================================================= */
+/* =====================================================
+   PREVENT PAGE SCROLL
+===================================================== */
 
 document.addEventListener(
-    "touchmove",
-    e=>{
+ "touchmove",
+ e=>{
 
-        if(
-            !e.target.closest(
-                ".cake-stage"
-            )
-        ){
+  if(!e.target.closest(".cake-stage")){
+   e.preventDefault();
+  }
 
-            e.preventDefault();
-
-        }
-
-    },
-    {passive:false}
+ },
+ {passive:false}
 );
 
 </script>
