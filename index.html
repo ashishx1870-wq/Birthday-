@@ -287,6 +287,8 @@ p{
   letter-spacing:1.5px;
 
   cursor:pointer;
+  position:relative;
+  overflow:hidden;
 
   box-shadow:0 12px 35px rgba(70,50,55,.08);
 
@@ -297,6 +299,22 @@ p{
     transform .3s ease,
     box-shadow .3s ease,
     background .3s ease;
+}
+
+.btn-ripple{
+  position:absolute;
+  border-radius:50%;
+  background:rgba(184,109,124,.35);
+  transform:scale(0);
+  animation:rippleAnim .6s ease-out forwards;
+  pointer-events:none;
+}
+
+@keyframes rippleAnim{
+  to{
+    transform:scale(2.6);
+    opacity:0;
+  }
 }
 
 .scene.active .btn{
@@ -509,28 +527,22 @@ p{
 }
 
 /* =========================
-   SCENE 2 LETTER
+   SCENE 2 — LETTER FLIP CARD
 ========================= */
 
-.envelope-stage{
-  height:325px;
-  display:grid;
-  place-items:center;
-  perspective:1200px;
-}
-
-.envelope{
-  width:min(330px,84vw);
-  height:215px;
+.letter-flip-stage{
+  width:min(280px,78vw);
+  height:220px;
+  margin:0 auto;
   position:relative;
   cursor:pointer;
-  transform-style:preserve-3d;
+  perspective:1300px;
 
   opacity:0;
   transform:translateY(22px) scale(.94);
 }
 
-.scene.active .envelope{
+.scene.active .letter-flip-stage{
   animation:envelopeIn .9s .45s var(--ease) forwards;
 }
 
@@ -541,178 +553,70 @@ p{
   }
 }
 
-.envelope-shadow{
-  position:absolute;
-  left:8%;
-  right:8%;
-  bottom:1px;
-  height:30px;
-  border-radius:50%;
-  background:rgba(66,45,53,.15);
-  filter:blur(17px);
-}
-
-.envelope-back{
-  position:absolute;
-  inset:0;
-  border-radius:8px;
-  background:linear-gradient(145deg,#fffefa,#f1e3dc);
-  box-shadow:var(--shadow);
-  overflow:hidden;
-}
-
-.envelope-back:after{
-  content:"";
-  position:absolute;
-  inset:0;
-  background:
-    linear-gradient(32deg,transparent 49.5%,rgba(184,109,124,.12) 50%,transparent 50.5%),
-    linear-gradient(-32deg,transparent 49.5%,rgba(184,109,124,.1) 50%,transparent 50.5%);
-}
-
-.flap{
-  position:absolute;
-  z-index:8;
-  left:0;
-  top:0;
+.letter-flip-inner{
+  position:relative;
   width:100%;
-  height:58%;
-  background:linear-gradient(145deg,#f6e8df,#ead0ce);
-  clip-path:polygon(0 0,100% 0,50% 100%);
-  transform-origin:50% 0;
-  transition:transform 1.05s var(--ease);
+  height:100%;
+  transition:transform .9s var(--ease);
+  transform-style:preserve-3d;
+}
+
+.letter-flip-stage.flipped .letter-flip-inner{
+  transform:rotateY(180deg);
+}
+
+.letter-flip-face{
+  position:absolute;
+  inset:0;
+  border-radius:14px;
+
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  padding:24px;
+
   backface-visibility:hidden;
+  box-shadow:var(--shadow);
 }
 
-.envelope.open .flap{
-  transform:rotateX(180deg);
+.letter-flip-front{
+  background:linear-gradient(150deg,#fffdf9,#f6e8e1);
+  border:1px solid rgba(184,109,124,.22);
 }
 
-.letter{
-  position:absolute;
-  z-index:6;
-  left:7%;
-  width:86%;
-  height:178px;
-  bottom:10px;
-  padding:25px 22px;
-
-  background:linear-gradient(
-    rgba(255,255,255,.94),
-    rgba(255,253,249,.98)
-  );
-
-  border-radius:4px;
-  box-shadow:0 10px 30px rgba(60,40,45,.12);
-
-  transition:
-    transform 1.05s .15s var(--ease),
-    box-shadow .8s ease;
-}
-
-.envelope.open .letter{
-  transform:translateY(-98px);
-  box-shadow:0 25px 60px rgba(60,40,45,.17);
-}
-
-.letter:after{
-  content:"";
-  position:absolute;
-  inset:8px;
-  border:1px solid rgba(184,109,124,.12);
-}
-
-.letter-name{
+.letter-flip-monogram{
   font-family:var(--luxury);
-  font-size:20px;
+  font-size:44px;
   color:var(--rose);
-  margin-bottom:10px;
 }
 
-.letter-preview{
-  font-family:var(--serif);
-  font-style:italic;
-  font-size:17px;
-  line-height:1.3;
-  color:#66585d;
-}
-
-.seal{
-  position:absolute;
-  z-index:14;
-  left:50%;
-  top:54%;
-
-  width:42px;
-  height:42px;
-
-  transform:translate(-50%,-50%);
-  border-radius:50%;
-
-  display:grid;
-  place-items:center;
-
-  background:radial-gradient(circle at 35% 30%,#d88d99,#a75d6c);
-  color:white;
-
-  font-family:var(--luxury);
-  font-size:16px;
-
-  box-shadow:0 7px 17px rgba(100,55,65,.2);
-
-  transition:.6s;
-}
-
-.envelope.open .seal{
-  transform:translate(-50%,-50%) scale(.65) rotate(-18deg);
-  opacity:0;
-}
-
-.letter-glow{
-  position:absolute;
-  z-index:3;
-  width:150px;
-  height:110px;
-  left:50%;
-  top:52%;
-
-  transform:translate(-50%,-50%);
-
-  background:radial-gradient(
-    circle,
-    rgba(255,245,206,.8),
-    transparent 70%
-  );
-
-  filter:blur(8px);
-  opacity:0;
-  transition:opacity 1s;
-}
-
-.envelope.open .letter-glow{
-  opacity:1;
-}
-
-.envelope-hint{
-  position:absolute;
-  left:50%;
-  bottom:-30px;
-  transform:translateX(-50%);
-  white-space:nowrap;
-
+.letter-flip-tap{
+  margin-top:14px;
   font-size:9px;
   letter-spacing:1.5px;
   color:#9a8b90;
-
-  opacity:0;
 }
 
-.scene.active .envelope-hint{
-  animation:hint .8s 1.25s forwards;
+.letter-flip-back{
+  background:linear-gradient(150deg,#ecc8ce,#e4b9c2);
+  transform:rotateY(180deg);
 }
 
-@keyframes hint{
-  to{opacity:1}
+.letter-flip-name{
+  font-family:var(--luxury);
+  font-size:19px;
+  color:#6b3f48;
+  margin-bottom:9px;
+}
+
+.letter-flip-preview{
+  font-family:var(--serif);
+  font-style:italic;
+  font-size:16px;
+  line-height:1.35;
+  color:#6b3f48;
 }
 
 /* =========================
@@ -2272,6 +2176,50 @@ p{
   pointer-events:none;
 }
 
+/* =========================
+   MUSIC TOGGLE
+========================= */
+
+.music-toggle{
+  position:fixed;
+  top:14px;
+  right:14px;
+  z-index:210;
+
+  width:38px;
+  height:38px;
+
+  display:grid;
+  place-items:center;
+
+  border-radius:50%;
+  border:1px solid rgba(100,70,78,.15);
+
+  background:rgba(255,253,249,.82);
+  backdrop-filter:blur(10px);
+
+  box-shadow:0 8px 20px rgba(70,50,55,.12);
+
+  cursor:pointer;
+  font-size:15px;
+
+  transition:transform .3s ease,box-shadow .3s ease;
+}
+
+.music-toggle:active{
+  transform:scale(.9);
+}
+
+.music-toggle.playing{
+  animation:musicPulse 2.4s ease-in-out infinite;
+}
+
+@keyframes musicPulse{
+  50%{
+    box-shadow:0 8px 24px rgba(184,109,124,.28);
+  }
+}
+
 .confetti{
   position:fixed;
   top:-20px;
@@ -2333,16 +2281,8 @@ p{
     font-size:29px;
   }
 
-  .envelope-stage{
-    height:320px;
-  }
-
-  .letter{
-    height:170px;
-  }
-
-  .envelope.open .letter{
-    transform:translateY(-93px);
+  .letter-flip-stage{
+    height:195px;
   }
 
   .message-card{
@@ -2483,7 +2423,7 @@ p{
 
 
   <!-- =========================
-       SCENE 2 — LETTER
+       SCENE 2 — LETTER FLIP CARD
   ========================== -->
 
   <section class="scene" id="s2">
@@ -2499,40 +2439,38 @@ p{
         <span class="accent">sirf aapke liye.</span>
       </h2>
 
-      <div class="envelope-stage">
+      <div style="height:36px"></div>
 
-        <div
-          class="envelope"
-          id="envelope"
-          onclick="openLetter()"
-        >
+      <div
+        class="letter-flip-stage"
+        id="letterFlipStage"
+        onclick="openLetterFlip()"
+      >
 
-          <div class="envelope-shadow"></div>
+        <div class="letter-flip-inner">
 
-          <div class="envelope-back"></div>
+          <div class="letter-flip-face letter-flip-front">
 
-          <div class="letter-glow"></div>
+            <div class="letter-flip-monogram">
+              P
+            </div>
 
-          <div class="letter">
+            <div class="letter-flip-tap">
+              TAP TO FLIP ✦
+            </div>
 
-            <div class="letter-name">
+          </div>
+
+          <div class="letter-flip-face letter-flip-back">
+
+            <div class="letter-flip-name">
               For Pallavi,
             </div>
 
-            <div class="letter-preview">
+            <div class="letter-flip-preview">
               “Ek chhoti si baat kehni thi…”
             </div>
 
-          </div>
-
-          <div class="flap"></div>
-
-          <div class="seal">
-            P
-          </div>
-
-          <div class="envelope-hint">
-            TAP TO OPEN
           </div>
 
         </div>
@@ -3398,6 +3336,12 @@ p{
 
 <div id="flash"></div>
 
+<button class="music-toggle" id="musicToggle" onclick="toggleMusic()">🔇</button>
+
+<audio id="bgMusic" loop preload="auto">
+  <source src="Music.mp3" type="audio/mpeg">
+</audio>
+
 
 <script>
 
@@ -3409,6 +3353,288 @@ const $ = id => document.getElementById(id);
 
 let currentScene = 1;
 let navigating = false;
+
+
+/* =========================================================
+   BUTTON RIPPLE
+   tap feedback on every .btn, purely visual —
+   runs alongside whatever the button's own onclick does.
+========================================================= */
+
+(function addButtonRipples(){
+
+  document.querySelectorAll(".btn").forEach(btn => {
+
+    btn.addEventListener("click",function(event){
+
+      const rect = this.getBoundingClientRect();
+
+      const size = Math.max(rect.width,rect.height);
+
+      const ripple = document.createElement("span");
+
+      ripple.className = "btn-ripple";
+
+      ripple.style.width = size + "px";
+      ripple.style.height = size + "px";
+
+      const originX =
+        (event.clientX || (rect.left + rect.width/2)) - rect.left - size/2;
+
+      const originY =
+        (event.clientY || (rect.top + rect.height/2)) - rect.top - size/2;
+
+      ripple.style.left = originX + "px";
+      ripple.style.top = originY + "px";
+
+      this.appendChild(ripple);
+
+      setTimeout(() => {
+
+        ripple.remove();
+
+      },650);
+
+    });
+
+  });
+
+})();
+
+
+/* =========================================================
+   SOUND EFFECTS
+   synthesized via Web Audio API — no external files,
+   works fully offline. AudioContext is created lazily
+   on the first tap, since browsers block audio before
+   any user gesture.
+========================================================= */
+
+let audioCtx = null;
+
+function ensureAudio(){
+
+  if(!audioCtx){
+
+    try{
+
+      audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+
+    }catch(e){}
+
+  }
+
+  if(audioCtx && audioCtx.state === "suspended"){
+
+    audioCtx.resume();
+
+  }
+
+}
+
+document.addEventListener("pointerdown",ensureAudio,{once:true});
+document.addEventListener("touchstart",ensureAudio,{once:true});
+document.addEventListener("mousedown",ensureAudio,{once:true});
+
+
+/* =========================================================
+   BACKGROUND MUSIC
+   Controlled purely via the toggle button — kept separate
+   from the sound-effect unlock above so the first tap on
+   the button itself doesn't start-then-immediately-stop
+   the track in the same gesture.
+========================================================= */
+
+const bgMusic = $("bgMusic");
+const musicToggle = $("musicToggle");
+
+let musicPlaying = false;
+
+function toggleMusic(){
+
+  if(!bgMusic) return;
+
+  if(musicPlaying){
+
+    bgMusic.pause();
+
+    musicPlaying = false;
+
+    if(musicToggle){
+
+      musicToggle.textContent = "🔇";
+      musicToggle.classList.remove("playing");
+
+    }
+
+  }else{
+
+    bgMusic.volume = .45;
+
+    const playPromise = bgMusic.play();
+
+    if(playPromise && playPromise.catch){
+
+      playPromise.catch(() => {});
+
+    }
+
+    musicPlaying = true;
+
+    if(musicToggle){
+
+      musicToggle.textContent = "🎵";
+      musicToggle.classList.add("playing");
+
+    }
+
+  }
+
+}
+
+function soundPop(){
+
+  if(!audioCtx) return;
+
+  const osc = audioCtx.createOscillator();
+  const gain = audioCtx.createGain();
+
+  osc.type = "triangle";
+
+  const now = audioCtx.currentTime;
+
+  osc.frequency.setValueAtTime(300,now);
+  osc.frequency.exponentialRampToValueAtTime(700,now + .08);
+
+  gain.gain.setValueAtTime(.22,now);
+  gain.gain.exponentialRampToValueAtTime(.001,now + .16);
+
+  osc.connect(gain);
+  gain.connect(audioCtx.destination);
+
+  osc.start(now);
+  osc.stop(now + .17);
+
+}
+
+function soundFlip(){
+
+  if(!audioCtx) return;
+
+  const osc = audioCtx.createOscillator();
+  const gain = audioCtx.createGain();
+
+  osc.type = "sine";
+
+  const now = audioCtx.currentTime;
+
+  osc.frequency.setValueAtTime(520,now);
+  osc.frequency.exponentialRampToValueAtTime(220,now + .18);
+
+  gain.gain.setValueAtTime(.16,now);
+  gain.gain.exponentialRampToValueAtTime(.001,now + .22);
+
+  osc.connect(gain);
+  gain.connect(audioCtx.destination);
+
+  osc.start(now);
+  osc.stop(now + .24);
+
+}
+
+function soundCut(){
+
+  if(!audioCtx) return;
+
+  const now = audioCtx.currentTime;
+
+  const bufferSize =
+    audioCtx.sampleRate * .35;
+
+  const buffer =
+    audioCtx.createBuffer(1,bufferSize,audioCtx.sampleRate);
+
+  const data = buffer.getChannelData(0);
+
+  for(let i = 0; i < bufferSize; i++){
+
+    data[i] =
+      (Math.random()*2 - 1) * (1 - i/bufferSize);
+
+  }
+
+  const noise = audioCtx.createBufferSource();
+
+  noise.buffer = buffer;
+
+  const filter = audioCtx.createBiquadFilter();
+
+  filter.type = "bandpass";
+  filter.frequency.value = 1200;
+
+  const gain = audioCtx.createGain();
+
+  gain.gain.value = .22;
+
+  noise.connect(filter);
+  filter.connect(gain);
+  gain.connect(audioCtx.destination);
+
+  noise.start(now);
+
+  setTimeout(() => {
+
+    const osc = audioCtx.createOscillator();
+    const g2 = audioCtx.createGain();
+
+    osc.type = "sine";
+    osc.frequency.value = 880;
+
+    const t = audioCtx.currentTime;
+
+    g2.gain.setValueAtTime(.18,t);
+    g2.gain.exponentialRampToValueAtTime(.001,t + .5);
+
+    osc.connect(g2);
+    g2.connect(audioCtx.destination);
+
+    osc.start(t);
+    osc.stop(t + .5);
+
+  },220);
+
+}
+
+function soundChime(){
+
+  if(!audioCtx) return;
+
+  [660,880,990].forEach((freq,index) => {
+
+    setTimeout(() => {
+
+      const osc = audioCtx.createOscillator();
+      const gain = audioCtx.createGain();
+
+      osc.type = "sine";
+      osc.frequency.value = freq;
+
+      const now = audioCtx.currentTime;
+
+      gain.gain.setValueAtTime(.14,now);
+      gain.gain.exponentialRampToValueAtTime(.001,now + .6);
+
+      osc.connect(gain);
+      gain.connect(audioCtx.destination);
+
+      osc.start(now);
+      osc.stop(now + .6);
+
+    },index * 90);
+
+  });
+
+}
 
 
 /* =========================================================
@@ -3523,27 +3749,29 @@ function go(number){
 
 
 /* =========================================================
-   LETTER
+   LETTER FLIP CARD
 ========================================================= */
 
-let letterOpened = false;
+let letterFlipped = false;
 
-function openLetter(){
+function openLetterFlip(){
 
-  if(letterOpened) return;
+  if(letterFlipped) return;
 
-  letterOpened = true;
+  letterFlipped = true;
 
-  const envelope = $("envelope");
+  const stage = $("letterFlipStage");
 
-  if(!envelope) return;
+  if(!stage) return;
 
-  envelope.classList.add("open");
+  stage.classList.add("flipped");
+
+  soundFlip();
 
   setTimeout(() => {
     flash();
     confetti(28);
-  },550);
+  },500);
 
   setTimeout(() => {
 
@@ -3556,7 +3784,7 @@ function openLetter(){
 
     go(3);
 
-  },1750);
+  },2000);
 
 }
 
@@ -3639,6 +3867,8 @@ function openGlobe(){
 
   if(stage)
     stage.classList.add("shaking");
+
+  soundChime();
 
   if(glass)
     spawnPetals(glass);
@@ -3835,6 +4065,8 @@ function popBalloon(balloon){
 
   balloonsPopped++;
 
+  soundPop();
+
   const rect =
     balloon.getBoundingClientRect();
 
@@ -4014,6 +4246,8 @@ function flipWishCard(card){
 
   wishesFlipped++;
 
+  soundFlip();
+
   if(wishesFlipped === totalWishes){
 
     const hint =
@@ -4168,6 +4402,8 @@ function initScratchCard(){
 
     scratchCompleted = true;
 
+    soundChime();
+
     canvas.style.transition =
       "opacity .6s ease";
 
@@ -4243,6 +4479,31 @@ function initScratchCard(){
 
   }
 
+  /*
+    Touch is handled completely independently
+    of the dragging flag: touchmove only ever
+    fires while a finger is actually on the
+    screen, so there is nothing to get out of
+    sync. This guarantees the mobile/slide
+    case works even if the flag-based pointer
+    or mouse path misbehaves in a particular
+    webview.
+  */
+
+  function touchScratch(event){
+
+    if(scratchCompleted) return;
+
+    const p = getPos(event);
+
+    scratchAt(p.x,p.y);
+
+    checkProgress();
+
+    event.preventDefault();
+
+  }
+
   canvas.style.touchAction = "none";
 
   canvas.addEventListener("pointerdown",down);
@@ -4254,10 +4515,10 @@ function initScratchCard(){
   canvas.addEventListener("mousemove",move);
   window.addEventListener("mouseup",up);
 
-  canvas.addEventListener("touchstart",down,{passive:false});
-  canvas.addEventListener("touchmove",move,{passive:false});
-  canvas.addEventListener("touchend",up);
-  canvas.addEventListener("touchcancel",up);
+  canvas.addEventListener("touchstart",touchScratch,{passive:false});
+  canvas.addEventListener("touchmove",touchScratch,{passive:false});
+  canvas.addEventListener("touchend",() => checkProgress(true));
+  canvas.addEventListener("touchcancel",() => checkProgress(true));
 
 }
 
@@ -4406,6 +4667,92 @@ function knifeUp(){
 }
 
 
+/*
+  Touch gets its own fully independent
+  start/move/end path (separate from the
+  "dragging" flag used by pointer/mouse),
+  same reasoning as the scratch card: touch
+  events only fire while a finger is actually
+  on the knife, so nothing can desync.
+*/
+
+let knifeTouchActive = false;
+let knifeTouchStartX = 0;
+let knifeTouchStartY = 0;
+
+function knifeTouchStart(event){
+
+  if(cutDone) return;
+
+  const t = event.touches[0];
+
+  if(!t) return;
+
+  knifeTouchActive = true;
+  knifeTouchStartX = t.clientX;
+  knifeTouchStartY = t.clientY;
+
+  if(knife)
+    knife.classList.add("dragging");
+
+  event.preventDefault();
+
+}
+
+function knifeTouchMove(event){
+
+  if(!knifeTouchActive || cutDone)
+    return;
+
+  const t = event.touches[0];
+
+  if(!t) return;
+
+  const dx = t.clientX - knifeTouchStartX;
+  const dy = t.clientY - knifeTouchStartY;
+
+  const x =
+    Math.max(-110,Math.min(8,dx));
+
+  const y =
+    Math.max(-14,Math.min(48,dy));
+
+  if(knife){
+
+    knife.style.transform =
+      "translate3d(" +
+      x + "px," +
+      y + "px,0) rotate(-42deg)";
+
+  }
+
+  if(dx < -65){
+
+    cutCake();
+
+  }
+
+  event.preventDefault();
+
+}
+
+function knifeTouchEnd(){
+
+  knifeTouchActive = false;
+
+  if(knife)
+    knife.classList.remove("dragging");
+
+  if(!cutDone && knife){
+
+    knife.style.transform =
+      "translate3d(0,0,0) rotate(-42deg)";
+
+  }
+
+}
+
+
 /* EVENTS */
 
 if(knife){
@@ -4486,6 +4833,8 @@ function cutCake(){
 
   if(cake)
     cake.classList.add("cut");
+
+  soundCut();
 
   if(cutHint)
     cutHint.textContent =
